@@ -58,31 +58,31 @@ Objetivos:
 ---
 
 ## 4) 🏗️ Arquitectura y diagramas (compatibles con GitHub)
-A continuación diagramas revisados para GitHub (sin caracteres problemáticos). Si quieres imágenes PNG/SVG con los mismos diagramas, puedo generarlas y subirlas a `/docs/images`.
+A continuación diagramas revisados para GitHub (evitando caracteres problemáticos en etiquetas). Si quieres imágenes PNG/SVG con los mismos diagramas, puedo generarlas y subirlas a `/docs/images`.
 
 ### 4.1) Diagrama de despliegue (topología)
 ```mermaid
 flowchart LR
   subgraph Usuarios
-    WebUser[Usuario Web (Navegador)]
-    DeskUser[Usuario Desktop (PC/Terminal)]
+    WebUser["Usuario Web - Navegador"]
+    DeskUser["Usuario Desktop - Terminal"]
   end
 
   subgraph Local
-    DeskApp[FacturaPro360 Desktop - .NET 8 WPF]
-    DeskDB[SQLite / SQL Server Express]
-    Backups[Backups (.bak) y archivos locales]
+    DeskApp["FacturaPro360 Desktop - .NET 8 WPF"]
+    DeskDB["SQLite o SQLServerExpress"]
+    Backups["Backups y archivos locales"]
     DeskUser --> DeskApp
     DeskApp --> DeskDB
     DeskApp --> Backups
   end
 
   subgraph Cloud
-    Browser[Angular SPA (estática)]
-    Nginx[Nginx / CDN]
-    Supabase[Supabase / PostgreSQL]
-    PGData[Postgres Data]
-    Audit[Auditorías / Logs]
+    Browser["Angular SPA - estática"]
+    Nginx["Nginx o CDN"]
+    Supabase["Supabase / PostgreSQL"]
+    PGData["Postgres Data"]
+    Audit["Auditorías y Logs"]
     WebUser --> Browser
     Browser --> Nginx
     Nginx --> Supabase
@@ -90,7 +90,7 @@ flowchart LR
     Supabase --> Audit
   end
 
-  DockerHost[Docker Host / VM] --> Nginx
+  DockerHost["Docker Host o VM"] --> Nginx
   DockerHost --> Supabase
 ```
 
@@ -99,14 +99,14 @@ Explicación: frontend estático servido por Nginx o CDN; Supabase/PG ejecuta RP
 ### 4.2) Diagrama de componentes (módulos y responsabilidades)
 ```mermaid
 graph TD
-  UI_WEB[Angular SPA]
-  UI_DESK[WPF Desktop]
-  SHARED[Shared Domain (Entidades/DTOs)]
-  RPCS[Postgres RPCs]
-  DB[Postgres / Supabase]
-  EFCORE[EF Core DbContext]
-  AUDIT[Auditorías]
-  AUTH[Auth / Roles]
+  UI_WEB["Angular SPA"]
+  UI_DESK["WPF Desktop"]
+  SHARED["Shared Domain\nEntidades y DTOs"]
+  RPCS["Postgres RPCs"]
+  DB["Postgres - Supabase"]
+  EFCORE["EF Core DbContext"]
+  AUDIT["Auditorías"]
+  AUTH["Auth y Roles"]
 
   UI_WEB -->|llama RPCs| RPCS
   UI_WEB -->|auth| AUTH
