@@ -1,0 +1,181 @@
+<UserControl x:Class="FacturaPro360.Wpf.Views.BackupView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Margin="24,20,24,24">
+            <!-- CABECERA -->
+            <DockPanel Margin="0,0,0,16">
+                <StackPanel>
+                    <TextBlock Text="CENTRO DE RESPALDO Y PROTECCIÓN CRIPTOGRÁFICA" FontSize="20" FontWeight="Bold" Foreground="{StaticResource TextPrimaryBrush}"/>
+                    <TextBlock Text="Mecanismo redundante contra borrado accidental, errores de usuario y contingencias con rotación continua." 
+                               FontSize="13" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,4,0,0"/>
+                </StackPanel>
+            </DockPanel>
+
+            <!-- BANNER HERO TELEMETRÍA -->
+            <Border CornerRadius="12" Margin="0,0,0,20" Height="110" ClipToBounds="True" BorderBrush="#1E3E62" BorderThickness="1">
+                <Grid>
+                    <Image Source="/Assets/hero_banner.jpg" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Border Background="#D0071324">
+                        <Grid Margin="20,0">
+                            <StackPanel VerticalAlignment="Center">
+                                <Border Background="#1E3E62" CornerRadius="4" Padding="6,2" HorizontalAlignment="Left" Margin="0,0,0,6">
+                                    <TextBlock Text="ENTERPRISE DISASTER RECOVERY &amp; TELEMETRY" FontSize="9" FontWeight="Bold" Foreground="#38BDF8"/>
+                                </Border>
+                                <TextBlock Text="Protección de Base de Datos y Replicación Criptográfica Activa" FontSize="15" FontWeight="Bold" Foreground="White"/>
+                                <TextBlock Text="Respaldos automáticos programados, copias de seguridad en caliente e historial inmutable." FontSize="11" Foreground="#94A3B8"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <!-- TARJETAS SUPERIORES DE TELEMETRÍA (3 COLUMNAS) -->
+            <UniformGrid Columns="3" Margin="0,0,0,20">
+                <!-- TARJETA 1: AUTO-RESPALDO -->
+                <Border Style="{StaticResource ModernCard}" Margin="0,0,10,0">
+                    <StackPanel>
+                        <TextBlock Text="ESTADO DEL AUTO-RESPALDO" FontSize="10" FontWeight="Bold" Foreground="{StaticResource TextSecondaryBrush}"/>
+                        <Border CornerRadius="12" Background="#ECFDF5" BorderBrush="#A7F3D0" BorderThickness="1" Padding="8,4" Margin="0,8,0,6" HorizontalAlignment="Left">
+                            <StackPanel Orientation="Horizontal">
+                                <Ellipse Width="8" Height="8" Fill="#059669" Margin="0,0,6,0" VerticalAlignment="Center"/>
+                                <TextBlock Text="ACTIVO (SEGUNDO PLANO)" FontSize="10" FontWeight="Bold" Foreground="#047857"/>
+                            </StackPanel>
+                        </Border>
+                        <TextBlock Text="{Binding UltimoRespaldo, StringFormat='Último: {0}'}" FontSize="11" Foreground="{StaticResource TextPrimaryBrush}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" Margin="0,2,0,0"/>
+                        <TextBlock Text="Frecuencia: Cada 15 min (Checkpoint WAL)" FontSize="11" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,2,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- TARJETA 2: PUNTOS DISPONIBLES -->
+                <Border Style="{StaticResource ModernCard}" Margin="5,0,5,0">
+                    <StackPanel>
+                        <TextBlock Text="PUNTOS DE RESTAURACIÓN DISPONIBLES" FontSize="10" FontWeight="Bold" Foreground="{StaticResource TextSecondaryBrush}"/>
+                        <TextBlock Text="{Binding TotalRespaldos, StringFormat='{}{0} Copias Guardadas'}" FontSize="18" FontWeight="ExtraBold" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,8,0,2"/>
+                        <TextBlock Text="{Binding EspacioTotalOcupado, StringFormat='Espacio en Disco: {0}'}" FontSize="11" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,2,0,0"/>
+                        <TextBlock Text="Política de rotación: Retiene últimas 30 copias" FontSize="10" Foreground="#059669" FontWeight="SemiBold" Margin="0,4,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- TARJETA 3: INTEGRIDAD SHA-256 -->
+                <Border Style="{StaticResource ModernCard}" Margin="10,0,0,0">
+                    <StackPanel>
+                        <TextBlock Text="INTEGRIDAD Y SEGURIDAD" FontSize="10" FontWeight="Bold" Foreground="{StaticResource TextSecondaryBrush}"/>
+                        <TextBlock Text="SHA-256 Validado" FontSize="18" FontWeight="ExtraBold" Foreground="#2563EB" Margin="0,8,0,2"/>
+                        <TextBlock Text="Checksum criptográfico por cada archivo .bak" FontSize="11" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,2,0,0"/>
+                        <TextBlock Text="Copia preventiva automática antes de restaurar" FontSize="10" Foreground="#D97706" FontWeight="SemiBold" Margin="0,4,0,0"/>
+                    </StackPanel>
+                </Border>
+            </UniformGrid>
+
+            <!-- BARRA DE CONFIGURACIÓN Y ACCIÓN INMEDIATA -->
+            <Border Style="{StaticResource ModernCard}" Margin="0,0,0,20">
+                <StackPanel>
+                    <TextBlock Text="CONFIGURACIÓN DE CARPETA Y ACCIÓN INMEDIATA" FontSize="12" FontWeight="Bold" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,10"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBox Grid.Column="0" Style="{StaticResource ModernTextBox}" 
+                                 Text="{Binding RutaDestino, UpdateSourceTrigger=PropertyChanged}" 
+                                 Height="36" Margin="0,0,10,0"/>
+
+                        <Button Grid.Column="1" Style="{StaticResource PrimaryBtn}" 
+                                Content="Crear Respaldo Inmediato (.BAK)" 
+                                Command="{Binding RealizarRespaldoManualCommand}" 
+                                Height="36" Margin="0,0,8,0"/>
+
+                        <Button Grid.Column="2" Style="{StaticResource SecondaryBtn}" 
+                                Content="Abrir Carpeta" 
+                                Command="{Binding AbrirCarpetaRespaldosCommand}" 
+                                Height="36" Margin="0,0,8,0"/>
+
+                        <Button Grid.Column="3" Style="{StaticResource SecondaryBtn}" 
+                                Content="Actualizar Lista" 
+                                Command="{Binding CargarHistorialCommand}" 
+                                Height="36"/>
+                    </Grid>
+
+                    <TextBlock Text="{Binding MensajeResultado}" FontSize="11" Foreground="#2563EB" FontWeight="SemiBold" Margin="0,8,0,0" TextWrapping="Wrap"/>
+                </StackPanel>
+            </Border>
+
+            <!-- TABLA DE HISTORIAL DE RESPALDOS -->
+            <Border Style="{StaticResource ModernCard}" Margin="0,0,0,20">
+                <StackPanel>
+                    <DockPanel Margin="0,0,0,12">
+                        <TextBlock Text="PUNTOS DE RESTAURACIÓN DISPONIBLES EN ESTA MÁQUINA" FontSize="13" FontWeight="Bold" Foreground="{StaticResource TextPrimaryBrush}" VerticalAlignment="Center"/>
+                        <TextBlock Text="Selecciona cualquier punto para restaurar en caso de contingencia" FontSize="11" Foreground="{StaticResource TextSecondaryBrush}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    </DockPanel>
+
+                    <DataGrid ItemsSource="{Binding HistorialRespaldos}" 
+                              SelectedItem="{Binding RespaldoSeleccionado, Mode=TwoWay}"
+                              AutoGenerateColumns="False" 
+                              IsReadOnly="True" 
+                              HeadersVisibility="Column"
+                              GridLinesVisibility="Horizontal"
+                              HorizontalGridLinesBrush="#F1F5F9"
+                              Background="White"
+                              BorderThickness="1"
+                              BorderBrush="{StaticResource CardBorderBrush}"
+                              RowHeight="38"
+                              MaxHeight="360"
+                              SelectionMode="Single">
+                        <DataGrid.Columns>
+                            <!-- TIPO DE RESPALDO -->
+                            <DataGridTemplateColumn Header="TIPO" Width="130">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border CornerRadius="4" Padding="6,2" HorizontalAlignment="Left" Background="#F1F5F9">
+                                            <TextBlock Text="{Binding Tipo}" FontSize="10" FontWeight="Bold" Foreground="#334155"/>
+                                        </Border>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <!-- NOMBRE DEL ARCHIVO -->
+                            <DataGridTextColumn Header="ARCHIVO DE RESPALDO" Binding="{Binding NombreArchivo}" Width="*" FontWeight="SemiBold"/>
+
+                            <!-- FECHA Y HORA -->
+                            <DataGridTextColumn Header="FECHA Y HORA" Binding="{Binding FechaCreacion, StringFormat='{}{0:dd/MM/yyyy HH:mm:ss}'}" Width="150"/>
+
+                            <!-- TAMAÑO -->
+                            <DataGridTextColumn Header="TAMAÑO" Binding="{Binding TamanoFormateado}" Width="90"/>
+
+                            <!-- HASH SHA-256 -->
+                            <DataGridTextColumn Header="SHA-256 INTEGRIDAD" Binding="{Binding HashCorto}" Width="150" FontFamily="Consolas" FontSize="10"/>
+
+                            <!-- ACCIONES -->
+                            <DataGridTemplateColumn Header="ACCIONES DE RECUPERACIÓN" Width="160">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Style="{StaticResource WarningBtn}" Content="Restaurar" 
+                                                    Command="{Binding DataContext.RestaurarRespaldoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                                    Margin="0,0,6,0"/>
+                                            <Button Style="{StaticResource DangerBtn}" Content="Eliminar" 
+                                                    Command="{Binding DataContext.EliminarRespaldoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </Border>
+
+            <!-- AVISO DE PROTOCOLO DE SEGURIDAD -->
+            <Border Background="#F0FDF4" BorderBrush="#BBF7D0" BorderThickness="1" CornerRadius="8" Padding="14,10">
+                <DockPanel>
+                    <TextBlock Text="PROTOCOLO DE RESILIENCIA ANTE ERRORES Y MALAS PRÁCTICAS" FontWeight="Bold" FontSize="11" Foreground="#166534" DockPanel.Dock="Top" Margin="0,0,0,4"/>
+                    <TextBlock Text="El auto-respaldo corre periódicamente en segundo plano mediante checkpoints del journal SQLite WAL. Si ocurre un fallo eléctrico, corrupción o borrado involuntario de registros, puedes seleccionar cualquier punto de restauración previo. Antes de sobrescribir, el sistema siempre genera una copia preventiva 'PreRestore_Safety' para evitar pérdidas irreversibles." 
+                               FontSize="11" Foreground="#15803D" TextWrapping="Wrap"/>
+                </DockPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

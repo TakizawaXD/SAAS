@@ -1,0 +1,368 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- ========================= PALETA FACTURAPRO 360 (EXACTA AL WEB) ========================= -->
+    <Color x:Key="SidebarBgColor">#0B192C</Color>
+    <Color x:Key="SidebarHoverColor">#15263F</Color>
+    <Color x:Key="SidebarBorderColor">#152C4C</Color>
+    
+    <Color x:Key="PrimaryBlueColor">#2563EB</Color>
+    <Color x:Key="PrimaryBlueHoverColor">#1D4ED8</Color>
+    
+    <Color x:Key="CanvasBgColor">#F8FAFC</Color>
+    <Color x:Key="CardBgColor">#FFFFFF</Color>
+    <Color x:Key="CardBorderColor">#E2E8F0</Color>
+    
+    <Color x:Key="TextDarkColor">#0F172A</Color>
+    <Color x:Key="TextMutedColor">#64748B</Color>
+    <Color x:Key="TextSlate500Color">#64748B</Color>
+    
+    <Color x:Key="EmeraldColor">#059669</Color>
+    <Color x:Key="Emerald50Color">#ECFDF5</Color>
+    <Color x:Key="Emerald200Color">#A7F3D0</Color>
+    <Color x:Key="Emerald700Color">#047857</Color>
+
+    <Color x:Key="AmberColor">#D97706</Color>
+    <Color x:Key="Amber50Color">#FFFBEB</Color>
+    <Color x:Key="Amber200Color">#FDE68A</Color>
+    <Color x:Key="Amber700Color">#B45309</Color>
+
+    <Color x:Key="RoseColor">#E11D48</Color>
+    <Color x:Key="Rose50Color">#FFF1F2</Color>
+    <Color x:Key="Rose600Color">#E11D48</Color>
+
+    <Color x:Key="Blue50Color">#EFF6FF</Color>
+    <Color x:Key="Blue100Color">#DBEAFE</Color>
+    <Color x:Key="Blue200Color">#BFDBFE</Color>
+    <Color x:Key="Blue600Color">#2563EB</Color>
+    <Color x:Key="Blue700Color">#1D4ED8</Color>
+
+    <Color x:Key="Purple50Color">#F5F3FF</Color>
+    <Color x:Key="Purple600Color">#9333EA</Color>
+
+    <Color x:Key="Slate50Color">#F8FAFC</Color>
+    <Color x:Key="Slate100Color">#F1F5F9</Color>
+    <Color x:Key="Slate200Color">#E2E8F0</Color>
+
+    <!-- ========================= BRUSHES ========================= -->
+    <SolidColorBrush x:Key="SidebarBgBrush" Color="{StaticResource SidebarBgColor}"/>
+    <SolidColorBrush x:Key="SidebarHoverBrush" Color="{StaticResource SidebarHoverColor}"/>
+    <SolidColorBrush x:Key="SidebarBorderBrush" Color="{StaticResource SidebarBorderColor}"/>
+
+    <SolidColorBrush x:Key="PrimaryBlueBrush" Color="{StaticResource PrimaryBlueColor}"/>
+    <SolidColorBrush x:Key="PrimaryBlueHoverBrush" Color="{StaticResource PrimaryBlueHoverColor}"/>
+
+    <SolidColorBrush x:Key="CanvasBgBrush" Color="{StaticResource CanvasBgColor}"/>
+    <SolidColorBrush x:Key="CardBgBrush" Color="{StaticResource CardBgColor}"/>
+    <SolidColorBrush x:Key="CardBorderBrush" Color="{StaticResource CardBorderColor}"/>
+
+    <SolidColorBrush x:Key="TextDarkBrush" Color="{StaticResource TextDarkColor}"/>
+    <SolidColorBrush x:Key="TextMutedBrush" Color="{StaticResource TextMutedColor}"/>
+    <SolidColorBrush x:Key="TextPrimaryBrush" Color="{StaticResource TextDarkColor}"/>
+    <SolidColorBrush x:Key="TextSecondaryBrush" Color="{StaticResource TextMutedColor}"/>
+
+    <SolidColorBrush x:Key="EmeraldBrush" Color="{StaticResource EmeraldColor}"/>
+    <SolidColorBrush x:Key="Emerald50Brush" Color="{StaticResource Emerald50Color}"/>
+    <SolidColorBrush x:Key="Emerald700Brush" Color="{StaticResource Emerald700Color}"/>
+
+    <SolidColorBrush x:Key="AmberBrush" Color="{StaticResource AmberColor}"/>
+    <SolidColorBrush x:Key="Amber50Brush" Color="{StaticResource Amber50Color}"/>
+    <SolidColorBrush x:Key="Amber700Brush" Color="{StaticResource Amber700Color}"/>
+
+    <SolidColorBrush x:Key="RoseBrush" Color="{StaticResource RoseColor}"/>
+    <SolidColorBrush x:Key="Rose50Brush" Color="{StaticResource Rose50Color}"/>
+
+    <SolidColorBrush x:Key="Blue50Brush" Color="{StaticResource Blue50Color}"/>
+    <SolidColorBrush x:Key="Blue100Brush" Color="{StaticResource Blue100Color}"/>
+    <SolidColorBrush x:Key="Blue200Brush" Color="{StaticResource Blue200Color}"/>
+    <SolidColorBrush x:Key="Blue600Brush" Color="{StaticResource Blue600Color}"/>
+
+    <SolidColorBrush x:Key="Purple50Brush" Color="{StaticResource Purple50Color}"/>
+    <SolidColorBrush x:Key="Purple600Brush" Color="{StaticResource Purple600Color}"/>
+
+    <SolidColorBrush x:Key="Slate50Brush" Color="{StaticResource Slate50Color}"/>
+    <SolidColorBrush x:Key="Slate100Brush" Color="{StaticResource Slate100Color}"/>
+
+    <!-- ========================= TARJETA BLANCA (CARD) ========================= -->
+    <Style x:Key="FacturaCard" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource CardBgBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource CardBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="12"/>
+        <Setter Property="Padding" Value="20"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect Color="#0F172A" Opacity="0.04" BlurRadius="8" Direction="270" ShadowDepth="2"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ModernCard" TargetType="Border" BasedOn="{StaticResource FacturaCard}"/>
+
+    <!-- Tarjeta grande redondeada (igual al banner de bienvenida web) -->
+    <Style x:Key="WelcomeCard" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource CardBgBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource CardBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="16"/>
+        <Setter Property="Padding" Value="24"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect Color="#0F172A" Opacity="0.03" BlurRadius="6" Direction="270" ShadowDepth="1"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- ========================= BOTONES ========================= -->
+
+    <!-- BOTÓN ROYAL BLUE PRINCIPAL -->
+    <Style x:Key="PrimaryBtn" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource PrimaryBlueBrush}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="Padding" Value="14,7"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="bd" Background="{TemplateBinding Background}" CornerRadius="8" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="bd" Property="Background" Value="{StaticResource PrimaryBlueHoverBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="bd" Property="Opacity" Value="0.5"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- BOTÓN BLANCO / SECUNDARIO -->
+    <Style x:Key="SecondaryBtn" TargetType="Button">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Foreground" Value="{StaticResource TextDarkBrush}"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="Padding" Value="12,6"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="BorderBrush" Value="{StaticResource CardBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="bd" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="8" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="bd" Property="Background" Value="#F1F5F9"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- BOTÓN DESTRUCTIVO / PELIGRO (ROJO) -->
+    <Style x:Key="DangerBtn" TargetType="Button">
+        <Setter Property="Background" Value="#FFF1F2"/>
+        <Setter Property="Foreground" Value="{StaticResource RoseBrush}"/>
+        <Setter Property="BorderBrush" Value="#FECDD3"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="Padding" Value="10,5"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="bd" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="6" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="bd" Property="Background" Value="#FFE4E6"/>
+                            <Setter TargetName="bd" Property="BorderBrush" Value="#FDA4AF"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- BOTÓN DE ADVERTENCIA / ÁMBAR -->
+    <Style x:Key="WarningBtn" TargetType="Button">
+        <Setter Property="Background" Value="#FFFBEB"/>
+        <Setter Property="Foreground" Value="{StaticResource AmberBrush}"/>
+        <Setter Property="BorderBrush" Value="#FDE68A"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="Padding" Value="10,5"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="bd" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="6" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="bd" Property="Background" Value="#FEF3C7"/>
+                            <Setter TargetName="bd" Property="BorderBrush" Value="#FCD34D"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- BOTÓN GRIS SECUNDARIO (ACCESO DIRECTO — como en la web) -->
+    <Style x:Key="SlateBtn" TargetType="Button">
+        <Setter Property="Background" Value="#F1F5F9"/>
+        <Setter Property="Foreground" Value="#334155"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="Padding" Value="10,6"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="bd" Background="{TemplateBinding Background}" CornerRadius="8" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="bd" Property="Background" Value="#E2E8F0"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- BOTÓN MENÚ LATERAL (NAV) — estado normal -->
+    <Style x:Key="NavBtn" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="#CBD5E1"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Padding" Value="10,8"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="navBorder" Background="{TemplateBinding Background}" CornerRadius="8" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="navBorder" Property="Background" Value="{StaticResource SidebarHoverBrush}"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- BOTÓN MENÚ LATERAL (NAV) — estado ACTIVO (fondo azul como la web) -->
+    <Style x:Key="NavBtnActive" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource PrimaryBlueBrush}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Padding" Value="10,8"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="navBorder" Background="{TemplateBinding Background}" CornerRadius="8" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- ========================= INPUTS / TEXTBOX ========================= -->
+    <Style x:Key="ModernTextBox" TargetType="TextBox">
+        <Setter Property="Background" Value="#F8FAFC"/>
+        <Setter Property="Foreground" Value="{StaticResource TextDarkBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource CardBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="10,7"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="bd" Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            CornerRadius="8">
+                        <ScrollViewer x:Name="PART_ContentHost" Margin="0"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter TargetName="bd" Property="BorderBrush" Value="{StaticResource PrimaryBlueBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- ========================= DATAGRID ========================= -->
+    <Style x:Key="ModernDataGrid" TargetType="DataGrid">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="BorderBrush" Value="{StaticResource CardBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="RowBackground" Value="White"/>
+        <Setter Property="AlternatingRowBackground" Value="#F8FAFC"/>
+        <Setter Property="Foreground" Value="{StaticResource TextDarkBrush}"/>
+        <Setter Property="GridLinesVisibility" Value="Horizontal"/>
+        <Setter Property="HorizontalGridLinesBrush" Value="#F1F5F9"/>
+        <Setter Property="HeadersVisibility" Value="Column"/>
+        <Setter Property="AutoGenerateColumns" Value="False"/>
+        <Setter Property="CanUserAddRows" Value="False"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="RowHeight" Value="40"/>
+    </Style>
+
+    <!-- ========================= BADGE STYLES ========================= -->
+    <Style x:Key="BadgeEmerald" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource Emerald50Brush}"/>
+        <Setter Property="BorderBrush" Value="#A7F3D0"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="12"/>
+        <Setter Property="Padding" Value="8,2"/>
+    </Style>
+
+    <Style x:Key="BadgeBlue" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource Blue50Brush}"/>
+        <Setter Property="BorderBrush" Value="#BFDBFE"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="12"/>
+        <Setter Property="Padding" Value="8,2"/>
+    </Style>
+
+    <Style x:Key="BadgeAmber" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource Amber50Brush}"/>
+        <Setter Property="BorderBrush" Value="#FDE68A"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="12"/>
+        <Setter Property="Padding" Value="8,2"/>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,70 @@
+<UserControl x:Class="FacturaPro360.Wpf.Views.ClientesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- FORMULARIO CREAR CLIENTE -->
+        <Border Grid.Row="0" Style="{StaticResource ModernCard}" Margin="0,0,0,16">
+            <StackPanel>
+                <TextBlock Text="Crear Nuevo Cliente" FontSize="14" FontWeight="Bold" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,12"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                        <TextBlock Text="RUC / NIT / Doc *" FontSize="11" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,4"/>
+                        <TextBox Style="{StaticResource ModernTextBox}" Text="{Binding NuevoDocumento, UpdateSourceTrigger=PropertyChanged}" Height="34"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Margin="0,0,10,0">
+                        <TextBlock Text="Razón Social / Nombre *" FontSize="11" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,4"/>
+                        <TextBox Style="{StaticResource ModernTextBox}" Text="{Binding NuevaRazonSocial, UpdateSourceTrigger=PropertyChanged}" Height="34"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2" Margin="0,0,10,0">
+                        <TextBlock Text="Teléfono" FontSize="11" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,4"/>
+                        <TextBox Style="{StaticResource ModernTextBox}" Text="{Binding NuevoTelefono, UpdateSourceTrigger=PropertyChanged}" Height="34"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="3" Margin="0,0,10,0">
+                        <TextBlock Text="Correo Electrónico" FontSize="11" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,4"/>
+                        <TextBox Style="{StaticResource ModernTextBox}" Text="{Binding NuevoEmail, UpdateSourceTrigger=PropertyChanged}" Height="34"/>
+                    </StackPanel>
+
+                    <Button Grid.Column="4" Style="{StaticResource PrimaryBtn}" Content="Guardar Cliente" Command="{Binding CrearClienteCommand}" Height="34" VerticalAlignment="Bottom"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+
+        <!-- LISTA DE CLIENTES -->
+        <Border Grid.Row="1" Style="{StaticResource ModernCard}" Padding="0">
+            <DataGrid Style="{StaticResource ModernDataGrid}" ItemsSource="{Binding Clientes}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Documento" Binding="{Binding NumeroDocumento}" Width="150" FontWeight="Bold"/>
+                    <DataGridTextColumn Header="Razón Social" Binding="{Binding RazonSocial}" Width="*"/>
+                    <DataGridTextColumn Header="Teléfono" Binding="{Binding Telefono}" Width="150"/>
+                    <DataGridTextColumn Header="Correo" Binding="{Binding Email}" Width="200"/>
+                    <DataGridTextColumn Header="Saldo Actual" Binding="{Binding SaldoActual, StringFormat='{}{0:C2}'}" Width="140" FontWeight="Bold"/>
+                    <DataGridTemplateColumn Header="Acción" Width="100">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Style="{StaticResource DangerBtn}" Content="Eliminar"
+                                        Command="{Binding DataContext.EliminarClienteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                        CommandParameter="{Binding}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</UserControl>

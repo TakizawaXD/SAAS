@@ -1,0 +1,414 @@
+<!-- VISTA PARA LOGIN Y REGISTER SIN SIDEBAR -->
+<ng-container *ngIf="esRutaAutenticacion()">
+  <router-outlet></router-outlet>
+</ng-container>
+
+<!-- VISTA PRINCIPAL DEL SISTEMA (AUTENTICADO) -->
+<div *ngIf="!esRutaAutenticacion()" class="flex h-screen bg-[#F8FAFC] text-slate-800 font-sans antialiased overflow-hidden">
+
+  <!-- BACKDROP OVERLAY PARA MOBILE -->
+  <div *ngIf="sidebarAbierto()" (click)="cerrarSidebar()" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-30 md:hidden transition-opacity"></div>
+
+  <!-- ==================== SIDEBAR LATERAL (DARK NAVY #0B192C) ==================== -->
+  <aside class="fixed inset-y-0 left-0 z-40 w-64 bg-[#0B192C] text-slate-300 flex flex-col shrink-0 border-r border-[#152C4C] transition-transform duration-300 ease-in-out md:static md:translate-x-0"
+         [ngClass]="sidebarAbierto() ? 'translate-x-0 shadow-2xl' : '-translate-x-full md:translate-x-0'">
+    <!-- LOGO SUPERIOR -->
+    <div class="h-16 flex items-center justify-between px-5 border-b border-[#152C4C]/60 shrink-0">
+      <div class="flex items-center gap-3">
+        <img src="/assets/images/logo.jpg" alt="FacturaPro 360 Logo" class="w-8 h-8 rounded-lg object-cover ring-1 ring-blue-500/40 shadow-md shadow-blue-500/20" />
+        <div>
+          <div class="font-bold text-white text-base tracking-tight leading-none">FacturaPro <span class="text-blue-400 font-normal">360</span></div>
+          <div class="text-[9px] uppercase tracking-wider text-slate-400 font-semibold mt-1">Enterprise Suite</div>
+        </div>
+      </div>
+      <!-- BOTÓN CERRAR EN MOBILE -->
+      <button (click)="cerrarSidebar()" class="md:hidden p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-[#15263F] transition cursor-pointer" aria-label="Cerrar menú">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- NAVEGACIÓN PRINCIPAL OPTIMIZADA Y SIMPLIFICADA -->
+    <div class="flex-1 overflow-y-auto sidebar-scroll px-3 py-4 space-y-1">
+      <a routerLink="/" routerLinkActive="bg-[#2563EB] text-white font-semibold" [routerLinkActiveOptions]="{exact: true}" 
+         class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-[#15263F] transition cursor-pointer">
+        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>Inicio</span>
+      </a>
+
+      <button (click)="toggleBuscador()" class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-[#15263F] transition cursor-pointer">
+        <div class="flex items-center gap-3">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <span>Buscador global</span>
+        </div>
+        <span class="text-[10px] bg-[#152C4C] text-slate-300 px-1.5 py-0.5 rounded font-mono">Ctrl + K</span>
+      </button>
+
+      <div class="pt-3 pb-1 px-3 text-[10px] font-bold uppercase tracking-wider text-slate-400">Operaciones comerciales</div>
+
+      <a routerLink="/facturas" routerLinkActive="bg-[#2563EB] text-white font-semibold" 
+         class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-[#15263F] transition cursor-pointer">
+        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        <span>Facturacion</span>
+      </a>
+
+      <a routerLink="/clientes" routerLinkActive="bg-[#2563EB] text-white font-semibold" 
+         class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-[#15263F] transition cursor-pointer">
+        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        <span>Clientes</span>
+      </a>
+
+      <a routerLink="/productos" routerLinkActive="bg-[#2563EB] text-white font-semibold" 
+         class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-[#15263F] transition cursor-pointer">
+        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+        <span>Productos e inventario</span>
+      </a>
+
+      <a routerLink="/compras" routerLinkActive="bg-[#2563EB] text-white font-semibold" 
+         class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-[#15263F] transition cursor-pointer">
+        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+        <span>Compras y proveedores</span>
+      </a>
+
+      <a routerLink="/caja-bancos" routerLinkActive="bg-[#2563EB] text-white font-semibold" 
+         class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-[#15263F] transition cursor-pointer">
+        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        <span>Caja y bancos</span>
+      </a>
+
+      <div class="pt-3 pb-1 px-3 text-[10px] font-bold uppercase tracking-wider text-slate-400">Gestion y control</div>
+
+      <a routerLink="/informes" routerLinkActive="bg-[#2563EB] text-white font-semibold" 
+         class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-[#15263F] transition cursor-pointer">
+        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        <span>Informes de negocio</span>
+      </a>
+
+      <a *ngIf="auth.currentUser()?.rol === 'SuperAdmin' || auth.currentUser()?.rol === 'Administrador'" 
+         routerLink="/auditoria" routerLinkActive="bg-[#2563EB] text-white font-semibold" 
+         class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-[#15263F] transition cursor-pointer">
+        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        <span>Auditoria</span>
+      </a>
+
+      <a routerLink="/configuracion" routerLinkActive="bg-[#2563EB] text-white font-semibold" 
+         class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-[#15263F] transition cursor-pointer">
+        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        <span>Configuracion</span>
+      </a>
+
+      <a *ngIf="auth.currentUser()?.rol === 'SuperAdmin'" 
+         routerLink="/administracion" routerLinkActive="bg-[#2563EB] text-white font-semibold" 
+         class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-[#15263F] transition cursor-pointer">
+        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span>Administracion global</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ==================== CONTENEDOR PRINCIPAL DERECHO ==================== -->
+  <div class="flex-1 flex flex-col min-w-0 overflow-hidden">
+    
+    <!-- HEADER SUPERIOR (BLANCO CON BORDES LIMPIOS) -->
+    <header class="h-16 bg-white border-b border-slate-200 px-4 sm:px-6 flex items-center justify-between shrink-0 z-10 shadow-xs">
+      <div class="flex items-center gap-2 sm:gap-4">
+        <!-- BOTÓN HAMBURGUESA MOBILE / TABLET -->
+        <button (click)="toggleSidebar()" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition cursor-pointer" aria-label="Abrir navegación">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+
+        <!-- BUSCADOR GLOBAL -->
+        <div class="w-44 sm:w-64 lg:w-96 relative">
+          <button (click)="toggleBuscador()" class="w-full flex items-center justify-between bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-400 px-3 py-1.5 rounded-lg text-xs transition cursor-pointer">
+            <div class="flex items-center gap-2 truncate">
+              <svg class="w-4 h-4 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+              <span class="truncate">Buscar en el sistema...</span>
+            </div>
+            <span class="hidden sm:inline-block text-[10px] bg-white border border-slate-200 px-1.5 py-0.5 rounded text-slate-500 font-mono font-medium shadow-xs shrink-0">Ctrl + K</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ACCIONES DERECHA -->
+      <div class="flex items-center gap-2 sm:gap-4">
+        <!-- SELECTOR DE EMPRESA MULTI-TENANT CON DROPDOWN -->
+        <div class="relative hidden sm:block">
+          <div (click)="toggleMenuEmpresas()" 
+               class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-white text-xs font-medium text-slate-700 cursor-pointer shadow-xs max-w-[190px] lg:max-w-xs transition">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+            <span class="truncate font-semibold">{{ auth.currentUser()?.empresaNombre || 'Empresa Demo S.A.' }}</span>
+            <svg class="w-3.5 h-3.5 text-slate-400 shrink-0 transition" [ngClass]="menuEmpresasAbierto() ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+
+          <!-- DROPDOWN DE ORGANIZACIONES DISPONIBLES -->
+          <div *ngIf="menuEmpresasAbierto()" class="absolute left-0 mt-2 w-72 bg-white border border-slate-200 rounded-xl shadow-xl py-2 z-30">
+            <div class="px-3.5 py-1.5 border-b border-slate-100 flex items-center justify-between">
+              <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Organizacion Activa</span>
+              <span class="text-[9px] bg-emerald-50 text-emerald-700 font-bold px-1.5 py-0.5 rounded border border-emerald-200">En linea</span>
+            </div>
+
+            <div class="px-3.5 py-2.5 bg-slate-50/70 border-b border-slate-100">
+              <div class="font-bold text-slate-900 text-xs">{{ auth.currentUser()?.empresaNombre }}</div>
+              <div class="text-[11px] text-slate-500 mt-0.5 flex items-center gap-1.5">
+                <span>Rol: <strong class="text-blue-600">{{ auth.currentUser()?.rol }}</strong></span>
+                <span>&bull;</span>
+                <span class="font-mono text-[10px] text-slate-400">ID: {{ auth.currentUser()?.empresaId?.slice(0, 8) }}</span>
+              </div>
+            </div>
+
+            <!-- OTRAS EMPRESAS ACCESIBLES DEL USUARIO -->
+            <div *ngIf="(auth.currentUser()?.empresasDisponibles?.length || 0) > 1" class="py-1">
+              <div class="px-3.5 py-1 text-[10px] font-bold text-slate-400 uppercase">Cambiar de Empresa</div>
+              <button *ngFor="let emp of auth.currentUser()?.empresasDisponibles" 
+                      (click)="conmutarEmpresa(emp.id)"
+                      [disabled]="emp.id === auth.currentUser()?.empresaId"
+                      class="w-full text-left px-3.5 py-2 text-xs flex items-center justify-between hover:bg-slate-50 transition cursor-pointer disabled:opacity-50 disabled:bg-slate-50/40">
+                <div class="truncate">
+                  <div class="font-semibold text-slate-800 truncate">{{ emp.nombre }}</div>
+                  <div class="text-[10px] text-slate-400">{{ emp.rol }}</div>
+                </div>
+                <span *ngIf="emp.id === auth.currentUser()?.empresaId" class="text-emerald-600 font-bold text-xs">Actual</span>
+              </button>
+            </div>
+
+            <!-- ACCIONES MULTI-TENANT -->
+            <div class="p-2 border-t border-slate-100 space-y-1">
+              <a routerLink="/configuracion" (click)="menuEmpresasAbierto.set(false)" 
+                 class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-700 hover:bg-slate-50 transition cursor-pointer">
+                <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <span>Configurar esta tienda</span>
+              </a>
+
+              <a routerLink="/register" (click)="menuEmpresasAbierto.set(false)" 
+                 class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold text-blue-600 hover:bg-blue-50 transition cursor-pointer">
+                <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                <span>Registrar nueva tienda</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOTÓN DE INSTALACIÓN EN ESCRITORIO O TELÉFONO -->
+        <button *ngIf="!pwa.instalada()" (click)="pwa.abrirModal()" 
+                class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-bold border border-blue-200 shadow-2xs transition cursor-pointer"
+                title="Instalar aplicacion en este equipo o telefono">
+          <svg class="w-3.5 h-3.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span class="hidden sm:inline">Instalar app</span>
+          <span class="sm:hidden">Instalar</span>
+        </button>
+
+        <!-- ICONO DE NOTIFICACIONES CON DROPDOWN FUNCIONAL -->
+        <div class="relative">
+          <button (click)="toggleNotificaciones()" class="relative p-2 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition cursor-pointer" title="Ver notificaciones">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+            <span *ngIf="!notificacionesLeidas()" class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-rose-500 border border-white"></span>
+          </button>
+
+          <!-- DROPDOWN NOTIFICACIONES -->
+          <div *ngIf="menuNotificacionesAbierto()" class="absolute right-0 mt-2 w-80 bg-white border border-slate-200 rounded-xl shadow-xl py-2 z-30">
+            <div class="px-4 py-2 border-b border-slate-100 flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-900">Notificaciones del Sistema</span>
+              <span class="text-[10px] text-blue-600 font-semibold cursor-pointer" (click)="notificacionesLeidas.set(true)">Marcar leídas</span>
+            </div>
+
+            <div class="max-h-64 overflow-y-auto divide-y divide-slate-100 text-xs">
+              <div *ngIf="notificacionesRecientes().length === 0" class="p-4 text-center text-slate-400 text-[11px]">
+                No hay notificaciones pendientes.
+              </div>
+              <div *ngFor="let ev of notificacionesRecientes()" class="p-3 hover:bg-slate-50 transition">
+                <div class="flex items-center justify-between text-[10px] text-slate-400">
+                  <span class="font-bold text-blue-600 uppercase">{{ ev.modulo }}</span>
+                  <span>{{ ev.fecha | date:'HH:mm' }}</span>
+                </div>
+                <div class="font-semibold text-slate-800 text-[11px] mt-0.5">{{ ev.accion }}</div>
+                <div class="text-slate-500 text-[10px] truncate">{{ ev.detalles || ev.registro_afectado }}</div>
+              </div>
+            </div>
+
+            <div class="p-2 border-t border-slate-100 text-center">
+              <a routerLink="/auditoria" (click)="menuNotificacionesAbierto.set(false)" class="text-[11px] text-blue-600 hover:underline font-bold block">
+                Ver historial completo en Auditoría &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PERFIL DE USUARIO Y MENU DESPLEGABLE -->
+        <div class="relative">
+          <div (click)="toggleMenuUsuario()" class="flex items-center gap-2 sm:gap-3 pl-2 border-l border-slate-200 cursor-pointer">
+            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-slate-200 overflow-hidden border border-slate-200 shrink-0">
+              <img src="/assets/images/logo.jpg" alt="Avatar" class="w-full h-full object-cover"/>
+            </div>
+            <div class="hidden sm:block text-left">
+              <div class="text-xs font-bold text-slate-800 leading-tight truncate max-w-[110px]">{{ auth.currentUser()?.nombre || 'adminfactura' }}</div>
+              <div class="text-[10px] text-slate-400 truncate max-w-[110px]">{{ auth.currentUser()?.rol || 'Administrador' }}</div>
+            </div>
+            <svg class="w-3.5 h-3.5 text-slate-400 hidden sm:block shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+
+          <!-- DROPDOWN CERRAR SESION -->
+          <div *ngIf="menuUsuarioAbierto()" class="absolute right-0 mt-2 w-52 bg-white border border-slate-200 rounded-xl shadow-xl py-1 z-30">
+            <div class="px-4 py-2 border-b border-slate-100">
+              <div class="text-xs font-bold text-slate-900">{{ auth.currentUser()?.username }}</div>
+              <div class="text-[10px] text-slate-400 truncate">{{ auth.currentUser()?.email }}</div>
+            </div>
+            <button (click)="pwa.abrirModal(); menuUsuarioAbierto.set(false)" class="w-full text-left px-4 py-2 text-xs text-blue-700 hover:bg-blue-50 font-semibold flex items-center gap-2 cursor-pointer border-b border-slate-100">
+              <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              <span>Instalar aplicacion</span>
+            </button>
+            <button (click)="cerrarSesion()" class="w-full text-left px-4 py-2 text-xs text-rose-600 hover:bg-rose-50 font-semibold flex items-center gap-2 cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+              Cerrar Sesión
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ÁREA DE CONTENIDO (PÁGINAS) -->
+    <main class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 bg-[#F8FAFC]">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+
+  <!-- ==================== BUSCADOR SPOTLIGHT GLOBAL (CTRL + K) ==================== -->
+  <div *ngIf="modalBusquedaAbierto()" (click)="cerrarModalBusqueda()" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-start justify-center pt-16 sm:pt-20 p-3 sm:p-4 animate-fade-in">
+    <div (click)="$event.stopPropagation()" class="bg-white rounded-2xl border border-slate-200 shadow-2xl max-w-3xl w-full overflow-hidden flex flex-col max-h-[85vh]">
+      
+      <!-- ENCABEZADO Y BARRA DE BÚSQUEDA -->
+      <div class="p-4 border-b border-slate-100 flex items-center gap-3 bg-slate-50/50">
+        <svg class="w-5 h-5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <input type="text" [ngModel]="terminoBusqueda()" (ngModelChange)="terminoBusqueda.set($event)" 
+               placeholder="Buscar facturas, clientes, productos, proveedores, órdenes, pagos..." 
+               class="flex-1 bg-transparent text-sm text-slate-800 focus:outline-none placeholder:text-slate-400" autofocus />
+        <button *ngIf="terminoBusqueda()" (click)="terminoBusqueda.set('')" class="text-xs text-slate-400 hover:text-slate-600 px-1 font-bold">&times;</button>
+        <button (click)="cerrarModalBusqueda()" class="text-[10px] bg-white border border-slate-200 hover:bg-slate-100 text-slate-500 px-2 py-0.5 rounded font-mono font-semibold shadow-xs cursor-pointer">
+          ESC
+        </button>
+      </div>
+
+      <!-- CUERPO: SIDEBAR DE CATEGORÍAS + RESULTADOS DINÁMICOS -->
+      <div class="grid grid-cols-1 md:grid-cols-4 flex-1 min-h-[360px] overflow-hidden">
+        
+        <!-- SIDEBAR DE CATEGORÍAS CON CONTADORES DINÁMICOS -->
+        <div class="p-3 bg-slate-50 border-r border-slate-100 space-y-1 overflow-y-auto max-h-[480px]">
+          <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-2 py-1">Categorías</div>
+          <button *ngFor="let cat of categorias" (click)="seleccionarCategoria(cat)" 
+                  [ngClass]="categoriaFiltro() === cat ? 'bg-[#2563EB] text-white font-semibold shadow-xs' : 'text-slate-600 hover:bg-slate-200/60'"
+                  class="w-full text-left px-3 py-1.5 rounded-lg text-xs transition cursor-pointer flex items-center justify-between">
+            <span class="truncate">{{ cat }}</span>
+            <span [ngClass]="categoriaFiltro() === cat ? 'bg-white/20 text-white' : 'bg-slate-200/70 text-slate-500'" 
+                  class="text-[10px] px-1.5 py-0.2 rounded-full font-mono font-medium shrink-0 ml-1">
+              {{ conteoPorCategoria()[cat] || 0 }}
+            </span>
+          </button>
+        </div>
+
+        <!-- LISTA DE RESULTADOS EN TIEMPO REAL -->
+        <div class="md:col-span-3 p-4 overflow-y-auto max-h-[480px] space-y-3 flex flex-col justify-between">
+          <div>
+            <!-- ENCABEZADO DE RESULTADOS -->
+            <div class="flex items-center justify-between text-[11px] font-bold text-slate-500 pb-2 mb-2 border-b border-slate-100">
+              <span>Resultados en: {{ categoriaFiltro() }} ({{ resultadosFiltrados().length }})</span>
+              <span *ngIf="terminoBusqueda()" class="text-blue-600 font-normal">Filtro: "{{ terminoBusqueda() }}"</span>
+            </div>
+
+            <!-- RESULTADOS ENCONTRADOS -->
+            <div *ngIf="resultadosFiltrados().length > 0" class="space-y-1.5">
+              <div *ngFor="let it of resultadosFiltrados()" (click)="navegarA(it)" 
+                   class="p-2.5 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition cursor-pointer flex items-center justify-between gap-3 group">
+                <div class="flex items-center gap-3 min-w-0">
+                  <div class="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-xs shrink-0" [ngClass]="it.badgeClase">
+                    {{ it.codigoBadge }}
+                  </div>
+                  <div class="min-w-0">
+                    <div class="text-xs font-semibold text-slate-800 truncate group-hover:text-blue-600 transition">{{ it.titulo }}</div>
+                    <div class="text-[11px] text-slate-400 truncate">{{ it.subtitulo }}</div>
+                  </div>
+                </div>
+
+                <div class="text-right shrink-0">
+                  <div *ngIf="it.monto !== undefined" class="text-xs font-bold text-slate-900 font-mono">\${{ it.monto | number:'1.2-2' }}</div>
+                  <span *ngIf="it.estado" class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold border" [ngClass]="it.estadoClase || 'text-slate-600 bg-slate-50 border-slate-200'">
+                    {{ it.estado }}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ESTADO VACÍO (SIN COINCIDENCIAS O SIN DATOS EN LA CATEGORÍA) -->
+            <div *ngIf="resultadosFiltrados().length === 0" class="py-10 px-4 text-center">
+              <div class="w-12 h-12 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center mx-auto mb-3">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+              </div>
+
+              <!-- SI HABÍA TÉRMINO DE BÚSQUEDA -->
+              <div *ngIf="terminoBusqueda()">
+                <h4 class="text-xs font-bold text-slate-800">No se encontraron coincidencias</h4>
+                <p class="text-[11px] text-slate-500 mt-1 mb-4">No hay registros que coincidan con "{{ terminoBusqueda() }}" en la categoría seleccionada.</p>
+                <button (click)="terminoBusqueda.set(''); categoriaFiltro.set('Todos')" class="px-3.5 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-xs font-semibold text-slate-700 shadow-xs cursor-pointer">
+                  Limpiar búsqueda y ver todo
+                </button>
+              </div>
+
+              <!-- SI LA CATEGORÍA ESTÁ VACÍA (USUARIO NUEVO / EN BLANCO) -->
+              <div *ngIf="!terminoBusqueda()">
+                <h4 class="text-xs font-bold text-slate-800">No hay registros en {{ categoriaFiltro() }}</h4>
+                <p class="text-[11px] text-slate-500 mt-1 mb-4 max-w-sm mx-auto">Esta sección se encuentra en blanco para esta empresa. Puedes registrar tu primer elemento inmediatamente.</p>
+                
+                <div class="flex flex-wrap items-center justify-center gap-2">
+                  <button *ngIf="categoriaFiltro() === 'Facturas' || categoriaFiltro() === 'Todos'" (click)="navegarRuta('/nueva-factura')" class="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-xs cursor-pointer">
+                    + Emitir Factura
+                  </button>
+                  <button *ngIf="categoriaFiltro() === 'Clientes' || categoriaFiltro() === 'Todos'" (click)="navegarRuta('/clientes')" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-xs cursor-pointer">
+                    + Registrar Cliente
+                  </button>
+                  <button *ngIf="categoriaFiltro() === 'Productos' || categoriaFiltro() === 'Todos'" (click)="navegarRuta('/productos')" class="px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold shadow-xs cursor-pointer">
+                    + Registrar Producto
+                  </button>
+                  <button *ngIf="categoriaFiltro() === 'Proveedores' || categoriaFiltro() === 'Órdenes de compra'" (click)="navegarRuta('/compras')" class="px-3 py-1.5 rounded-lg bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold shadow-xs cursor-pointer">
+                    + Registrar en Compras
+                  </button>
+                  <button *ngIf="categoriaFiltro() === 'Pagos'" (click)="navegarRuta('/caja-bancos')" class="px-3 py-1.5 rounded-lg bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold shadow-xs cursor-pointer">
+                    + Ir a Caja y Bancos
+                  </button>
+                  <button *ngIf="categoriaFiltro() === 'Empleados'" (click)="navegarRuta('/empleados')" class="px-3 py-1.5 rounded-lg bg-cyan-600 hover:bg-cyan-700 text-white text-xs font-bold shadow-xs cursor-pointer">
+                    + Gestionar Empleados
+                  </button>
+                  <button *ngIf="categoriaFiltro() === 'Documentos'" (click)="navegarRuta('/documentos')" class="px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-slate-800 text-white text-xs font-bold shadow-xs cursor-pointer">
+                    + Subir Documento
+                  </button>
+                  <button *ngIf="categoriaFiltro() === 'Proyectos'" (click)="navegarRuta('/proyectos')" class="px-3 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold shadow-xs cursor-pointer">
+                    + Crear Tarea
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ATAJOS RÁPIDOS INFERIORES -->
+          <div class="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500">
+            <span class="text-[11px] text-slate-400">Atajos rápidos:</span>
+            <div class="flex items-center gap-1.5">
+              <button (click)="navegarRuta('/nueva-factura')" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-semibold cursor-pointer">+ Factura</button>
+              <button (click)="navegarRuta('/clientes')" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-semibold cursor-pointer">+ Cliente</button>
+              <button (click)="navegarRuta('/productos')" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-semibold cursor-pointer">+ Producto</button>
+              <button (click)="navegarRuta('/compras')" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-semibold cursor-pointer">+ Compra</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE CONFIRMACIÓN GLOBAL ("¿ESTÁS SEGURO?") -->
+  <app-confirm-modal></app-confirm-modal>
+
+  <!-- MODAL DE AYUDA GLOBAL CON EXPLICACIONES DETALLADAS ("?") -->
+  <app-help-modal></app-help-modal>
+
+  <!-- MODAL DE INSTALACIÓN PWA (ESCRITORIO Y TELÉFONO) -->
+  <app-install-modal></app-install-modal>
+
+</div>
+
+

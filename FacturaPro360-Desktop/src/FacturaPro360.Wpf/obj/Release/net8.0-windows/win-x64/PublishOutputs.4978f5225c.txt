@@ -1,0 +1,6 @@
+C:\Users\andre\OneDrive\Desktop\SAAS\FacturaPro360-Desktop\FacturaPro360-Standalone\FacturaPro360.Wpf.pdb
+C:\Users\andre\OneDrive\Desktop\SAAS\FacturaPro360-Desktop\FacturaPro360-Standalone\appsettings.json
+C:\Users\andre\OneDrive\Desktop\SAAS\FacturaPro360-Desktop\FacturaPro360-Standalone\FacturaPro360.Domain.pdb
+C:\Users\andre\OneDrive\Desktop\SAAS\FacturaPro360-Desktop\FacturaPro360-Standalone\FacturaPro360.Application.pdb
+C:\Users\andre\OneDrive\Desktop\SAAS\FacturaPro360-Desktop\FacturaPro360-Standalone\FacturaPro360.Infrastructure.pdb
+C:\Users\andre\OneDrive\Desktop\SAAS\FacturaPro360-Desktop\FacturaPro360-Standalone\FacturaPro360.Wpf.exe

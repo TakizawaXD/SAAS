@@ -1,0 +1,16 @@
+<Project>
+  <Target Name="FixWpfMarkupCompile" BeforeTargets="MarkupCompilePass1;MarkupCompilePass2">
+    <ItemGroup>
+      <KnownReferencePaths Include="$(NetCoreTargetingPackRoot)\Microsoft.NETCore.App.Ref\8.0.32\ref\net8.0" />
+      <KnownReferencePaths Include="$(NetCoreTargetingPackRoot)\Microsoft.WindowsDesktop.App.Ref\8.0.32\ref\net8.0" />
+      <KnownReferencePaths Include="C:\Users\andre\.dotnet\packs\Microsoft.NETCore.App.Ref\8.0.32\ref\net8.0" />
+      <KnownReferencePaths Include="C:\Users\andre\.dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.32\ref\net8.0" />
+    </ItemGroup>
+  </Target>
+
+  <Target Name="RemoveMissingAnalyzers" BeforeTargets="CoreCompile">
+    <ItemGroup>
+      <Analyzer Remove="@(Analyzer)" Condition="!Exists('%(FullPath)')" />
+    </ItemGroup>
+  </Target>
+</Project>

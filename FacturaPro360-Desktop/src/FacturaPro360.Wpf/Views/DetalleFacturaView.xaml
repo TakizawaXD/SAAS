@@ -1,0 +1,98 @@
+<UserControl x:Class="FacturaPro360.Wpf.Views.DetalleFacturaView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- CABECERA DE LA FACTURA -->
+        <Border Grid.Row="0" Style="{StaticResource ModernCard}" Margin="0,0,0,16">
+            <DockPanel LastChildFill="True">
+                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Button Style="{StaticResource SuccessBtn}" Content="Imprimir / PDF" Command="{Binding ImprimirPdfCommand}" Margin="0,0,10,0"/>
+                    <Button Style="{StaticResource DangerBtn}" Content="Anular Factura" Command="{Binding AnularFacturaCommand}"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <TextBlock Text="{Binding Factura.NumeroFactura}" FontSize="22" FontWeight="Bold" Foreground="{StaticResource TextPrimaryBrush}"/>
+                        <Border Margin="14,0,0,0" Background="#334155" CornerRadius="4" Padding="8,3">
+                            <TextBlock Text="{Binding Factura.Estado}" FontWeight="SemiBold" FontSize="11" Foreground="#38BDF8"/>
+                        </Border>
+                    </StackPanel>
+                    <TextBlock Text="{Binding Factura.ClienteNombre, StringFormat='Cliente: {0}'}" FontSize="13" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,6,0,0"/>
+                    <TextBlock Text="{Binding Factura.FechaEmision, StringFormat='Fecha de emisión: {0:dd/MM/yyyy HH:mm}'}" FontSize="12" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,2,0,0"/>
+                </StackPanel>
+            </DockPanel>
+        </Border>
+
+        <!-- ITEMS FACTURADOS -->
+        <Border Grid.Row="1" Style="{StaticResource ModernCard}" Margin="0,0,0,16" Padding="0">
+            <DataGrid Style="{StaticResource ModernDataGrid}" ItemsSource="{Binding Factura.Items}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Producto / Servicio" Binding="{Binding ProductoNombre}" Width="*"/>
+                    <DataGridTextColumn Header="Cantidad" Binding="{Binding Cantidad, StringFormat='{}{0:N2}'}" Width="110"/>
+                    <DataGridTextColumn Header="Precio Unit." Binding="{Binding PrecioUnitario, StringFormat='{}{0:C2}'}" Width="130"/>
+                    <DataGridTextColumn Header="IVA %" Binding="{Binding IvaPorcentaje, StringFormat='{}{0}%'}" Width="90"/>
+                    <DataGridTextColumn Header="Total Línea" Binding="{Binding Total, StringFormat='{}{0:C2}'}" Width="140" FontWeight="Bold"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+
+        <!-- SECCIÓN DE PAGO RÁPIDO Y TOTALES -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="380"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- REGISTRAR PAGO -->
+            <Border Grid.Column="0" Style="{StaticResource ModernCard}" Margin="0,0,16,0">
+                <StackPanel>
+                    <TextBlock Text="Registrar Pago a Esta Factura" FontSize="14" FontWeight="Bold" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,10"/>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Margin="0,0,12,0">
+                            <TextBlock Text="Monto a Pagar" FontSize="11" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,4"/>
+                            <TextBox Style="{StaticResource ModernTextBox}" Text="{Binding MontoPago, UpdateSourceTrigger=PropertyChanged}" Width="140" Height="34"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,0,12,0">
+                            <TextBlock Text="Método de Pago" FontSize="11" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,4"/>
+                            <ComboBox SelectedValue="{Binding MetodoPago}" Width="140" Height="34">
+                                <ComboBoxItem Content="Efectivo" IsSelected="True"/>
+                                <ComboBoxItem Content="Tarjeta"/>
+                                <ComboBoxItem Content="Transferencia"/>
+                            </ComboBox>
+                        </StackPanel>
+                        <Button Style="{StaticResource SuccessBtn}" Content="Aplicar Pago" Command="{Binding RegistrarPagoCommand}" VerticalAlignment="Bottom" Height="34"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- RESUMEN DE TOTALES -->
+            <Border Grid.Column="1" Style="{StaticResource ModernCard}">
+                <StackPanel>
+                    <DockPanel Margin="0,0,0,6">
+                        <TextBlock Text="Subtotal:" Foreground="{StaticResource TextSecondaryBrush}"/>
+                        <TextBlock Text="{Binding Factura.Subtotal, StringFormat='{}{0:C2}'}" HorizontalAlignment="Right" Foreground="{StaticResource TextPrimaryBrush}"/>
+                    </DockPanel>
+                    <DockPanel Margin="0,0,0,6">
+                        <TextBlock Text="Impuestos (IVA):" Foreground="{StaticResource TextSecondaryBrush}"/>
+                        <TextBlock Text="{Binding Factura.ImpuestoTotal, StringFormat='{}{0:C2}'}" HorizontalAlignment="Right" Foreground="{StaticResource TextPrimaryBrush}"/>
+                    </DockPanel>
+                    <DockPanel Margin="0,0,0,10">
+                        <TextBlock Text="TOTAL FACTURADO:" FontWeight="Bold" Foreground="{StaticResource TextPrimaryBrush}"/>
+                        <TextBlock Text="{Binding Factura.Total, StringFormat='{}{0:C2}'}" FontWeight="Bold" HorizontalAlignment="Right" Foreground="{StaticResource TextPrimaryBrush}"/>
+                    </DockPanel>
+                    <Separator Background="{StaticResource CardBorderBrush}" Margin="0,0,0,10"/>
+                    <DockPanel>
+                        <TextBlock Text="SALDO PENDIENTE:" FontWeight="Bold" FontSize="14" Foreground="{StaticResource WarningBrush}"/>
+                        <TextBlock Text="{Binding Factura.SaldoPendiente, StringFormat='{}{0:C2}'}" FontWeight="Bold" FontSize="16" HorizontalAlignment="Right" Foreground="{StaticResource WarningBrush}"/>
+                    </DockPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,11 @@
+C:\Users\andre\OneDrive\Desktop\SAAS\FacturaPro360-Desktop\src\FacturaPro360.Domain\obj\Release\net8.0\FacturaPro360.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andre\OneDrive\Desktop\SAAS\FacturaPro360-Desktop\src\FacturaPro360.Domain\obj\Release\net8.0\FacturaPro360.Domain.AssemblyInfoInputs.cache
+C:\Users\andre\OneDrive\Desktop\SAAS\FacturaPro360-Desktop\src\FacturaPro360.Domain\obj\Release\net8.0\FacturaPro360.Domain.AssemblyInfo.cs
+C:\Users\andre\OneDrive\Desktop\SAAS\FacturaPro360-Desktop\src\FacturaPro360.Domain\obj\Release\net8.0\FacturaPro360.Domain.csproj.CoreCompileInputs.cache
+C:\Users\andre\OneDrive\Desktop\SAAS\FacturaPro360-Desktop\src\FacturaPro360.Domain\bin\Release\net8.0\FacturaPro360.Domain.deps.json
+C:\Users\andre\OneDrive\Desktop\SAAS\FacturaPro360-Desktop\src\FacturaPro360.Domain\bin\Release\net8.0\FacturaPro360.Domain.dll
+C:\Users\andre\OneDrive\Desktop\SAAS\FacturaPro360-Desktop\src\FacturaPro360.Domain\bin\Release\net8.0\FacturaPro360.Domain.pdb
+C:\Users\andre\OneDrive\Desktop\SAAS\FacturaPro360-Desktop\src\FacturaPro360.Domain\obj\Release\net8.0\FacturaPro360.Domain.dll
+C:\Users\andre\OneDrive\Desktop\SAAS\FacturaPro360-Desktop\src\FacturaPro360.Domain\obj\Release\net8.0\refint\FacturaPro360.Domain.dll
+C:\Users\andre\OneDrive\Desktop\SAAS\FacturaPro360-Desktop\src\FacturaPro360.Domain\obj\Release\net8.0\FacturaPro360.Domain.pdb
+C:\Users\andre\OneDrive\Desktop\SAAS\FacturaPro360-Desktop\src\FacturaPro360.Domain\obj\Release\net8.0\ref\FacturaPro360.Domain.dll

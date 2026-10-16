@@ -1,0 +1,434 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Wpf\\FacturaPro360.Wpf.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Application\\FacturaPro360.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Application\\FacturaPro360.Application.csproj",
+        "projectName": "FacturaPro360.Application",
+        "projectPath": "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Application\\FacturaPro360.Application.csproj",
+        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Domain\\FacturaPro360.Domain.csproj": {
+                "projectPath": "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Domain\\FacturaPro360.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.9.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.32, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[8.0.32, 8.0.32]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[8.0.32, 8.0.32]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[8.0.32, 8.0.32]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Users\\andre\\.dotnet\\sdk\\8.0.426/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Domain\\FacturaPro360.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Domain\\FacturaPro360.Domain.csproj",
+        "projectName": "FacturaPro360.Domain",
+        "projectPath": "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Domain\\FacturaPro360.Domain.csproj",
+        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.32, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[8.0.32, 8.0.32]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[8.0.32, 8.0.32]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[8.0.32, 8.0.32]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Users\\andre\\.dotnet\\sdk\\8.0.426/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Infrastructure\\FacturaPro360.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Infrastructure\\FacturaPro360.Infrastructure.csproj",
+        "projectName": "FacturaPro360.Infrastructure",
+        "projectPath": "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Infrastructure\\FacturaPro360.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Application\\FacturaPro360.Application.csproj": {
+                "projectPath": "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Application\\FacturaPro360.Application.csproj"
+              },
+              "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Domain\\FacturaPro360.Domain.csproj": {
+                "projectPath": "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Domain\\FacturaPro360.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.102.2, )"
+            },
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.35, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.32, )",
+              "autoReferenced": true
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "QuestPDF": {
+              "target": "Package",
+              "version": "[2024.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[8.0.32, 8.0.32]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[8.0.32, 8.0.32]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[8.0.32, 8.0.32]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Users\\andre\\.dotnet\\sdk\\8.0.426/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Wpf\\FacturaPro360.Wpf.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Wpf\\FacturaPro360.Wpf.csproj",
+        "projectName": "FacturaPro360.Wpf",
+        "projectPath": "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Wpf\\FacturaPro360.Wpf.csproj",
+        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Wpf\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Application\\FacturaPro360.Application.csproj": {
+                "projectPath": "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Application\\FacturaPro360.Application.csproj"
+              },
+              "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Domain\\FacturaPro360.Domain.csproj": {
+                "projectPath": "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Domain\\FacturaPro360.Domain.csproj"
+              },
+              "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Infrastructure\\FacturaPro360.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\andre\\OneDrive\\Desktop\\SAAS\\FacturaPro360-Desktop\\src\\FacturaPro360.Infrastructure\\FacturaPro360.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.2.2, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.32, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[8.0.32, 8.0.32]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[8.0.32, 8.0.32]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[8.0.32, 8.0.32]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Users\\andre\\.dotnet\\sdk\\8.0.426/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
