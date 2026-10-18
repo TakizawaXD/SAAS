@@ -215,7 +215,7 @@ export class LoginComponent {
     this.errorMensaje.set(null);
     try {
       await this.auth.login(this.usuario, this.contrasena);
-      this.router.navigate(['/']);
+      this.router.navigate(['/dashboard']);
     } catch (err: any) {
       this.errorMensaje.set(err?.message || 'Error al iniciar sesion');
     } finally {

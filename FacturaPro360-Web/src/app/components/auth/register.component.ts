@@ -566,7 +566,7 @@ export class RegisterComponent {
     this.guardando.set(true);
     try {
       await this.auth.registerWizard(this.formData);
-      this.router.navigate(['/']);
+      this.router.navigate(['/dashboard']);
     } catch (err: any) {
       this.errorMensaje.set(err?.message || 'Error al aprovisionar la organizacion.');
     } finally {

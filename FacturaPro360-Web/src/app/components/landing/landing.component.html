@@ -1,0 +1,718 @@
+<!-- ========================================================================= -->
+<!-- FACTURAPRO 360 - LANDING & PÁGINA DE PRESENTACIÓN OFICIAL                   -->
+<!-- ========================================================================= -->
+
+<div class="min-h-screen bg-[#060E1A] text-slate-100 font-sans selection:bg-blue-600 selection:text-white radial-mesh-bg overflow-x-hidden">
+
+  <!-- ==================== 1. BARRA DE NAVEGACIÓN SUPERIOR ==================== -->
+  <header class="sticky top-0 z-50 glass-nav border-b border-slate-800/80 transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- LOGO Y MARCA -->
+      <a routerLink="/" class="flex items-center gap-3.5 group cursor-pointer focus:outline-hidden">
+        <div class="relative">
+          <img src="/assets/images/logo.jpg" alt="FacturaPro 360 Logo" 
+               class="w-10 h-10 rounded-xl object-cover ring-2 ring-blue-500/50 shadow-lg shadow-blue-500/25 group-hover:scale-105 transition-transform duration-300" />
+          <div class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-emerald-500 border-2 border-[#0B192C] rounded-full"></div>
+        </div>
+        <div>
+          <div class="font-extrabold text-white text-lg tracking-tight leading-none group-hover:text-blue-400 transition-colors">
+            FacturaPro <span class="text-blue-500 font-light">360</span>
+          </div>
+          <div class="text-[10px] uppercase tracking-widest text-slate-400 font-semibold mt-1">
+            Enterprise Suite • Cloud & Desktop
+          </div>
+        </div>
+      </a>
+
+      <!-- ENLACES DE ESCRITORIO -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#caracteristicas" class="hover:text-white transition-colors">Características</a>
+        <a href="#modulos" class="hover:text-white transition-colors">Módulos</a>
+        <a href="#arquitectura" class="hover:text-white transition-colors flex items-center gap-1.5">
+          <span>Dualidad Offline</span>
+          <span class="px-2 py-0.5 text-[10px] font-bold bg-blue-500/20 text-blue-400 border border-blue-500/30 rounded-full">Nativo</span>
+        </a>
+        <a href="#planes" class="hover:text-white transition-colors">Planes</a>
+        <a href="#faq" class="hover:text-white transition-colors">Preguntas</a>
+      </nav>
+
+      <!-- BOTONES DE ACCIÓN -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="/MANUAL_USUARIO_FACTURAPRO360.pdf" target="_blank" 
+           class="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 rounded-lg transition-all"
+           title="Abrir Manual de Usuario en PDF">
+          <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <span>Manual PDF</span>
+        </a>
+
+        <a routerLink="/login" 
+           class="px-4 py-2 text-xs font-semibold text-slate-200 hover:text-white hover:bg-slate-800/60 rounded-lg transition-colors">
+          Iniciar Sesión
+        </a>
+
+        <a routerLink="/dashboard" 
+           class="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold text-white bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 rounded-lg shadow-md shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all">
+          <span>Probar Demo Gratis</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+
+      <!-- BOTÓN MENÚ MÓVIL -->
+      <button (click)="toggleMenuMovil()" 
+              class="md:hidden p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg focus:outline-hidden"
+              aria-label="Abrir menú de navegación">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+
+    </div>
+
+    <!-- MENÚ MÓVIL DESPLEGABLE -->
+    <div *ngIf="menuMovilAbierto()" class="md:hidden bg-[#0B192C] border-b border-slate-800 px-4 pt-3 pb-6 space-y-3">
+      <a (click)="cerrarMenuMovil()" href="#caracteristicas" class="block py-2 text-sm font-medium text-slate-300 hover:text-white">Características</a>
+      <a (click)="cerrarMenuMovil()" href="#modulos" class="block py-2 text-sm font-medium text-slate-300 hover:text-white">Módulos</a>
+      <a (click)="cerrarMenuMovil()" href="#arquitectura" class="block py-2 text-sm font-medium text-slate-300 hover:text-white">Dualidad Offline (.NET + Web)</a>
+      <a (click)="cerrarMenuMovil()" href="#planes" class="block py-2 text-sm font-medium text-slate-300 hover:text-white">Planes & Precios</a>
+      <a (click)="cerrarMenuMovil()" href="#faq" class="block py-2 text-sm font-medium text-slate-300 hover:text-white">Preguntas Frecuentes</a>
+      <div class="pt-4 border-t border-slate-800 flex flex-col gap-2.5">
+        <a routerLink="/dashboard" (click)="cerrarMenuMovil()" class="w-full text-center py-2.5 text-xs font-bold text-white bg-blue-600 rounded-lg shadow-sm">
+          Ingresar al Panel Demo
+        </a>
+        <a routerLink="/login" (click)="cerrarMenuMovil()" class="w-full text-center py-2.5 text-xs font-semibold text-slate-300 bg-slate-800 rounded-lg">
+          Iniciar Sesión
+        </a>
+        <a href="/MANUAL_USUARIO_FACTURAPRO360.pdf" target="_blank" class="w-full text-center py-2.5 text-xs font-medium text-slate-400 border border-slate-700 rounded-lg">
+          Descargar Manual PDF
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== 2. SECCIÓN HERO (PORTADA PRINCIPAL) ==================== -->
+  <section class="relative pt-12 pb-20 sm:pt-20 sm:pb-32 overflow-hidden">
+    
+    <!-- EFECTOS DE FONDO LUMINISCENTES -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[450px] bg-blue-500/15 rounded-full blur-[130px] pointer-events-none -z-10"></div>
+    <div class="absolute top-1/3 left-1/4 w-[350px] h-[350px] bg-cyan-500/10 rounded-full blur-[110px] pointer-events-none -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+      <!-- BADGE DE NOVEDAD -->
+      <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold mb-8 animate-fade-in">
+        <span class="flex h-2 w-2 relative">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+        </span>
+        <span>FacturaPro 360 v2.5 • Suite Transaccional de Facturación & ERP</span>
+      </div>
+
+      <!-- TITULAR PRINCIPAL DE IMPACTO -->
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.1] max-w-5xl mx-auto mb-6">
+        El Sistema de Facturación e Inventario que 
+        <span class="bg-clip-text text-transparent bg-linear-to-r from-blue-400 via-cyan-400 to-indigo-400">
+          Nunca se Detiene
+        </span>
+      </h1>
+
+      <!-- SUBTÍTULO DESCRIPTIVO -->
+      <p class="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed mb-10">
+        Gestiona ventas, clientes, inventario kardex valorizado, tesorería y múltiples sucursales con total tranquilidad. 
+        Opera en la nube con <strong class="text-white font-medium">SaaS multi-tenant</strong> y garantiza tu servicio en tienda con nuestra <strong class="text-white font-medium">app nativa de escritorio offline</strong> (.NET 8).
+      </p>
+
+      <!-- BOTONES DE LLAMADA A LA ACCIÓN (CTAs) -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-16">
+        <a routerLink="/dashboard" 
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-sm font-bold text-white bg-linear-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 rounded-xl shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-95 transition-all">
+          <span>Entrar al Panel / Probar Demo</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+
+        <a routerLink="/register" 
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-semibold text-slate-200 hover:text-white bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700 hover:border-slate-600 rounded-xl transition-all">
+          <span>Crear Cuenta Gratis</span>
+        </a>
+      </div>
+
+      <!-- BANDA DE MÉTRICAS / CONFIANZA -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto pt-6 pb-12 border-y border-slate-800/80 text-left">
+        <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
+          <div class="text-2xl sm:text-3xl font-extrabold text-blue-400">99.98%</div>
+          <div class="text-xs text-slate-400 mt-1 font-medium">Disponibilidad en la Nube</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
+          <div class="text-2xl sm:text-3xl font-extrabold text-cyan-400">100% ACID</div>
+          <div class="text-xs text-slate-400 mt-1 font-medium">Garantía Transaccional</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
+          <div class="text-2xl sm:text-3xl font-extrabold text-indigo-400">RLS Activo</div>
+          <div class="text-xs text-slate-400 mt-1 font-medium">Aislamiento por Empresa</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
+          <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400">Offline Ready</div>
+          <div class="text-xs text-slate-400 mt-1 font-medium">Escritorio .NET sin Internet</div>
+        </div>
+      </div>
+
+      <!-- MOCKUP VISUAL DEL SISTEMA (DASHBOARD REAL) -->
+      <div class="relative mt-12 max-w-5xl mx-auto">
+        <!-- MARCO DE VENTANA TIPO SISTEMA OPERATIVO PREMIUM -->
+        <div class="rounded-2xl p-2 sm:p-3 bg-linear-to-b from-slate-700/60 via-slate-800/40 to-slate-900/80 border border-slate-700/80 shadow-2xl shadow-blue-500/20 hero-glow-pulse">
+          
+          <!-- BARRA DE TÍTULO DE LA APLICACIÓN -->
+          <div class="flex items-center justify-between px-4 py-2.5 bg-[#0B192C] rounded-t-xl border-b border-slate-800">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+              <span class="ml-2 text-[11px] font-mono text-slate-400">facturapro360.cloud/dashboard</span>
+            </div>
+            <div class="text-[11px] text-slate-400 font-semibold flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Empresa Demo S.A. • Multi-tenant Aislado</span>
+            </div>
+          </div>
+
+          <!-- IMAGEN REAL DEL DASHBOARD -->
+          <div class="relative overflow-hidden rounded-b-xl bg-slate-950">
+            <img src="/assets/images/hero_dashboard_preview.jpg" 
+                 alt="FacturaPro 360 Dashboard Preview" 
+                 class="w-full h-auto object-cover transform hover:scale-[1.01] transition-transform duration-500" />
+            
+            <!-- OVERLAY GRADIENTES DE PROFUNDIDAD -->
+            <div class="absolute inset-0 bg-linear-to-t from-[#060E1A]/40 via-transparent to-transparent pointer-events-none"></div>
+
+            <!-- TARJETAS FLOTANTES DE DATOS EN VIVO -->
+            <div class="hidden lg:flex absolute top-6 right-6 items-center gap-3 px-4 py-3 rounded-xl glass-card-dark float-element-1 shadow-xl">
+              <div class="w-9 h-9 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <div class="text-left">
+                <div class="text-xs font-bold text-white">Factura #FAC-00124 Emitida</div>
+                <div class="text-[11px] text-slate-400">PDF generado • Stock descontado en Kardex</div>
+              </div>
+            </div>
+
+            <div class="hidden lg:flex absolute bottom-6 left-6 items-center gap-3 px-4 py-3 rounded-xl glass-card-dark float-element-2 shadow-xl">
+              <div class="w-9 h-9 rounded-lg bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-blue-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+              </div>
+              <div class="text-left">
+                <div class="text-xs font-bold text-white">Aislamiento RLS en Base de Datos</div>
+                <div class="text-[11px] text-emerald-400 font-semibold">Tus datos nunca se mezclan con otros tenants</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 3. SECCIÓN: POR QUÉ FACTURAPRO 360 ==================== -->
+  <section id="caracteristicas" class="py-20 border-t border-slate-800/80 bg-slate-950/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-blue-400 mb-2">Diseñado para la vida real</h2>
+        <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Supera las limitaciones de los sistemas tradicionales de facturación
+        </p>
+        <p class="text-slate-400 text-sm sm:text-base mt-4">
+          La mayoría de sistemas fallan cuando se corta el internet, o causan descuadres en inventario al no contar con integridad transaccional. FacturaPro 360 fue concebido desde cero para blindar tus operaciones.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- PILAR 1 -->
+        <div class="p-8 rounded-2xl glass-card-dark flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Velocidad Extrema sin Esperas</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Emite comprobantes en menos de 2 segundos. Compatible con ticketeras térmicas de 58mm y 80mm para puntos de venta con colas de clientes, y PDF corporativo para clientes corporativos.
+            </p>
+          </div>
+          <ul class="space-y-2 text-xs text-slate-300 font-medium">
+            <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> Soporte para lectores de código de barras</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> Cálculo automático de impuestos y descuentos</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> Descarga o impresión inmediata en 1 clic</li>
+          </ul>
+        </div>
+
+        <!-- PILAR 2 -->
+        <div class="p-8 rounded-2xl glass-card-dark flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Integridad ACID & Kardex Real</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Dile adiós a los duplicados de facturas o pérdidas misteriosas de stock. Cada comprobante emitido ejecuta transacciones atómicas con bloqueo exclusivo para garantizar correlatividad inquebrantable.
+            </p>
+          </div>
+          <ul class="space-y-2 text-xs text-slate-300 font-medium">
+            <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> Procedimientos almacenados PL/pgSQL</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> Control de costo promedio y FIFO</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> Auditoría inmutable de cada transacción</li>
+          </ul>
+        </div>
+
+        <!-- PILAR 3 -->
+        <div class="p-8 rounded-2xl glass-card-dark flex flex-col justify-between border-blue-500/40 bg-blue-950/20">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/20 border border-indigo-500/40 flex items-center justify-center text-indigo-400 mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+            </div>
+            <div class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-blue-500 text-white mb-2 uppercase">Ventaja Exclusiva</div>
+            <h3 class="text-xl font-bold text-white mb-3">Dual Cloud + Offline Nativo</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Si se corta la fibra óptica o el Wi-Fi en tu tienda física, la estación de trabajo continúa cobrando con la app de escritorio en .NET 8. Al volver la red, se sincroniza automáticamente con la nube.
+            </p>
+          </div>
+          <ul class="space-y-2 text-xs text-slate-300 font-medium">
+            <li class="flex items-center gap-2"><span class="text-blue-400 font-bold">✓</span> Base de datos local SQLite / SQL Server</li>
+            <li class="flex items-center gap-2"><span class="text-blue-400 font-bold">✓</span> Cero tiempo muerto en cajas y mostradores</li>
+            <li class="flex items-center gap-2"><span class="text-blue-400 font-bold">✓</span> Panel Web accesible desde cualquier celular o PC</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 4. SECCIÓN: MÓDULOS DEL SISTEMA (INTERACTIVA) ==================== -->
+  <section id="modulos" class="py-20 border-t border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-blue-400 mb-2">Todo en una sola suite</h2>
+        <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Explora los módulos de FacturaPro 360
+        </p>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">
+          Una solución modular y centralizada para cubrir todo el ciclo comercial de tu empresa.
+        </p>
+      </div>
+
+      <!-- BOTONES SELECTORES DE PESTAÑAS (TABS) -->
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
+        <button *ngFor="let mod of modulos"
+                (click)="setTab(mod.id)"
+                class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-2"
+                [ngClass]="tabActivo() === mod.id ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30' : 'bg-slate-900/80 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800'">
+          <span>{{ mod.titulo.split(' ')[0] }}</span>
+          <span class="text-[10px] opacity-75 font-normal hidden sm:inline">{{ mod.tag }}</span>
+        </button>
+      </div>
+
+      <!-- CONTENIDO DEL MÓDULO ACTIVO -->
+      <div class="p-8 sm:p-12 rounded-3xl radial-card-glow border border-blue-500/25 shadow-2xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-block px-3 py-1 rounded-md bg-blue-500/20 text-blue-400 text-xs font-bold tracking-wider uppercase border border-blue-500/30">
+              {{ moduloSeleccionado().tag }}
+            </div>
+            
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-white">
+              {{ moduloSeleccionado().titulo }}
+            </h3>
+
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              {{ moduloSeleccionado().descripcion }}
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div *ngFor="let p of moduloSeleccionado().puntos" class="flex items-start gap-2.5 text-xs text-slate-200">
+                <span class="text-blue-400 font-bold shrink-0">✔</span>
+                <span>{{ p }}</span>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-6 pt-4 border-t border-slate-800">
+              <div *ngFor="let m of moduloSeleccionado().metricas" class="space-y-0.5">
+                <div class="text-xl font-extrabold text-white">{{ m.valor }}</div>
+                <div class="text-xs text-slate-400 font-medium">{{ m.label }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 bg-slate-950/70 p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
+                <div class="flex items-center gap-2">
+                  <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                  <span class="text-xs font-mono text-slate-300">Módulo Verificado</span>
+                </div>
+                <span class="text-[11px] text-blue-400 font-semibold">Listo para Producción</span>
+              </div>
+              <p class="text-xs text-slate-400 leading-relaxed mb-6">
+                Puedes probar este módulo ahora mismo con datos reales de demostración sin necesidad de registro ni tarjeta.
+              </p>
+            </div>
+
+            <div class="space-y-3">
+              <a routerLink="/dashboard" class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold text-white bg-blue-600 hover:bg-blue-500 shadow-md transition-all">
+                <span>Ver este módulo en Vivo</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+              <a href="/MANUAL_USUARIO_FACTURAPRO360.pdf" target="_blank" class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs font-semibold text-slate-300 hover:text-white bg-slate-900 hover:bg-slate-800 border border-slate-800 transition-all">
+                <span>Leer guía en Manual PDF</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 5. SECCIÓN: ARQUITECTURA DUAL (.NET + WEB) ==================== -->
+  <section id="arquitectura" class="py-20 border-t border-slate-800/80 bg-slate-950/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-block px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold mb-3 border border-emerald-500/20">
+          Tecnología Híbrida de Última Generación
+        </div>
+        <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          La Arquitectura Dual que Hace Único a FacturaPro 360
+        </p>
+        <p class="text-slate-400 text-sm sm:text-base mt-4">
+          Combina la agilidad ubicua de la Nube con la solidez incombustible de una aplicación de escritorio nativa para tus cajas físicas.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+        
+        <!-- CARD WEB SAAS -->
+        <div class="p-8 sm:p-10 rounded-2xl glass-card-dark flex flex-col justify-between border-slate-800">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="px-3 py-1 rounded-md text-xs font-bold bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                EDICIÓN WEB (SAAS CLOUD)
+              </span>
+              <span class="text-xs text-slate-400 font-mono">Angular 22 + Signals</span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-white mb-3">Gestión Ubicua desde Cualquier Dispositivo</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Ideal para directores, contadores y administradores. Consulta el estado de tu negocio, emite cotizaciones o revisa el kardex desde tu laptop en casa, una tablet en la bodega o tu teléfono móvil.
+            </p>
+
+            <div class="space-y-3 mb-8">
+              <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between text-xs">
+                <span class="text-slate-300 font-medium">Infraestructura</span>
+                <span class="text-white font-mono font-semibold">PostgreSQL 15 + RLS + Supabase</span>
+              </div>
+              <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between text-xs">
+                <span class="text-slate-300 font-medium">Seguridad</span>
+                <span class="text-emerald-400 font-semibold">Cifrado SSL / JWT / Aislamiento Estricto</span>
+              </div>
+              <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between text-xs">
+                <span class="text-slate-300 font-medium">Copias de Seguridad</span>
+                <span class="text-blue-400 font-semibold">Automáticas en la Nube (Snapshot diario)</span>
+              </div>
+            </div>
+          </div>
+
+          <a routerLink="/dashboard" class="w-full text-center py-3 rounded-xl text-xs font-bold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-colors">
+            Acceder a la Versión Web
+          </a>
+        </div>
+
+        <!-- CARD ESCRITORIO OFFLINE -->
+        <div class="p-8 sm:p-10 rounded-2xl glass-card-dark flex flex-col justify-between border-blue-500/30 bg-blue-950/25">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="px-3 py-1 rounded-md text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                EDICIÓN ESCRITORIO (OFFLINE RESISTANT)
+              </span>
+              <span class="text-xs text-slate-400 font-mono">.NET 8 WPF + MVVM</span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-white mb-3">Máxima Potencia para Puntos de Venta Físicos</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Diseñada para la caja de cobro donde cada segundo cuenta y no te puedes permitir que un fallo de red detenga la fila de clientes. Cero latencia de internet e integración directa con hardware.
+            </p>
+
+            <div class="space-y-3 mb-8">
+              <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between text-xs">
+                <span class="text-slate-300 font-medium">Hardware POS</span>
+                <span class="text-white font-mono font-semibold">Ticketeras ESC/POS, Gaveta & Balanzas</span>
+              </div>
+              <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between text-xs">
+                <span class="text-slate-300 font-medium">Base de Datos Local</span>
+                <span class="text-emerald-400 font-semibold">SQLite / SQL Server Express (ACID)</span>
+              </div>
+              <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between text-xs">
+                <span class="text-slate-300 font-medium">Sincronización</span>
+                <span class="text-cyan-400 font-semibold">Automática con la nube al reconectar</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="/MANUAL_USUARIO_FACTURAPRO360.pdf" target="_blank" class="w-full text-center py-3 rounded-xl text-xs font-bold text-white bg-blue-600 hover:bg-blue-500 shadow-md shadow-blue-500/20 transition-all">
+            Ver Detalles Técnicos en el Manual
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 6. SECCIÓN: PLANES Y PRECIOS ==================== -->
+  <section id="planes" class="py-20 border-t border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-blue-400 mb-2">Precios Claros y Transparentes</h2>
+        <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Elige el plan ideal para el tamaño de tu negocio
+        </p>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">
+          Sin costos ocultos ni permanencia obligatoria. Cambia o cancela de plan cuando quieras.
+        </p>
+
+        <!-- SELECTOR MENSUAL / ANUAL -->
+        <div class="inline-flex items-center p-1.5 rounded-xl bg-slate-900 border border-slate-800 mt-8">
+          <button (click)="cambiarFrecuencia('mensual')" 
+                  class="px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer"
+                  [ngClass]="frecuenciaPago() === 'mensual' ? 'bg-blue-600 text-white shadow-sm' : 'text-slate-400 hover:text-white'">
+            Facturación Mensual
+          </button>
+          <button (click)="cambiarFrecuencia('anual')" 
+                  class="px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5"
+                  [ngClass]="frecuenciaPago() === 'anual' ? 'bg-blue-600 text-white shadow-sm' : 'text-slate-400 hover:text-white'">
+            <span>Pago Anual</span>
+            <span class="px-1.5 py-0.5 rounded-full text-[9px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Ahorra 20%</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- PLAN 1: EMPRENDEDOR / DEMO -->
+        <div class="p-8 rounded-2xl glass-card-dark flex flex-col justify-between">
+          <div>
+            <div class="text-base font-bold text-white mb-2">Plan Emprendedor</div>
+            <p class="text-xs text-slate-400 mb-6">Para pequeños comercios que inician su facturación digital.</p>
+            
+            <div class="flex items-baseline gap-2 mb-6">
+              <span class="text-4xl font-extrabold text-white">$0</span>
+              <span class="text-xs text-slate-400">/ para siempre</span>
+            </div>
+
+            <ul class="space-y-3 text-xs text-slate-300 pb-8 border-b border-slate-800">
+              <li class="flex items-center gap-2.5"><span class="text-blue-400 font-bold">✓</span> Hasta 50 comprobantes al mes</li>
+              <li class="flex items-center gap-2.5"><span class="text-blue-400 font-bold">✓</span> 1 Sucursal y 1 Usuario</li>
+              <li class="flex items-center gap-2.5"><span class="text-blue-400 font-bold">✓</span> Catálogo de hasta 100 productos</li>
+              <li class="flex items-center gap-2.5"><span class="text-blue-400 font-bold">✓</span> Exportación a PDF estándar</li>
+              <li class="flex items-center gap-2.5 text-slate-500"><span class="font-bold">✕</span> Modo Offline de Escritorio</li>
+              <li class="flex items-center gap-2.5 text-slate-500"><span class="font-bold">✕</span> Multibodega y Kardex Avanzado</li>
+            </ul>
+          </div>
+
+          <a routerLink="/register" class="mt-8 w-full text-center py-3 rounded-xl text-xs font-bold text-slate-200 hover:text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-all">
+            Empezar Gratis
+          </a>
+        </div>
+
+        <!-- PLAN 2: PYME PRO (RECOMENDADO) -->
+        <div class="p-8 rounded-2xl glass-card-dark flex flex-col justify-between border-blue-500/50 bg-blue-950/30 relative shadow-xl shadow-blue-500/10">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-blue-600 text-white text-[10px] font-extrabold tracking-wider uppercase shadow-md">
+            MÁS POPULAR
+          </div>
+
+          <div>
+            <div class="text-base font-bold text-white mb-2">Pyme Pro</div>
+            <p class="text-xs text-slate-300 mb-6">La solución integral para pymes en crecimiento comercial.</p>
+            
+            <div class="flex items-baseline gap-2 mb-6">
+              <span class="text-4xl font-extrabold text-white">
+                {{ frecuenciaPago() === 'anual' ? '$23' : '$29' }}
+              </span>
+              <span class="text-xs text-slate-400">USD / mes</span>
+            </div>
+
+            <ul class="space-y-3 text-xs text-slate-200 pb-8 border-b border-blue-500/30">
+              <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> <strong>Facturación ilimitada</strong> sin restricciones</li>
+              <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Hasta 3 Sucursales y 5 Usuarios</li>
+              <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Kardex valorizado (FIFO / Promedio)</li>
+              <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Formatos térmicos 58/80mm + A4 PDF</li>
+              <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Soporte para app de Escritorio</li>
+              <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Soporte prioritario vía WhatsApp y Correo</li>
+            </ul>
+          </div>
+
+          <a routerLink="/dashboard" class="mt-8 w-full text-center py-3.5 rounded-xl text-xs font-bold text-white bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-lg shadow-blue-500/30 hover:scale-[1.02] transition-all">
+            Probar Pyme Pro en Vivo
+          </a>
+        </div>
+
+        <!-- PLAN 3: ENTERPRISE -->
+        <div class="p-8 rounded-2xl glass-card-dark flex flex-col justify-between">
+          <div>
+            <div class="text-base font-bold text-white mb-2">Enterprise Suite</div>
+            <p class="text-xs text-slate-400 mb-6">Para cadenas comerciales, distribuidores y multi-empresas.</p>
+            
+            <div class="flex items-baseline gap-2 mb-6">
+              <span class="text-4xl font-extrabold text-white">
+                {{ frecuenciaPago() === 'anual' ? '$63' : '$79' }}
+              </span>
+              <span class="text-xs text-slate-400">USD / mes</span>
+            </div>
+
+            <ul class="space-y-3 text-xs text-slate-300 pb-8 border-b border-slate-800">
+              <li class="flex items-center gap-2.5"><span class="text-blue-400 font-bold">✓</span> Todo lo incluido en Pyme Pro</li>
+              <li class="flex items-center gap-2.5"><span class="text-blue-400 font-bold">✓</span> <strong>Sucursales y Usuarios Ilimitados</strong></li>
+              <li class="flex items-center gap-2.5"><span class="text-blue-400 font-bold">✓</span> Base de datos Postgres dedicada / RLS</li>
+              <li class="flex items-center gap-2.5"><span class="text-blue-400 font-bold">✓</span> Módulo de Auditoría Forense y Logs</li>
+              <li class="flex items-center gap-2.5"><span class="text-blue-400 font-bold">✓</span> API REST para integraciones ERP externas</li>
+              <li class="flex items-center gap-2.5"><span class="text-blue-400 font-bold">✓</span> SLA 99.9% y Asesor de cuenta 24/7</li>
+            </ul>
+          </div>
+
+          <a routerLink="/register" class="mt-8 w-full text-center py-3 rounded-xl text-xs font-bold text-slate-200 hover:text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-all">
+            Contactar para Enterprise
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 7. PREGUNTAS FRECUENTES (FAQ) ==================== -->
+  <section id="faq" class="py-20 border-t border-slate-800/80 bg-slate-950/40">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-14">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-blue-400 mb-2">Resolvemos tus dudas</h2>
+        <p class="text-3xl font-extrabold text-white tracking-tight">Preguntas Frecuentes</p>
+      </div>
+
+      <div class="space-y-4">
+        <div *ngFor="let item of faqs; let i = index" 
+             class="rounded-xl border border-slate-800 bg-slate-900/60 overflow-hidden transition-colors">
+          <button (click)="toggleFaq(i)" 
+                  class="w-full text-left px-6 py-4 flex items-center justify-between text-sm sm:text-base font-bold text-white hover:text-blue-400 transition-colors cursor-pointer">
+            <span>{{ item.pregunta }}</span>
+            <svg class="w-5 h-5 shrink-0 transform transition-transform duration-200"
+                 [ngClass]="faqAbierto() === i ? 'rotate-180 text-blue-400' : 'text-slate-500'" 
+                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          
+          <div *ngIf="faqAbierto() === i" class="px-6 pb-5 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60">
+            {{ item.respuesta }}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 8. LLAMADA A LA ACCIÓN FINAL (CTA BANNER) ==================== -->
+  <section class="py-20 border-t border-slate-800/80 relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="p-10 sm:p-14 rounded-3xl bg-linear-to-r from-blue-900/40 via-indigo-900/30 to-slate-900/80 border border-blue-500/40 shadow-2xl text-center relative overflow-hidden">
+        <div class="relative z-10">
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+            Lleva la Gestión de tu Empresa al Siguiente Nivel
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+            Sin contratos forzosos. Prueba el sistema en vivo en menos de 1 minuto y comprueba por qué FacturaPro 360 es la suite definitiva para pymes.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a routerLink="/dashboard" class="w-full sm:w-auto px-8 py-3.5 text-xs sm:text-sm font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-xl shadow-lg shadow-blue-500/30 transition-all">
+              Explorar Demo en Vivo Ahora
+            </a>
+            <a routerLink="/login" class="w-full sm:w-auto px-8 py-3.5 text-xs sm:text-sm font-semibold text-slate-200 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-xl transition-all">
+              Iniciar Sesión con mi Cuenta
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 9. PIE DE PÁGINA (FOOTER) ==================== -->
+  <footer class="border-t border-slate-800/80 bg-[#040912] py-14 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        
+        <!-- COLUMNA 1: MARCA -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="/assets/images/logo.jpg" alt="FacturaPro 360" class="w-8 h-8 rounded-lg object-cover" />
+            <span class="font-extrabold text-white text-base">FacturaPro <span class="text-blue-500 font-light">360</span></span>
+          </div>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            Suite transaccional para facturación electrónica, kardex valorizado y control empresarial. Operación dual Web SaaS y Escritorio Offline.
+          </p>
+          <div class="flex items-center gap-2 text-[11px] text-emerald-400">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span>Todos los sistemas operando con normalidad</span>
+          </div>
+        </div>
+
+        <!-- COLUMNA 2: PLATAFORMA -->
+        <div class="space-y-2.5">
+          <div class="font-bold text-white text-xs uppercase tracking-wider mb-2">Plataforma</div>
+          <div><a routerLink="/dashboard" class="hover:text-blue-400 transition-colors">Panel de Control (Dashboard)</a></div>
+          <div><a routerLink="/facturas" class="hover:text-blue-400 transition-colors">Facturación & Ventas</a></div>
+          <div><a routerLink="/productos" class="hover:text-blue-400 transition-colors">Inventario & Kardex</a></div>
+          <div><a routerLink="/clientes" class="hover:text-blue-400 transition-colors">Directorio de Clientes</a></div>
+          <div><a routerLink="/caja-bancos" class="hover:text-blue-400 transition-colors">Caja, Bancos & Finanzas</a></div>
+        </div>
+
+        <!-- COLUMNA 3: RECURSOS -->
+        <div class="space-y-2.5">
+          <div class="font-bold text-white text-xs uppercase tracking-wider mb-2">Recursos</div>
+          <div><a href="/MANUAL_USUARIO_FACTURAPRO360.pdf" target="_blank" class="hover:text-blue-400 transition-colors">Manual de Usuario Oficial (PDF)</a></div>
+          <div><a routerLink="/login" class="hover:text-blue-400 transition-colors">Acceso de Usuarios</a></div>
+          <div><a routerLink="/register" class="hover:text-blue-400 transition-colors">Registro de Empresa</a></div>
+          <div><a href="#arquitectura" class="hover:text-blue-400 transition-colors">Arquitectura Dual .NET / Web</a></div>
+        </div>
+
+        <!-- COLUMNA 4: SEGURIDAD & COMPLIANCE -->
+        <div class="space-y-2.5">
+          <div class="font-bold text-white text-xs uppercase tracking-wider mb-2">Seguridad & RLS</div>
+          <p class="text-slate-400 text-[11px] leading-relaxed">
+            Aislamiento estricto por tenant en PostgreSQL con Row Level Security. Cada cliente cuenta con cifrado y trazabilidad inmutable.
+          </p>
+          <div class="pt-2 text-[11px] text-slate-500">
+            PostgreSQL • Supabase • Angular • .NET 8 WPF
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
+        <div>
+          © 2026 FacturaPro 360 Enterprise Suite. Todos los derechos reservados.
+        </div>
+        <div class="flex gap-6">
+          <a href="#caracteristicas" class="hover:text-slate-200">Privacidad</a>
+          <a href="#planes" class="hover:text-slate-200">Términos del Servicio</a>
+          <a href="#faq" class="hover:text-slate-200">Soporte Técnico</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</div>

@@ -26,8 +26,12 @@ import { SeguridadLabComponent } from './components/seguridad/seguridad-lab.comp
 import { Error404Component } from './components/errors/error-404.component';
 import { Error403Component } from './components/errors/error-403.component';
 import { Error500Component } from './components/errors/error-500.component';
+import { LandingComponent } from './components/landing/landing.component';
 
 export const routes: Routes = [
+  // Página de presentación del sistema (Landing Page oficial)
+  { path: '', component: LandingComponent },
+
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   
@@ -36,8 +40,9 @@ export const routes: Routes = [
   { path: '403', component: Error403Component },
   { path: '500', component: Error500Component },
 
-  // Rutas protegidas con AuthGuard
-  { path: '', component: DashboardComponent, canActivate: [authGuard] },
+  // Panel interno de control y Rutas protegidas con AuthGuard
+  { path: 'dashboard', component: DashboardComponent, canActivate: [authGuard] },
+  { path: 'app', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'facturas', component: FacturasListComponent, canActivate: [authGuard] },
   { path: 'nueva-factura', component: NuevaFacturaComponent, canActivate: [authGuard] },
   { path: 'facturas/:id', component: DetalleFacturaComponent, canActivate: [authGuard] },

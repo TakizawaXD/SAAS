@@ -1,0 +1,89 @@
+/* Custom styles for FacturaPro 360 presentation landing page */
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(37, 99, 235, 0.4), 0 0 60px rgba(6, 182, 212, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(37, 99, 235, 0.7), 0 0 90px rgba(6, 182, 212, 0.35);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.hero-glow-pulse {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.float-element-1 {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.float-element-2 {
+  animation: floatReverse 7s ease-in-out infinite;
+}
+
+.glass-nav {
+  background: rgba(11, 25, 44, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-card-dark {
+  background: rgba(16, 34, 59, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+}
+
+.glass-card-dark:hover {
+  border-color: rgba(59, 130, 246, 0.45);
+  transform: translateY(-2px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.radial-mesh-bg {
+  background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.18) 0%, rgba(6, 182, 212, 0.08) 25%, transparent 60%),
+              radial-gradient(circle at 10% 40%, rgba(79, 70, 229, 0.12) 0%, transparent 45%),
+              radial-gradient(circle at 90% 70%, rgba(14, 165, 233, 0.12) 0%, transparent 45%),
+              #060E1A;
+}
+
+.radial-card-glow {
+  background: radial-gradient(800px circle at top left, rgba(37, 99, 235, 0.15), transparent 40%),
+              #0F1F35;
+}
+
+/* Custom scrollbar for landing if needed */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060E1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E3E66;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563EB;
+}

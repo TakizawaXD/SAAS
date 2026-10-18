@@ -55,14 +55,28 @@ export class App {
   ];
 
   constructor() {
+    this.evaluarRuta(this.router.url);
+
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: any) => {
       const url = event.urlAfterRedirects || event.url;
-      this.esRutaAutenticacion.set(url.includes('/login') || url.includes('/register'));
+      this.evaluarRuta(url);
       this.sidebarAbierto.set(false);
       this.menuUsuarioAbierto.set(false);
     });
+  }
+
+  private evaluarRuta(url: string) {
+    if (!url) {
+      this.esRutaAutenticacion.set(true);
+      return;
+    }
+    const cleanPath = url.split('?')[0].split('#')[0];
+    const esPublica = cleanPath === '' || cleanPath === '/' || 
+                      cleanPath === '/login' || cleanPath === '/register' ||
+                      cleanPath === '/404' || cleanPath === '/403' || cleanPath === '/500';
+    this.esRutaAutenticacion.set(esPublica);
   }
 
   // Colección de todos los datos reales del tenant

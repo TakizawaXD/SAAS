@@ -20,7 +20,6 @@ export class PwaInstallService {
     this.detectarDispositivo();
     this.comprobarSiYaEstaInstalada();
     this.escucharEventoInstalacion();
-    this.iniciarTemporizadorModal();
   }
 
   private detectarDispositivo() {
@@ -55,14 +54,6 @@ export class PwaInstallService {
       e.preventDefault();
       this.deferredPrompt = e;
       this.puedeInstalarNativamente.set(true);
-
-      // Si no ha sido descartada, abrir modal
-      const descartada = sessionStorage.getItem('facturapro_pwa_dismissed');
-      if (!descartada && !this.instalada()) {
-        setTimeout(() => {
-          this.modalVisible.set(true);
-        }, 1800);
-      }
     });
 
     window.addEventListener('appinstalled', () => {
