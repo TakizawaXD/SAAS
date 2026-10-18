@@ -26,9 +26,18 @@ export class LandingComponent {
   tabActivo = signal<string>('facturacion');
   tabHeroActivo = signal<'dashboard' | 'facturacion' | 'kardex' | 'escritorio'>('dashboard');
   frecuenciaPago = signal<'mensual' | 'anual'>('mensual');
+  diasPruebaRestantes = signal<number>(14);
 
   setTabHero(tab: 'dashboard' | 'facturacion' | 'kardex' | 'escritorio'): void {
     this.tabHeroActivo.set(tab);
+  }
+
+  irAlRegistro(): void {
+    this.router.navigate(['/register']);
+  }
+
+  irAlLogin(): void {
+    this.router.navigate(['/login']);
   }
 
   modulos: ModuloInfo[] = [

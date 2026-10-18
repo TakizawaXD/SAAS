@@ -37,7 +37,7 @@
         <a href="#faq" class="hover:text-white transition-colors">Preguntas</a>
       </nav>
 
-      <!-- BOTONES DE ACCIÓN -->
+      <!-- BOTONES DE ACCIÓN SUPERIOR -->
       <div class="hidden sm:flex items-center gap-3">
         <a href="/MANUAL_USUARIO_FACTURAPRO360.pdf" target="_blank" 
            class="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 rounded-lg transition-all"
@@ -47,13 +47,20 @@
         </a>
 
         <a routerLink="/login" 
-           class="px-4 py-2 text-xs font-semibold text-slate-200 hover:text-white hover:bg-slate-800/60 rounded-lg transition-colors">
-          Iniciar Sesión
+           class="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-slate-200 hover:text-white hover:bg-slate-800/80 rounded-lg transition-colors border border-transparent hover:border-slate-700">
+          <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/></svg>
+          <span>Iniciar Sesión</span>
         </a>
 
         <a routerLink="/dashboard" 
-           class="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold text-white bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 rounded-lg shadow-md shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all">
-          <span>Probar Demo Gratis</span>
+           class="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-bold text-cyan-300 bg-cyan-950/60 hover:bg-cyan-900/60 border border-cyan-500/30 rounded-lg transition-all shadow-xs">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          <span>Ver Demo</span>
+        </a>
+
+        <a routerLink="/register" 
+           class="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 rounded-lg shadow-md shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all">
+          <span>Registrarse Gratis</span>
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
       </div>
@@ -75,8 +82,11 @@
       <a (click)="cerrarMenuMovil()" href="#planes" class="block py-2 text-sm font-medium text-slate-300 hover:text-white">Planes & Precios</a>
       <a (click)="cerrarMenuMovil()" href="#faq" class="block py-2 text-sm font-medium text-slate-300 hover:text-white">Preguntas Frecuentes</a>
       <div class="pt-4 border-t border-slate-800 flex flex-col gap-2.5">
-        <a routerLink="/dashboard" (click)="cerrarMenuMovil()" class="w-full text-center py-2.5 text-xs font-bold text-white bg-blue-600 rounded-lg shadow-sm">
-          Ingresar al Panel Demo
+        <a routerLink="/register" (click)="cerrarMenuMovil()" class="w-full text-center py-2.5 text-xs font-bold text-white bg-blue-600 rounded-lg shadow-sm">
+          Registrarse Gratis (14 Días)
+        </a>
+        <a routerLink="/dashboard" (click)="cerrarMenuMovil()" class="w-full text-center py-2.5 text-xs font-bold text-cyan-300 bg-cyan-950/80 border border-cyan-500/40 rounded-lg">
+          Ver Demo en Vivo
         </a>
         <a routerLink="/login" (click)="cerrarMenuMovil()" class="w-full text-center py-2.5 text-xs font-semibold text-slate-300 bg-slate-800 rounded-lg">
           Iniciar Sesión
@@ -89,25 +99,30 @@
   </header>
 
   <!-- ==================== 2. SECCIÓN HERO (PORTADA PRINCIPAL HIGH-IMPACT) ==================== -->
-  <section class="relative pt-12 pb-20 sm:pt-20 sm:pb-32 overflow-hidden">
+  <section class="relative pt-12 pb-20 sm:pt-20 sm:pb-28 overflow-hidden">
     
     <!-- PATRÓN GEOMÉTRICO Y EFECTOS LUMINISCENTES DE FONDO -->
     <div class="absolute inset-0 hero-grid-pattern pointer-events-none opacity-40"></div>
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[500px] bg-blue-600/20 rounded-full blur-[140px] pointer-events-none -z-10"></div>
-    <div class="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-cyan-500/15 rounded-full blur-[120px] pointer-events-none -z-10"></div>
-    <div class="absolute top-1/2 right-1/4 w-[450px] h-[450px] bg-indigo-600/15 rounded-full blur-[130px] pointer-events-none -z-10"></div>
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[550px] bg-blue-600/20 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+    <div class="absolute top-1/3 left-1/4 w-[450px] h-[450px] bg-cyan-500/15 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+    <div class="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-indigo-600/15 rounded-full blur-[130px] pointer-events-none -z-10"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
 
-      <!-- BADGE DE NOVEDAD INTERACTIVO -->
-      <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold mb-8 backdrop-blur-md hover:bg-blue-500/15 transition-all">
+      <!-- BADGE DE NOVEDAD INTERACTIVO CON TEMPORIZADOR DE PRUEBA -->
+      <div class="inline-flex flex-wrap items-center justify-center gap-2.5 px-4 py-2 rounded-full bg-slate-900/90 border border-blue-500/30 text-blue-300 text-xs font-semibold mb-8 backdrop-blur-md hover:border-blue-500/50 transition-all shadow-lg">
         <span class="flex h-2.5 w-2.5 relative">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
         </span>
-        <span class="tracking-wide">FacturaPro 360 v2.5 — Suite de Facturación Electrónica & ERP Transaccional</span>
-        <span class="text-slate-500 font-normal">|</span>
-        <span class="text-cyan-300 font-bold hidden sm:inline">Web SaaS + Desktop Offline (.NET 8)</span>
+        <span class="tracking-wide text-white">FacturaPro 360 v2.5</span>
+        <span class="text-slate-600">|</span>
+        <span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span>14 Días de Prueba Gratuita Ilimitada</span>
+        </span>
+        <span class="text-slate-600 hidden sm:inline">|</span>
+        <span class="text-cyan-300 font-medium hidden sm:inline">Nube SaaS + Escritorio Offline (.NET 8)</span>
       </div>
 
       <!-- TITULAR PRINCIPAL DE IMPACTO VISUAL -->
@@ -120,37 +135,45 @@
 
       <!-- SUBTÍTULO DESCRIPTIVO -->
       <p class="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed mb-10">
-        Emite comprobantes en menos de 2 segundos, domina tu kardex valorizado en tiempo real y gestiona múltiples sucursales con total tranquilidad. 
-        Opera en la nube con <strong class="text-white font-semibold">SaaS multi-tenant</strong> y garantiza tu cobro en tienda física sin depender de internet con nuestra <strong class="text-white font-semibold">app nativa de escritorio offline</strong> (.NET 8).
+        Emite comprobantes en menos de 2 segundos, domina tu inventario kardex valorizado y gestiona múltiples sucursales con total tranquilidad. 
+        Opera en la nube con <strong class="text-white font-semibold">SaaS multi-tenant</strong> y garantiza tus cobros en tienda sin depender de internet con nuestra <strong class="text-white font-semibold">app nativa de escritorio offline</strong> (.NET 8).
       </p>
 
-      <!-- CLÚSTER DE BOTONES DE ACCIÓN (CTAs) -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto mb-8">
-        <a routerLink="/dashboard" 
-           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-sm font-extrabold text-white bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 rounded-xl shadow-2xl shadow-blue-500/40 hover:shadow-blue-500/60 hover:scale-[1.02] active:scale-95 transition-all">
-          <span>🚀 Entrar al Panel / Probar Demo</span>
+      <!-- CLÚSTER DE BOTONES DE ACCIÓN PRINCIPALES (CTAs) -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 max-w-2xl mx-auto mb-8">
+        
+        <!-- BOTÓN 1: REGISTRARSE GRATIS (14 DÍAS) -->
+        <a routerLink="/register" 
+           class="w-full sm:w-auto cta-glow-btn inline-flex items-center justify-center gap-3 px-8 py-4 text-sm font-extrabold text-white bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 rounded-xl shadow-2xl shadow-blue-500/40 hover:shadow-blue-500/60 active:scale-95 transition-all">
+          <span>🚀 Comenzar Prueba Gratis</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
 
-        <a href="/MANUAL_USUARIO_FACTURAPRO360.pdf" target="_blank"
-           class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 text-sm font-semibold text-slate-200 hover:text-white bg-slate-900/90 hover:bg-slate-800/90 border border-slate-700/80 hover:border-slate-600 rounded-xl transition-all shadow-md">
-          <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-          <span>Descargar Manual PDF</span>
+        <!-- BOTÓN 2: VER DEMO EN VIVO -->
+        <a routerLink="/dashboard" 
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 text-sm font-bold text-cyan-300 hover:text-white bg-slate-900/90 hover:bg-slate-800/90 border border-cyan-500/40 hover:border-cyan-400 rounded-xl transition-all shadow-lg shadow-cyan-500/10 hover:shadow-cyan-500/25">
+          <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
+          <span>👁️ Ver Demo en Vivo</span>
         </a>
 
+        <!-- BOTÓN 3: INICIAR SESIÓN -->
         <a routerLink="/login" 
-           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-xl transition-colors">
-          <span>Iniciar Sesión →</span>
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 text-sm font-semibold text-slate-300 hover:text-white bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-slate-700 rounded-xl transition-colors">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/></svg>
+          <span>Iniciar Sesión</span>
         </a>
+
       </div>
 
       <!-- MICRO-PRUEBA SOCIAL / CONFIANZA -->
-      <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400 mb-14 font-medium">
+      <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400 mb-12 font-medium">
         <span class="flex items-center gap-1.5"><span class="text-amber-400">★ ★ ★ ★ ★</span> 4.9/5 satisfacción pyme</span>
         <span class="hidden sm:inline text-slate-600">•</span>
-        <span class="flex items-center gap-1.5"><span class="text-emerald-400 font-bold">✓</span> Sin tarjeta de crédito para explorar</span>
+        <span class="flex items-center gap-1.5"><span class="text-emerald-400 font-bold">✓</span> Registro sin tarjeta de crédito</span>
         <span class="hidden sm:inline text-slate-600">•</span>
         <span class="flex items-center gap-1.5"><span class="text-blue-400 font-bold">✓</span> Aislamiento RLS en PostgreSQL</span>
+        <span class="hidden sm:inline text-slate-600">•</span>
+        <span class="flex items-center gap-1.5"><span class="text-cyan-400 font-bold">✓</span> Activación instantánea en 30 segundos</span>
       </div>
 
       <!-- SELECTOR INTERACTIVO DE CAPACIDADES DENTRO DEL HERO -->
@@ -185,7 +208,7 @@
       </div>
 
       <!-- MOCKUP VISUAL DEL SISTEMA (DASHBOARD REAL HIGH-RES) -->
-      <div class="relative max-w-5xl mx-auto">
+      <div class="relative max-w-5xl mx-auto mb-16">
         <!-- MARCO DE VENTANA TIPO SISTEMA OPERATIVO PREMIUM -->
         <div class="rounded-2xl p-2 sm:p-3 bg-gradient-to-b from-slate-700/60 via-slate-800/40 to-slate-900/80 border border-slate-700/80 shadow-2xl shadow-blue-500/25 hero-glow-pulse">
           
@@ -197,59 +220,226 @@
               <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block shadow-xs shadow-emerald-500/50"></span>
               <div class="ml-3 px-3 py-1 rounded-md bg-slate-900/90 border border-slate-800 flex items-center gap-2">
                 <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                <span class="text-[11px] font-mono text-slate-300">https://facturapro360.cloud/dashboard</span>
+                <span class="text-[11px] font-mono text-slate-300">
+                  {{ tabHeroActivo() === 'escritorio' ? 'FacturaPro360.Desktop.exe (Local SQLite Mode)' : 'https://facturapro360.cloud/' + tabHeroActivo() }}
+                </span>
               </div>
             </div>
             
             <div class="hidden sm:flex items-center gap-3 text-[11px] font-semibold">
               <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center gap-1.5">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>Conexión Segura Supabase</span>
+                <span>{{ tabHeroActivo() === 'escritorio' ? 'Motor Offline Listo' : 'Conexión Segura Supabase' }}</span>
               </span>
               <span class="text-slate-400">Empresa Demo S.A.</span>
             </div>
           </div>
 
-          <!-- IMAGEN REAL DEL DASHBOARD -->
-          <div class="relative overflow-hidden rounded-b-xl bg-slate-950">
-            <img src="/assets/images/hero_dashboard_preview.jpg" 
-                 alt="FacturaPro 360 Dashboard Preview" 
-                 class="w-full h-auto object-cover transform hover:scale-[1.01] transition-transform duration-500" />
+          <!-- CONTENIDO DEL PREVIEW SEGÚN PESTAÑA SELECCIONADA -->
+          <div class="relative overflow-hidden rounded-b-xl bg-slate-950 min-h-[380px] sm:min-h-[460px]">
             
-            <!-- OVERLAY GRADIENTES DE PROFUNDIDAD -->
-            <div class="absolute inset-0 bg-gradient-to-t from-[#060E1A]/40 via-transparent to-transparent pointer-events-none"></div>
+            <!-- VISTA 1: DASHBOARD EJECUTIVO -->
+            <div *ngIf="tabHeroActivo() === 'dashboard'" class="relative">
+              <img src="/assets/images/hero_dashboard_preview.jpg" 
+                   alt="FacturaPro 360 Dashboard Preview" 
+                   class="w-full h-auto object-cover transform hover:scale-[1.01] transition-transform duration-500" />
+              
+              <div class="absolute inset-0 bg-gradient-to-t from-[#060E1A]/40 via-transparent to-transparent pointer-events-none"></div>
 
-            <!-- TARJETA FLOTANTE 1 (SUPERIOR DERECHA): EVENTO DE FACTURACIÓN EN VIVO -->
-            <div class="hidden lg:flex absolute top-6 right-6 items-center gap-3.5 px-4 py-3 rounded-xl glass-card-dark float-element-1 shadow-2xl">
-              <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              </div>
-              <div class="text-left">
-                <div class="flex items-center gap-2">
-                  <span class="text-xs font-bold text-white">Factura #FAC-00124</span>
-                  <span class="px-1.5 py-0.2 rounded-sm text-[9px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">PAGADA</span>
+              <!-- TARJETA FLOTANTE 1: FACTURA PAGADA EN VIVO -->
+              <div class="hidden lg:flex absolute top-6 right-6 items-center gap-3.5 px-4 py-3 rounded-xl glass-card-dark float-element-1 shadow-2xl">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                 </div>
-                <div class="text-[11px] text-slate-300">$1,450.00 • PDF generado • Kardex actualizado</div>
+                <div class="text-left">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-bold text-white">Factura #FAC-00124</span>
+                    <span class="px-1.5 py-0.2 rounded-sm text-[9px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">PAGADA</span>
+                  </div>
+                  <div class="text-[11px] text-slate-300">$1,450.00 • PDF generado • Kardex actualizado</div>
+                </div>
+              </div>
+
+              <!-- TARJETA FLOTANTE 2: RLS EN POSTGRES -->
+              <div class="hidden lg:flex absolute bottom-6 left-6 items-center gap-3.5 px-4 py-3 rounded-xl glass-card-dark float-element-2 shadow-2xl">
+                <div class="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-blue-400 shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                </div>
+                <div class="text-left">
+                  <div class="text-xs font-bold text-white">Seguridad Row Level Security (RLS)</div>
+                  <div class="text-[11px] text-emerald-400 font-medium">PostgreSQL 15 • Aislamiento total por empresa</div>
+                </div>
+              </div>
+
+              <!-- TARJETA FLOTANTE 3: TERMINAL OFFLINE -->
+              <div class="hidden lg:flex absolute bottom-6 right-6 items-center gap-3 px-3.5 py-2.5 rounded-xl glass-card-dark shadow-xl">
+                <div class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></div>
+                <div class="text-left">
+                  <div class="text-[11px] font-bold text-white">Terminal Offline .NET 8</div>
+                  <div class="text-[10px] text-slate-400">Cobra en tienda aunque no haya internet</div>
+                </div>
               </div>
             </div>
 
-            <!-- TARJETA FLOTANTE 2 (INFERIOR IZQUIERDA): AISLAMIENTO RLS MULTI-TENANT -->
-            <div class="hidden lg:flex absolute bottom-6 left-6 items-center gap-3.5 px-4 py-3 rounded-xl glass-card-dark float-element-2 shadow-2xl">
-              <div class="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-blue-400 shrink-0">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            <!-- VISTA 2: FACTURACIÓN & EMISIÓN RÁPIDA -->
+            <div *ngIf="tabHeroActivo() === 'facturacion'" class="p-6 sm:p-10 text-left bg-gradient-to-br from-[#0B192C] via-[#081220] to-[#040810] min-h-[460px] flex flex-col justify-between">
+              <div>
+                <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-800">
+                  <div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded-md border border-blue-500/20">Módulo de Emisión</span>
+                    <h3 class="text-2xl font-black text-white mt-2">Nueva Factura Electrónica</h3>
+                    <p class="text-xs text-slate-400 mt-0.5">Correlativo automático: <span class="font-mono text-cyan-300 font-bold">FAC-000289</span> • Motor anti-duplicados</p>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center gap-2">
+                      <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                      <span>Listo para Timbrar (&lt; 1.8s)</span>
+                    </span>
+                  </div>
+                </div>
+
+                <!-- TABLA ILUSTRATIVA DE ITEMS -->
+                <div class="mt-6 overflow-x-auto">
+                  <table class="w-full text-xs text-slate-300">
+                    <thead class="bg-slate-900/80 text-slate-400 uppercase text-[10px] tracking-wider border-b border-slate-800">
+                      <tr>
+                        <th class="py-2.5 px-3 text-left">Producto / SKU</th>
+                        <th class="py-2.5 px-3 text-center">Cant.</th>
+                        <th class="py-2.5 px-3 text-right">Precio Unit.</th>
+                        <th class="py-2.5 px-3 text-right">Impuesto</th>
+                        <th class="py-2.5 px-3 text-right">Total</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800/60 font-mono">
+                      <tr class="hover:bg-slate-900/40 transition">
+                        <td class="py-3 px-3 font-sans font-medium text-white flex items-center gap-2">
+                          <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                          <span>Laptop Corporativa Core i7 16GB</span>
+                        </td>
+                        <td class="py-3 px-3 text-center">2</td>
+                        <td class="py-3 px-3 text-right">$850.00</td>
+                        <td class="py-3 px-3 text-right text-slate-400">18% ($306.00)</td>
+                        <td class="py-3 px-3 text-right font-bold text-white">$2,006.00</td>
+                      </tr>
+                      <tr class="hover:bg-slate-900/40 transition">
+                        <td class="py-3 px-3 font-sans font-medium text-white flex items-center gap-2">
+                          <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                          <span>Servicio de Soporte y Puesta en Marcha</span>
+                        </td>
+                        <td class="py-3 px-3 text-center">1</td>
+                        <td class="py-3 px-3 text-right">$250.00</td>
+                        <td class="py-3 px-3 text-right text-slate-400">18% ($45.00)</td>
+                        <td class="py-3 px-3 text-right font-bold text-white">$295.00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-              <div class="text-left">
-                <div class="text-xs font-bold text-white">Seguridad Row Level Security (RLS)</div>
-                <div class="text-[11px] text-emerald-400 font-medium">PostgreSQL 15 • Aislamiento total por empresa</div>
+
+              <!-- TOTALES Y ACCIONES -->
+              <div class="pt-6 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4 mt-6">
+                <div class="flex items-center gap-3">
+                  <span class="px-3 py-1.5 rounded-lg text-xs bg-slate-900 border border-slate-800 text-slate-300">Formatos: <strong>58mm / 80mm / A4 PDF</strong></span>
+                  <span class="px-3 py-1.5 rounded-lg text-xs bg-slate-900 border border-slate-800 text-emerald-400">Kardex: <strong>Salida automática</strong></span>
+                </div>
+                <div class="text-right">
+                  <div class="text-xs text-slate-400">Total a Pagar (Impuestos incl.):</div>
+                  <div class="text-2xl font-black text-white">$2,301.00 USD</div>
+                </div>
               </div>
             </div>
 
-            <!-- TARJETA FLOTANTE 3 (INFERIOR DERECHA): MODO OFFLINE DESKTOP -->
-            <div class="hidden lg:flex absolute bottom-6 right-6 items-center gap-3 px-3.5 py-2.5 rounded-xl glass-card-dark shadow-xl">
-              <div class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></div>
-              <div class="text-left">
-                <div class="text-[11px] font-bold text-white">Terminal Offline .NET 8</div>
-                <div class="text-[10px] text-slate-400">Cobra en tienda aunque no haya internet</div>
+            <!-- VISTA 3: INVENTARIO KARDEX -->
+            <div *ngIf="tabHeroActivo() === 'kardex'" class="p-6 sm:p-10 text-left bg-gradient-to-br from-[#0B192C] via-[#091526] to-[#040810] min-h-[460px] flex flex-col justify-between">
+              <div>
+                <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-800">
+                  <div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded-md border border-cyan-500/20">Control de Existencias</span>
+                    <h3 class="text-2xl font-black text-white mt-2">Kardex Valorizado & Multibodega</h3>
+                    <p class="text-xs text-slate-400 mt-0.5">Método de valorización: <span class="text-white font-semibold">Costo Promedio Ponderado (CPP) & FIFO</span></p>
+                  </div>
+                  <div class="px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-500/15 text-blue-400 border border-blue-500/30">
+                    Sede Principal + 2 Sucursales
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+                  <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+                    <div class="text-xs text-slate-400">Valor Total en Stock</div>
+                    <div class="text-2xl font-extrabold text-white mt-1">$48,920.00</div>
+                    <div class="text-[11px] text-emerald-400 mt-1">↑ 12% vs mes anterior</div>
+                  </div>
+                  <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+                    <div class="text-xs text-slate-400">Productos Registrados</div>
+                    <div class="text-2xl font-extrabold text-cyan-400 mt-1">1,248 SKUs</div>
+                    <div class="text-[11px] text-slate-400 mt-1">100% trazabilidad por código</div>
+                  </div>
+                  <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+                    <div class="text-xs text-slate-400">Alertas de Stock Mínimo</div>
+                    <div class="text-2xl font-extrabold text-amber-400 mt-1">3 Alertas</div>
+                    <div class="text-[11px] text-amber-300 mt-1">Reposición sugerida lista</div>
+                  </div>
+                </div>
+
+                <div class="mt-6 p-4 rounded-xl bg-slate-900/50 border border-slate-800/80 text-xs text-slate-300 space-y-2">
+                  <div class="flex items-center justify-between">
+                    <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-400"></span> Entrada por Compra #OC-0092 (Proveedor TechCorp)</span>
+                    <span class="font-mono text-emerald-400">+50 unid. ($1,250)</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-400"></span> Salida por Factura #FAC-00124 (Cliente Andes SAC)</span>
+                    <span class="font-mono text-blue-400">-2 unid. ($85.00)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+                <span>Algoritmo de bloqueo transaccional <strong class="text-white">SELECT FOR UPDATE</strong></span>
+                <span class="text-emerald-400 font-semibold">Cero descuadres de inventario</span>
+              </div>
+            </div>
+
+            <!-- VISTA 4: ESCRITORIO OFFLINE (.NET 8) -->
+            <div *ngIf="tabHeroActivo() === 'escritorio'" class="p-6 sm:p-10 text-left bg-gradient-to-br from-[#06181B] via-[#0B1E29] to-[#040810] min-h-[460px] flex flex-col justify-between">
+              <div>
+                <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-800">
+                  <div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/20">Arquitectura Dual Exclusiva</span>
+                    <h3 class="text-2xl font-black text-white mt-2">App Nativa de Escritorio (.NET 8)</h3>
+                    <p class="text-xs text-slate-400 mt-0.5">Diseñada para cajas rápidas y puntos de venta sin depender de conexión a internet.</p>
+                  </div>
+                  <div class="px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+                    <span>Modo Offline 100% Operativo</span>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+                  <div class="p-5 rounded-xl bg-slate-900/80 border border-slate-800">
+                    <div class="flex items-center gap-3 text-white font-bold text-sm mb-2">
+                      <span class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono">1</span>
+                      <span>Venta Local en Cajas (0 ms de latencia)</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                      El cajero escanea productos e imprime tickets térmicos directamente en SQLite local. Si se corta la fibra o el Wi-Fi, tu negocio sigue cobrando sin parar.
+                    </p>
+                  </div>
+
+                  <div class="p-5 rounded-xl bg-slate-900/80 border border-slate-800">
+                    <div class="flex items-center gap-3 text-white font-bold text-sm mb-2">
+                      <span class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-mono">2</span>
+                      <span>Sincronización Automática a la Nube</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                      En el momento en que regresa la conexión, la aplicación sincroniza en segundo plano todas las facturas y saldos a Supabase / PostgreSQL con conciliación idempotente.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-400">
+                <span class="text-slate-300">Incluido en tu suscripción sin cargos extras de licencia por terminal.</span>
+                <span class="text-emerald-400 font-bold">WPF + .NET 8 Nativo para Windows 10/11</span>
               </div>
             </div>
 
@@ -257,8 +447,107 @@
         </div>
       </div>
 
+      <!-- ==================== LA CUOTA MENSUAL EN LA PARTE INFERIOR DEL HERO ==================== -->
+      <div class="max-w-4xl mx-auto hero-pricing-box rounded-3xl p-6 sm:p-10 text-left relative overflow-hidden mb-16">
+        
+        <!-- GLOW DECORATIVO INTERNO -->
+        <div class="absolute -top-24 -right-24 w-72 h-72 bg-blue-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10">
+          
+          <!-- FILA SUPERIOR: BADGE DE PRUEBA Y TEMPORIZADOR -->
+          <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-700/60">
+            <div class="flex items-center gap-3">
+              <span class="trial-badge px-3.5 py-1.5 rounded-full text-xs font-bold text-emerald-400 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>14 DÍAS DE PRUEBA GRATUITA</span>
+              </span>
+              <span class="text-xs font-semibold text-slate-300">Regístrate hoy sin costo</span>
+            </div>
+            
+            <div class="flex items-center gap-2 text-xs text-slate-400 font-mono bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-800">
+              <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Temporizador: <strong class="text-cyan-300">14 días de acceso total</strong></span>
+            </div>
+          </div>
+
+          <!-- CUERPO PRINCIPAL DEL PRECIO MENSUAL -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center py-6">
+            
+            <!-- EXPLICACIÓN Y VALOR COMERCIAL -->
+            <div class="lg:col-span-7">
+              <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight leading-tight">
+                Pruébalo libremente hoy. Continúa por una cuota mensual transparente.
+              </h3>
+              <p class="text-sm text-slate-300 mt-3 leading-relaxed">
+                Puedes registrarte y comenzar a operar de inmediato sin ingresar tarjeta de crédito. Dispones de un temporizador de 14 días para evaluar todas las herramientas. Luego, conserva tu sistema activo con una cuota mensual plana y accesible para tu empresa.
+              </p>
+              
+              <!-- BENEFICIOS INCLUIDOS EN LA CUOTA -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-5 text-xs text-slate-200">
+                <div class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span>Facturación y boletas ilimitadas</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span>Inventario Kardex multisede</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span>App Escritorio Offline (.NET 8)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span>Multi-usuario y soporte incluido</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- BLOQUE DE PRECIO MENSUAL DESTACADO -->
+            <div class="lg:col-span-5 flex flex-col items-center lg:items-end justify-center p-6 rounded-2xl bg-[#0B192C]/90 border border-blue-500/30 text-center lg:text-right shadow-xl">
+              <span class="text-[11px] uppercase tracking-wider font-bold text-blue-400">Cuota Mensual del Plan</span>
+              
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-4xl sm:text-5xl font-black text-white tracking-tight">$19.90</span>
+                <span class="text-sm font-semibold text-slate-300">USD / mes</span>
+              </div>
+              
+              <div class="text-[11px] text-emerald-400 font-medium mt-1">
+                ✨ Primeros 14 días gratis al registrarte
+              </div>
+
+              <div class="w-full flex flex-col gap-2 mt-5">
+                <a routerLink="/register" 
+                   class="w-full py-3 px-5 text-center text-xs font-extrabold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 rounded-xl shadow-lg shadow-blue-500/30 hover:scale-[1.02] active:scale-95 transition-all">
+                  Registrarse Gratis (14 Días)
+                </a>
+                
+                <div class="flex items-center justify-between gap-2 text-[11px] text-slate-400 pt-1">
+                  <a routerLink="/dashboard" class="text-cyan-400 hover:underline">Ver demo en vivo</a>
+                  <span>•</span>
+                  <a routerLink="/login" class="text-slate-300 hover:underline">Iniciar sesión</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- NOTA INFERIOR DE TRANSPARENCIA -->
+          <div class="pt-4 border-t border-slate-700/60 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-400">
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Sin contratos forzosos. Cancela o cambia de plan en cualquier momento.</span>
+            </span>
+            <span class="text-slate-400">Soporte técnico continuo y actualizaciones en la nube incluidas.</span>
+          </div>
+
+        </div>
+      </div>
+
       <!-- BANDA DE MÉTRICAS CLAVE INFERIORES -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto mt-12 pt-8 border-t border-slate-800/80 text-left">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-800/80 text-left">
         <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/70 hover:border-blue-500/40 transition-colors">
           <div class="text-2xl sm:text-3xl font-black text-blue-400">&lt; 1.8s</div>
           <div class="text-xs text-slate-400 mt-1 font-medium">Emisión y timbrado de comprobantes</div>
