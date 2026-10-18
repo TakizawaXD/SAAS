@@ -1,0 +1,8 @@
+{
+  "name": "saas",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd FacturaPro360-Web && npm install && npm run build"
+  }
+}

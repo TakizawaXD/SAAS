@@ -1,0 +1,9 @@
+{
+  "outputDirectory": "dist/facturapro-web/browser",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
