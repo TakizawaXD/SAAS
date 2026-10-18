@@ -19,44 +19,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-      // Silenciar advertencia de Tailwind CDN en consola de producción
-      (function() {
-        const _warn = console.warn;
-        console.warn = function(...args) {
-          if (args[0] && typeof args[0] === 'string' && args[0].includes('cdn.tailwindcss.com')) return;
-          _warn.apply(console, args);
-        };
-      })();
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'system-ui', 'sans-serif'],
-            },
-            colors: {
-              navy: {
-                950: '#060E1A',
-                900: '#0B192C',
-                850: '#10223B',
-                800: '#152C4C',
-                700: '#1E3E66'
-              },
-              brand: {
-                50: '#EFF6FF',
-                100: '#DBEAFE',
-                500: '#3B82F6',
-                600: '#2563EB',
-                700: '#1D4ED8'
-              }
-            }
-          }
-        }
-      }
-    </script>
+
   </head>
   <body class="bg-[#060E1A] text-slate-100 font-sans antialiased selection:bg-brand-600 selection:text-white">
     <app-root></app-root>
@@ -68,14 +31,28 @@
             r.unregister();
           }
         });
-        if ('caches' in window) {
-          caches.keys().then(function(names) {
-            for (var name of names) {
-              caches.delete(name);
-            }
-          });
-        }
       }
+      if ('caches' in window) {
+        caches.keys().then(function(names) {
+          for (var name of names) {
+            caches.delete(name);
+          }
+        });
+      }
+      // Detección y auto-recuperación si el navegador intenta cargar chunks JS antiguos
+      window.addEventListener('error', function(e) {
+        var msg = (e.message || '').toLowerCase();
+        var target = e.target;
+        var isScriptTag = target && target.tagName === 'SCRIPT';
+        if (msg.includes('mime type') || msg.includes('failed to load module') || isScriptTag) {
+          var key = 'facturapro_reload_retry';
+          var last = sessionStorage.getItem(key);
+          if (!last || (Date.now() - parseInt(last, 10)) > 8000) {
+            sessionStorage.setItem(key, Date.now().toString());
+            window.location.reload();
+          }
+        }
+      }, true);
     </script>
   </body>
 </html>

@@ -4,8 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng.js build",
-    "build:dev": "node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng.js build --configuration development",
+    "build:css": "tailwindcss -i ./src/tailwind-input.css -o ./src/tailwind-built.css --minify",
+    "build": "npm run build:css && ng build",
+    "build:dev": "npm run build:css && ng build --configuration development",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -28,8 +29,11 @@
     "@angular/build": "^22.2.3",
     "@angular/cli": "^22.2.3",
     "@angular/compiler-cli": "^22.2.0",
+    "autoprefixer": "^10.6.1",
     "jsdom": "^30.0.0",
+    "postcss": "^8.5.30",
     "prettier": "^3.8.1",
+    "tailwindcss": "^3.4.19",
     "typescript": "~6.0.2",
     "vitest": "^5.0.0"
   }
