@@ -1,9 +1,10 @@
 {
   "buildCommand": "cd FacturaPro360-Web && npm install && npm run build",
   "outputDirectory": "FacturaPro360-Web/dist/facturapro-web/browser",
+  "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/((?!.*\\.[\\w]+$).*)",
       "destination": "/index.html"
     }
   ]

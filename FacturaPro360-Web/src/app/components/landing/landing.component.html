@@ -88,88 +88,125 @@
     </div>
   </header>
 
-  <!-- ==================== 2. SECCIÓN HERO (PORTADA PRINCIPAL) ==================== -->
+  <!-- ==================== 2. SECCIÓN HERO (PORTADA PRINCIPAL HIGH-IMPACT) ==================== -->
   <section class="relative pt-12 pb-20 sm:pt-20 sm:pb-32 overflow-hidden">
     
-    <!-- EFECTOS DE FONDO LUMINISCENTES -->
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[450px] bg-blue-500/15 rounded-full blur-[130px] pointer-events-none -z-10"></div>
-    <div class="absolute top-1/3 left-1/4 w-[350px] h-[350px] bg-cyan-500/10 rounded-full blur-[110px] pointer-events-none -z-10"></div>
+    <!-- PATRÓN GEOMÉTRICO Y EFECTOS LUMINISCENTES DE FONDO -->
+    <div class="absolute inset-0 hero-grid-pattern pointer-events-none opacity-40"></div>
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[500px] bg-blue-600/20 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+    <div class="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-cyan-500/15 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+    <div class="absolute top-1/2 right-1/4 w-[450px] h-[450px] bg-indigo-600/15 rounded-full blur-[130px] pointer-events-none -z-10"></div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
 
-      <!-- BADGE DE NOVEDAD -->
-      <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold mb-8 animate-fade-in">
-        <span class="flex h-2 w-2 relative">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+      <!-- BADGE DE NOVEDAD INTERACTIVO -->
+      <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold mb-8 backdrop-blur-md hover:bg-blue-500/15 transition-all">
+        <span class="flex h-2.5 w-2.5 relative">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
         </span>
-        <span>FacturaPro 360 v2.5 • Suite Transaccional de Facturación & ERP</span>
+        <span class="tracking-wide">FacturaPro 360 v2.5 — Suite de Facturación Electrónica & ERP Transaccional</span>
+        <span class="text-slate-500 font-normal">|</span>
+        <span class="text-cyan-300 font-bold hidden sm:inline">Web SaaS + Desktop Offline (.NET 8)</span>
       </div>
 
-      <!-- TITULAR PRINCIPAL DE IMPACTO -->
-      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.1] max-w-5xl mx-auto mb-6">
+      <!-- TITULAR PRINCIPAL DE IMPACTO VISUAL -->
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.08] max-w-5xl mx-auto mb-6">
         El Sistema de Facturación e Inventario que 
-        <span class="bg-clip-text text-transparent bg-linear-to-r from-blue-400 via-cyan-400 to-indigo-400">
+        <span class="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-400 shimmer-text">
           Nunca se Detiene
         </span>
       </h1>
 
       <!-- SUBTÍTULO DESCRIPTIVO -->
       <p class="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed mb-10">
-        Gestiona ventas, clientes, inventario kardex valorizado, tesorería y múltiples sucursales con total tranquilidad. 
-        Opera en la nube con <strong class="text-white font-medium">SaaS multi-tenant</strong> y garantiza tu servicio en tienda con nuestra <strong class="text-white font-medium">app nativa de escritorio offline</strong> (.NET 8).
+        Emite comprobantes en menos de 2 segundos, domina tu kardex valorizado en tiempo real y gestiona múltiples sucursales con total tranquilidad. 
+        Opera en la nube con <strong class="text-white font-semibold">SaaS multi-tenant</strong> y garantiza tu cobro en tienda física sin depender de internet con nuestra <strong class="text-white font-semibold">app nativa de escritorio offline</strong> (.NET 8).
       </p>
 
-      <!-- BOTONES DE LLAMADA A LA ACCIÓN (CTAs) -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-16">
+      <!-- CLÚSTER DE BOTONES DE ACCIÓN (CTAs) -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto mb-8">
         <a routerLink="/dashboard" 
-           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-sm font-bold text-white bg-linear-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 rounded-xl shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-95 transition-all">
-          <span>Entrar al Panel / Probar Demo</span>
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-sm font-extrabold text-white bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 rounded-xl shadow-2xl shadow-blue-500/40 hover:shadow-blue-500/60 hover:scale-[1.02] active:scale-95 transition-all">
+          <span>🚀 Entrar al Panel / Probar Demo</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
 
-        <a routerLink="/register" 
-           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-semibold text-slate-200 hover:text-white bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700 hover:border-slate-600 rounded-xl transition-all">
-          <span>Crear Cuenta Gratis</span>
+        <a href="/MANUAL_USUARIO_FACTURAPRO360.pdf" target="_blank"
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 text-sm font-semibold text-slate-200 hover:text-white bg-slate-900/90 hover:bg-slate-800/90 border border-slate-700/80 hover:border-slate-600 rounded-xl transition-all shadow-md">
+          <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <span>Descargar Manual PDF</span>
+        </a>
+
+        <a routerLink="/login" 
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-xl transition-colors">
+          <span>Iniciar Sesión →</span>
         </a>
       </div>
 
-      <!-- BANDA DE MÉTRICAS / CONFIANZA -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto pt-6 pb-12 border-y border-slate-800/80 text-left">
-        <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
-          <div class="text-2xl sm:text-3xl font-extrabold text-blue-400">99.98%</div>
-          <div class="text-xs text-slate-400 mt-1 font-medium">Disponibilidad en la Nube</div>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
-          <div class="text-2xl sm:text-3xl font-extrabold text-cyan-400">100% ACID</div>
-          <div class="text-xs text-slate-400 mt-1 font-medium">Garantía Transaccional</div>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
-          <div class="text-2xl sm:text-3xl font-extrabold text-indigo-400">RLS Activo</div>
-          <div class="text-xs text-slate-400 mt-1 font-medium">Aislamiento por Empresa</div>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
-          <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400">Offline Ready</div>
-          <div class="text-xs text-slate-400 mt-1 font-medium">Escritorio .NET sin Internet</div>
-        </div>
+      <!-- MICRO-PRUEBA SOCIAL / CONFIANZA -->
+      <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400 mb-14 font-medium">
+        <span class="flex items-center gap-1.5"><span class="text-amber-400">★ ★ ★ ★ ★</span> 4.9/5 satisfacción pyme</span>
+        <span class="hidden sm:inline text-slate-600">•</span>
+        <span class="flex items-center gap-1.5"><span class="text-emerald-400 font-bold">✓</span> Sin tarjeta de crédito para explorar</span>
+        <span class="hidden sm:inline text-slate-600">•</span>
+        <span class="flex items-center gap-1.5"><span class="text-blue-400 font-bold">✓</span> Aislamiento RLS en PostgreSQL</span>
       </div>
 
-      <!-- MOCKUP VISUAL DEL SISTEMA (DASHBOARD REAL) -->
-      <div class="relative mt-12 max-w-5xl mx-auto">
+      <!-- SELECTOR INTERACTIVO DE CAPACIDADES DENTRO DEL HERO -->
+      <div class="inline-flex p-1.5 rounded-2xl bg-slate-900/90 border border-slate-800 mb-8 max-w-3xl flex-wrap justify-center gap-1.5 shadow-xl">
+        <button (click)="setTabHero('dashboard')"
+                class="px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-2"
+                [ngClass]="tabHeroActivo() === 'dashboard' ? 'bg-blue-600 text-white shadow-md shadow-blue-500/25' : 'text-slate-400 hover:text-white'">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+          <span>Panel Ejecutivo</span>
+        </button>
+
+        <button (click)="setTabHero('facturacion')"
+                class="px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-2"
+                [ngClass]="tabHeroActivo() === 'facturacion' ? 'bg-blue-600 text-white shadow-md shadow-blue-500/25' : 'text-slate-400 hover:text-white'">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <span>Facturas & PDF</span>
+        </button>
+
+        <button (click)="setTabHero('kardex')"
+                class="px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-2"
+                [ngClass]="tabHeroActivo() === 'kardex' ? 'bg-blue-600 text-white shadow-md shadow-blue-500/25' : 'text-slate-400 hover:text-white'">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+          <span>Inventario Kardex</span>
+        </button>
+
+        <button (click)="setTabHero('escritorio')"
+                class="px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-2"
+                [ngClass]="tabHeroActivo() === 'escritorio' ? 'bg-emerald-600 text-white shadow-md shadow-emerald-500/25' : 'text-slate-400 hover:text-white'">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>Escritorio Offline (.NET 8)</span>
+        </button>
+      </div>
+
+      <!-- MOCKUP VISUAL DEL SISTEMA (DASHBOARD REAL HIGH-RES) -->
+      <div class="relative max-w-5xl mx-auto">
         <!-- MARCO DE VENTANA TIPO SISTEMA OPERATIVO PREMIUM -->
-        <div class="rounded-2xl p-2 sm:p-3 bg-linear-to-b from-slate-700/60 via-slate-800/40 to-slate-900/80 border border-slate-700/80 shadow-2xl shadow-blue-500/20 hero-glow-pulse">
+        <div class="rounded-2xl p-2 sm:p-3 bg-gradient-to-b from-slate-700/60 via-slate-800/40 to-slate-900/80 border border-slate-700/80 shadow-2xl shadow-blue-500/25 hero-glow-pulse">
           
           <!-- BARRA DE TÍTULO DE LA APLICACIÓN -->
-          <div class="flex items-center justify-between px-4 py-2.5 bg-[#0B192C] rounded-t-xl border-b border-slate-800">
-            <div class="flex items-center gap-2">
-              <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
-              <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
-              <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-              <span class="ml-2 text-[11px] font-mono text-slate-400">facturapro360.cloud/dashboard</span>
+          <div class="flex items-center justify-between px-4 py-3 bg-[#0B192C] rounded-t-xl border-b border-slate-800">
+            <div class="flex items-center gap-2.5">
+              <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block shadow-xs shadow-red-500/50"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block shadow-xs shadow-yellow-500/50"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block shadow-xs shadow-emerald-500/50"></span>
+              <div class="ml-3 px-3 py-1 rounded-md bg-slate-900/90 border border-slate-800 flex items-center gap-2">
+                <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                <span class="text-[11px] font-mono text-slate-300">https://facturapro360.cloud/dashboard</span>
+              </div>
             </div>
-            <div class="text-[11px] text-slate-400 font-semibold flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span>Empresa Demo S.A. • Multi-tenant Aislado</span>
+            
+            <div class="hidden sm:flex items-center gap-3 text-[11px] font-semibold">
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Conexión Segura Supabase</span>
+              </span>
+              <span class="text-slate-400">Empresa Demo S.A.</span>
             </div>
           </div>
 
@@ -180,30 +217,63 @@
                  class="w-full h-auto object-cover transform hover:scale-[1.01] transition-transform duration-500" />
             
             <!-- OVERLAY GRADIENTES DE PROFUNDIDAD -->
-            <div class="absolute inset-0 bg-linear-to-t from-[#060E1A]/40 via-transparent to-transparent pointer-events-none"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#060E1A]/40 via-transparent to-transparent pointer-events-none"></div>
 
-            <!-- TARJETAS FLOTANTES DE DATOS EN VIVO -->
-            <div class="hidden lg:flex absolute top-6 right-6 items-center gap-3 px-4 py-3 rounded-xl glass-card-dark float-element-1 shadow-xl">
-              <div class="w-9 h-9 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
+            <!-- TARJETA FLOTANTE 1 (SUPERIOR DERECHA): EVENTO DE FACTURACIÓN EN VIVO -->
+            <div class="hidden lg:flex absolute top-6 right-6 items-center gap-3.5 px-4 py-3 rounded-xl glass-card-dark float-element-1 shadow-2xl">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
               </div>
               <div class="text-left">
-                <div class="text-xs font-bold text-white">Factura #FAC-00124 Emitida</div>
-                <div class="text-[11px] text-slate-400">PDF generado • Stock descontado en Kardex</div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold text-white">Factura #FAC-00124</span>
+                  <span class="px-1.5 py-0.2 rounded-sm text-[9px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">PAGADA</span>
+                </div>
+                <div class="text-[11px] text-slate-300">$1,450.00 • PDF generado • Kardex actualizado</div>
               </div>
             </div>
 
-            <div class="hidden lg:flex absolute bottom-6 left-6 items-center gap-3 px-4 py-3 rounded-xl glass-card-dark float-element-2 shadow-xl">
-              <div class="w-9 h-9 rounded-lg bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-blue-400">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            <!-- TARJETA FLOTANTE 2 (INFERIOR IZQUIERDA): AISLAMIENTO RLS MULTI-TENANT -->
+            <div class="hidden lg:flex absolute bottom-6 left-6 items-center gap-3.5 px-4 py-3 rounded-xl glass-card-dark float-element-2 shadow-2xl">
+              <div class="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-blue-400 shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
               </div>
               <div class="text-left">
-                <div class="text-xs font-bold text-white">Aislamiento RLS en Base de Datos</div>
-                <div class="text-[11px] text-emerald-400 font-semibold">Tus datos nunca se mezclan con otros tenants</div>
+                <div class="text-xs font-bold text-white">Seguridad Row Level Security (RLS)</div>
+                <div class="text-[11px] text-emerald-400 font-medium">PostgreSQL 15 • Aislamiento total por empresa</div>
+              </div>
+            </div>
+
+            <!-- TARJETA FLOTANTE 3 (INFERIOR DERECHA): MODO OFFLINE DESKTOP -->
+            <div class="hidden lg:flex absolute bottom-6 right-6 items-center gap-3 px-3.5 py-2.5 rounded-xl glass-card-dark shadow-xl">
+              <div class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></div>
+              <div class="text-left">
+                <div class="text-[11px] font-bold text-white">Terminal Offline .NET 8</div>
+                <div class="text-[10px] text-slate-400">Cobra en tienda aunque no haya internet</div>
               </div>
             </div>
 
           </div>
+        </div>
+      </div>
+
+      <!-- BANDA DE MÉTRICAS CLAVE INFERIORES -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto mt-12 pt-8 border-t border-slate-800/80 text-left">
+        <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/70 hover:border-blue-500/40 transition-colors">
+          <div class="text-2xl sm:text-3xl font-black text-blue-400">&lt; 1.8s</div>
+          <div class="text-xs text-slate-400 mt-1 font-medium">Emisión y timbrado de comprobantes</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/70 hover:border-cyan-500/40 transition-colors">
+          <div class="text-2xl sm:text-3xl font-black text-cyan-400">100% ACID</div>
+          <div class="text-xs text-slate-400 mt-1 font-medium">Correlatividad y stock sin duplicados</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/70 hover:border-indigo-500/40 transition-colors">
+          <div class="text-2xl sm:text-3xl font-black text-indigo-400">99.98%</div>
+          <div class="text-xs text-slate-400 mt-1 font-medium">Disponibilidad del servicio en la nube</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/70 hover:border-emerald-500/40 transition-colors">
+          <div class="text-2xl sm:text-3xl font-black text-emerald-400">Offline POS</div>
+          <div class="text-xs text-slate-400 mt-1 font-medium">Cajas de cobro sin interrupción</div>
         </div>
       </div>
 

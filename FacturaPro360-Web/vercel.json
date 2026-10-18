@@ -1,8 +1,9 @@
 {
   "outputDirectory": "dist/facturapro-web/browser",
+  "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/((?!.*\\.[\\w]+$).*)",
       "destination": "/index.html"
     }
   ]

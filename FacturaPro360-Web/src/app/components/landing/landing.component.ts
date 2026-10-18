@@ -24,7 +24,12 @@ export class LandingComponent {
   menuMovilAbierto = signal<boolean>(false);
   faqAbierto = signal<number | null>(0);
   tabActivo = signal<string>('facturacion');
+  tabHeroActivo = signal<'dashboard' | 'facturacion' | 'kardex' | 'escritorio'>('dashboard');
   frecuenciaPago = signal<'mensual' | 'anual'>('mensual');
+
+  setTabHero(tab: 'dashboard' | 'facturacion' | 'kardex' | 'escritorio'): void {
+    this.tabHeroActivo.set(tab);
+  }
 
   modulos: ModuloInfo[] = [
     {
