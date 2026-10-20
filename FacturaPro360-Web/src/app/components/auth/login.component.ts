@@ -119,9 +119,17 @@ import { AuthService } from '../../services/auth.service';
             </button>
           </form>
 
-          <div class="pt-4 border-t border-slate-100 text-center text-xs text-slate-500">
-            ¿Deseas registrar un nuevo negocio independiente? 
-            <a routerLink="/register" class="font-bold text-blue-600 hover:underline">Registrar Empresa</a>
+          <div class="pt-4 border-t border-slate-100 text-center text-xs text-slate-500 space-y-2.5">
+            <div>
+              ¿Deseas registrar un nuevo negocio independiente? 
+              <a routerLink="/register" class="font-bold text-blue-600 hover:underline">Registrar Empresa</a>
+            </div>
+            <div>
+              <a routerLink="/" class="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-slate-700 font-medium transition">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Volver a la página principal</span>
+              </a>
+            </div>
           </div>
         </div>
 

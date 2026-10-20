@@ -382,15 +382,19 @@ import { RegistroEmpresaWizardData, TipoDocumentoResponsable } from '../../model
           </div>
 
           <!-- BOTONES DE NAVEGACIÓN ENTRE PASOS -->
-          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-3">
-            <div>
+          <div class="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-2">
               <button *ngIf="pasoActual() > 1" (click)="pasoAnterior()" type="button"
                       class="px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700 hover:bg-slate-50 transition cursor-pointer flex items-center gap-1.5">
                 &larr; Paso anterior
               </button>
+              <a *ngIf="pasoActual() === 1" routerLink="/" class="text-xs text-slate-400 hover:text-slate-700 font-medium flex items-center gap-1 transition">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Volver al inicio</span>
+              </a>
             </div>
 
-            <div class="flex items-center gap-3">
+            <div class="flex flex-wrap items-center gap-3">
               <a routerLink="/login" class="text-xs text-slate-500 hover:text-slate-800 font-medium">
                 ¿Ya tienes cuenta? Iniciar sesion
               </a>

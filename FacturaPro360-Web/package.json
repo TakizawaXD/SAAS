@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "dev": "ng serve",
     "build:css": "tailwindcss -i ./src/tailwind-input.css -o ./src/tailwind-built.css --minify",
     "build": "npm run build:css && ng build",
     "build:dev": "npm run build:css && ng build --configuration development",

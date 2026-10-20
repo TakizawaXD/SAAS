@@ -140,3 +140,87 @@
   background: linear-gradient(90deg, rgba(16, 185, 129, 0.15), rgba(6, 182, 212, 0.15));
   border: 1px solid rgba(16, 185, 129, 0.4);
 }
+
+/* Floating Hero Pricing Pill */
+.hero-pricing-pill {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.88) 0%, rgba(30, 41, 59, 0.75) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.6), 0 0 24px rgba(37, 99, 235, 0.2);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: all 0.3s ease;
+}
+
+.hero-pricing-pill:hover {
+  border-color: rgba(96, 165, 250, 0.6);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.7), 0 0 32px rgba(37, 99, 235, 0.3);
+}
+
+/* PayPal Donation Button with Premium Glow */
+.donate-btn {
+  background: linear-gradient(135deg, #0070BA 0%, #00457C 50%, #001C48 100%);
+  border: 1px solid rgba(255, 196, 57, 0.55);
+  box-shadow: 0 10px 28px -6px rgba(0, 112, 186, 0.55), 0 0 20px rgba(255, 196, 57, 0.25);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.donate-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 0.6s ease;
+}
+
+.donate-btn:hover::after {
+  left: 120%;
+}
+
+.donate-btn:hover {
+  background: linear-gradient(135deg, #0079C1 0%, #005399 50%, #002A66 100%);
+  border-color: rgba(255, 196, 57, 0.9);
+  box-shadow: 0 15px 36px -6px rgba(0, 112, 186, 0.75), 0 0 32px rgba(255, 196, 57, 0.45);
+}
+
+/* Ping Slow Animation */
+@keyframes pingSlow {
+  0% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(1.65);
+    opacity: 0;
+  }
+}
+
+.animate-ping-slow {
+  animation: pingSlow 3.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Mobile & Touch Optimizations */
+@media (max-width: 640px) {
+  .hero-pricing-pill {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem 1.25rem;
+    gap: 0.75rem;
+  }
+  
+  .hero-pricing-pill .h-8 {
+    display: none;
+  }
+  
+  .hero-pricing-pill .text-left {
+    text-align: center;
+  }
+}

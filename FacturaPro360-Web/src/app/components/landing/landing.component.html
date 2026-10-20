@@ -26,7 +26,7 @@
       </a>
 
       <!-- ENLACES DE ESCRITORIO -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
         <a href="#caracteristicas" class="hover:text-white transition-colors">Características</a>
         <a href="#modulos" class="hover:text-white transition-colors">Módulos</a>
         <a href="#arquitectura" class="hover:text-white transition-colors flex items-center gap-1.5">
@@ -35,6 +35,10 @@
         </a>
         <a href="#planes" class="hover:text-white transition-colors">Planes</a>
         <a href="#faq" class="hover:text-white transition-colors">Preguntas</a>
+        <a href="#donacion" class="hover:text-rose-300 text-rose-400/90 transition-colors flex items-center gap-1 px-2.5 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 hover:bg-rose-500/20">
+          <svg class="w-3.5 h-3.5 text-rose-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          <span class="text-xs font-semibold">Donar</span>
+        </a>
       </nav>
 
       <!-- BOTONES DE ACCIÓN SUPERIOR -->
@@ -81,6 +85,13 @@
       <a (click)="cerrarMenuMovil()" href="#arquitectura" class="block py-2 text-sm font-medium text-slate-300 hover:text-white">Dualidad Offline (.NET + Web)</a>
       <a (click)="cerrarMenuMovil()" href="#planes" class="block py-2 text-sm font-medium text-slate-300 hover:text-white">Planes & Precios</a>
       <a (click)="cerrarMenuMovil()" href="#faq" class="block py-2 text-sm font-medium text-slate-300 hover:text-white">Preguntas Frecuentes</a>
+      <a (click)="cerrarMenuMovil()" href="#donacion" class="py-2.5 px-3 rounded-xl bg-rose-500/10 border border-rose-500/20 text-sm font-bold text-rose-300 hover:text-rose-200 flex items-center justify-between">
+        <span class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-rose-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          <span>Apoyar Proyecto (Donación PayPal)</span>
+        </span>
+        <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-300">Donar</span>
+      </a>
       <div class="pt-4 border-t border-slate-800 flex flex-col gap-2.5">
         <a routerLink="/register" (click)="cerrarMenuMovil()" class="w-full text-center py-2.5 text-xs font-bold text-white bg-blue-600 rounded-lg shadow-sm">
           Registrarse Gratis (14 Días)
@@ -98,477 +109,395 @@
     </div>
   </header>
 
-  <!-- ==================== 2. SECCIÓN HERO (PORTADA PRINCIPAL HIGH-IMPACT) ==================== -->
-  <section class="relative pt-12 pb-20 sm:pt-20 sm:pb-28 overflow-hidden">
-    
-    <!-- PATRÓN GEOMÉTRICO Y EFECTOS LUMINISCENTES DE FONDO -->
-    <div class="absolute inset-0 hero-grid-pattern pointer-events-none opacity-40"></div>
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[550px] bg-blue-600/20 rounded-full blur-[140px] pointer-events-none -z-10"></div>
-    <div class="absolute top-1/3 left-1/4 w-[450px] h-[450px] bg-cyan-500/15 rounded-full blur-[120px] pointer-events-none -z-10"></div>
-    <div class="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-indigo-600/15 rounded-full blur-[130px] pointer-events-none -z-10"></div>
+  <!-- ==================== 2. SECCIÓN HERO — REDISEÑO PREMIUM ==================== -->
+  <section class="relative min-h-screen flex items-center pt-10 pb-20 sm:pt-16 sm:pb-28 overflow-hidden hero-section">
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+    <!-- ── FONDOS ATMOSFÉRICOS ── -->
+    <div class="absolute inset-0 hero-grid-pattern pointer-events-none opacity-25"></div>
+    <!-- Blob azul central superior -->
+    <div class="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[900px] h-[700px] bg-blue-600/18 rounded-full blur-[180px] pointer-events-none"></div>
+    <!-- Blob cyan izquierda -->
+    <div class="absolute top-[20%] left-[-5%] w-[500px] h-[500px] bg-cyan-500/12 rounded-full blur-[140px] pointer-events-none"></div>
+    <!-- Blob indigo derecha -->
+    <div class="absolute top-[30%] right-[-5%] w-[500px] h-[500px] bg-indigo-600/12 rounded-full blur-[140px] pointer-events-none"></div>
+    <!-- Glow inferior sutil -->
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-blue-900/25 rounded-full blur-[100px] pointer-events-none"></div>
 
-      <!-- BADGE DE NOVEDAD INTERACTIVO CON TEMPORIZADOR DE PRUEBA -->
-      <div class="inline-flex flex-wrap items-center justify-center gap-2.5 px-4 py-2 rounded-full bg-slate-900/90 border border-blue-500/30 text-blue-300 text-xs font-semibold mb-8 backdrop-blur-md hover:border-blue-500/50 transition-all shadow-lg">
-        <span class="flex h-2.5 w-2.5 relative">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
-        </span>
-        <span class="tracking-wide text-white">FacturaPro 360 v2.5</span>
-        <span class="text-slate-600">|</span>
-        <span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
-          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          <span>14 Días de Prueba Gratuita Ilimitada</span>
-        </span>
-        <span class="text-slate-600 hidden sm:inline">|</span>
-        <span class="text-cyan-300 font-medium hidden sm:inline">Nube SaaS + Escritorio Offline (.NET 8)</span>
-      </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
 
-      <!-- TITULAR PRINCIPAL DE IMPACTO VISUAL -->
-      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.08] max-w-5xl mx-auto mb-6">
-        El Sistema de Facturación e Inventario que 
-        <span class="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-400 shimmer-text">
-          Nunca se Detiene
-        </span>
-      </h1>
+      <!-- ══════════════════════════════════════════════════════
+           LAYOUT PRINCIPAL: DOS COLUMNAS (TEXTO | PREVIEW)
+           ══════════════════════════════════════════════════════ -->
+      <div class="grid grid-cols-1 xl:grid-cols-2 gap-12 xl:gap-16 items-center mb-16">
 
-      <!-- SUBTÍTULO DESCRIPTIVO -->
-      <p class="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed mb-10">
-        Emite comprobantes en menos de 2 segundos, domina tu inventario kardex valorizado y gestiona múltiples sucursales con total tranquilidad. 
-        Opera en la nube con <strong class="text-white font-semibold">SaaS multi-tenant</strong> y garantiza tus cobros en tienda sin depender de internet con nuestra <strong class="text-white font-semibold">app nativa de escritorio offline</strong> (.NET 8).
-      </p>
+        <!-- ─── COLUMNA IZQUIERDA: CONTENIDO TEXTUAL ─── -->
+        <div class="text-left">
 
-      <!-- CLÚSTER DE BOTONES DE ACCIÓN PRINCIPALES (CTAs) -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 max-w-2xl mx-auto mb-8">
-        
-        <!-- BOTÓN 1: REGISTRARSE GRATIS (14 DÍAS) -->
-        <a routerLink="/register" 
-           class="w-full sm:w-auto cta-glow-btn inline-flex items-center justify-center gap-3 px-8 py-4 text-sm font-extrabold text-white bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 rounded-xl shadow-2xl shadow-blue-500/40 hover:shadow-blue-500/60 active:scale-95 transition-all">
-          <span>🚀 Comenzar Prueba Gratis</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-        </a>
+          <!-- BADGE VIVO -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/95 border border-blue-500/35 text-xs font-semibold mb-8 backdrop-blur-lg shadow-lg shadow-blue-500/10 hover:border-blue-400/50 transition-all">
+            <span class="flex h-2 w-2 relative shrink-0">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-70"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+            </span>
+            <span class="text-white font-bold tracking-wide">FacturaPro 360 v2.5</span>
+            <span class="h-3 w-px bg-slate-600"></span>
+            <span class="text-emerald-400 font-semibold">14 días gratis · Sin tarjeta</span>
+            <span class="h-3 w-px bg-slate-600 hidden sm:block"></span>
+            <span class="text-cyan-300 hidden sm:inline">Nube + Offline</span>
+          </div>
 
-        <!-- BOTÓN 2: VER DEMO EN VIVO -->
-        <a routerLink="/dashboard" 
-           class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 text-sm font-bold text-cyan-300 hover:text-white bg-slate-900/90 hover:bg-slate-800/90 border border-cyan-500/40 hover:border-cyan-400 rounded-xl transition-all shadow-lg shadow-cyan-500/10 hover:shadow-cyan-500/25">
-          <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
-          <span>👁️ Ver Demo en Vivo</span>
-        </a>
+          <!-- TITULAR PRINCIPAL -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-[3.6rem] font-black text-white tracking-tight leading-[1.07] mb-6">
+            <span class="block">Factura, Controla</span>
+            <span class="block">tu Inventario y</span>
+            <span class="block mt-2">
+              <span class="hero-gradient-text">Nunca te Detengas</span>
+            </span>
+          </h1>
 
-        <!-- BOTÓN 3: INICIAR SESIÓN -->
-        <a routerLink="/login" 
-           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 text-sm font-semibold text-slate-300 hover:text-white bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-slate-700 rounded-xl transition-colors">
-          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/></svg>
-          <span>Iniciar Sesión</span>
-        </a>
+          <!-- SUBTÍTULO -->
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed mb-8 max-w-lg">
+            Emite comprobantes en <strong class="text-white font-semibold">menos de 1.8 s</strong>, controla tu stock valorizado en tiempo real y garantiza tus cobros aunque se corte el internet con la
+            <strong class="text-white font-semibold">app nativa .NET 8 Offline</strong>.
+          </p>
 
-      </div>
-
-      <!-- MICRO-PRUEBA SOCIAL / CONFIANZA -->
-      <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400 mb-12 font-medium">
-        <span class="flex items-center gap-1.5"><span class="text-amber-400">★ ★ ★ ★ ★</span> 4.9/5 satisfacción pyme</span>
-        <span class="hidden sm:inline text-slate-600">•</span>
-        <span class="flex items-center gap-1.5"><span class="text-emerald-400 font-bold">✓</span> Registro sin tarjeta de crédito</span>
-        <span class="hidden sm:inline text-slate-600">•</span>
-        <span class="flex items-center gap-1.5"><span class="text-blue-400 font-bold">✓</span> Aislamiento RLS en PostgreSQL</span>
-        <span class="hidden sm:inline text-slate-600">•</span>
-        <span class="flex items-center gap-1.5"><span class="text-cyan-400 font-bold">✓</span> Activación instantánea en 30 segundos</span>
-      </div>
-
-      <!-- SELECTOR INTERACTIVO DE CAPACIDADES DENTRO DEL HERO -->
-      <div class="inline-flex p-1.5 rounded-2xl bg-slate-900/90 border border-slate-800 mb-8 max-w-3xl flex-wrap justify-center gap-1.5 shadow-xl">
-        <button (click)="setTabHero('dashboard')"
-                class="px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-2"
-                [ngClass]="tabHeroActivo() === 'dashboard' ? 'bg-blue-600 text-white shadow-md shadow-blue-500/25' : 'text-slate-400 hover:text-white'">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
-          <span>Panel Ejecutivo</span>
-        </button>
-
-        <button (click)="setTabHero('facturacion')"
-                class="px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-2"
-                [ngClass]="tabHeroActivo() === 'facturacion' ? 'bg-blue-600 text-white shadow-md shadow-blue-500/25' : 'text-slate-400 hover:text-white'">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-          <span>Facturas & PDF</span>
-        </button>
-
-        <button (click)="setTabHero('kardex')"
-                class="px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-2"
-                [ngClass]="tabHeroActivo() === 'kardex' ? 'bg-blue-600 text-white shadow-md shadow-blue-500/25' : 'text-slate-400 hover:text-white'">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
-          <span>Inventario Kardex</span>
-        </button>
-
-        <button (click)="setTabHero('escritorio')"
-                class="px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-2"
-                [ngClass]="tabHeroActivo() === 'escritorio' ? 'bg-emerald-600 text-white shadow-md shadow-emerald-500/25' : 'text-slate-400 hover:text-white'">
-          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-          <span>Escritorio Offline (.NET 8)</span>
-        </button>
-      </div>
-
-      <!-- MOCKUP VISUAL DEL SISTEMA (DASHBOARD REAL HIGH-RES) -->
-      <div class="relative max-w-5xl mx-auto mb-16">
-        <!-- MARCO DE VENTANA TIPO SISTEMA OPERATIVO PREMIUM -->
-        <div class="rounded-2xl p-2 sm:p-3 bg-gradient-to-b from-slate-700/60 via-slate-800/40 to-slate-900/80 border border-slate-700/80 shadow-2xl shadow-blue-500/25 hero-glow-pulse">
-          
-          <!-- BARRA DE TÍTULO DE LA APLICACIÓN -->
-          <div class="flex items-center justify-between px-4 py-3 bg-[#0B192C] rounded-t-xl border-b border-slate-800">
-            <div class="flex items-center gap-2.5">
-              <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block shadow-xs shadow-red-500/50"></span>
-              <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block shadow-xs shadow-yellow-500/50"></span>
-              <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block shadow-xs shadow-emerald-500/50"></span>
-              <div class="ml-3 px-3 py-1 rounded-md bg-slate-900/90 border border-slate-800 flex items-center gap-2">
-                <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                <span class="text-[11px] font-mono text-slate-300">
-                  {{ tabHeroActivo() === 'escritorio' ? 'FacturaPro360.Desktop.exe (Local SQLite Mode)' : 'https://facturapro360.cloud/' + tabHeroActivo() }}
-                </span>
-              </div>
+          <!-- ─ MINI-STATS HORIZONTALES ─ -->
+          <div class="flex flex-wrap gap-4 mb-9">
+            <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-900/70 border border-slate-800 hover:border-blue-500/40 transition-colors">
+              <span class="text-lg font-black text-blue-400">&lt;1.8s</span>
+              <span class="text-[11px] text-slate-400 leading-tight">Emisión de<br>comprobantes</span>
             </div>
-            
-            <div class="hidden sm:flex items-center gap-3 text-[11px] font-semibold">
-              <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>{{ tabHeroActivo() === 'escritorio' ? 'Motor Offline Listo' : 'Conexión Segura Supabase' }}</span>
-              </span>
-              <span class="text-slate-400">Empresa Demo S.A.</span>
+            <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 transition-colors">
+              <span class="text-lg font-black text-cyan-400">100%</span>
+              <span class="text-[11px] text-slate-400 leading-tight">Integridad<br>ACID multi-tenant</span>
+            </div>
+            <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-900/70 border border-slate-800 hover:border-emerald-500/40 transition-colors">
+              <span class="text-lg font-black text-emerald-400">Offline</span>
+              <span class="text-[11px] text-slate-400 leading-tight">POS nativo<br>sin internet</span>
+            </div>
+            <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-900/70 border border-slate-800 hover:border-indigo-500/40 transition-colors">
+              <span class="text-lg font-black text-indigo-400">99.98%</span>
+              <span class="text-[11px] text-slate-400 leading-tight">SLA de<br>disponibilidad</span>
             </div>
           </div>
 
-          <!-- CONTENIDO DEL PREVIEW SEGÚN PESTAÑA SELECCIONADA -->
-          <div class="relative overflow-hidden rounded-b-xl bg-slate-950 min-h-[380px] sm:min-h-[460px]">
-            
-            <!-- VISTA 1: DASHBOARD EJECUTIVO -->
-            <div *ngIf="tabHeroActivo() === 'dashboard'" class="relative">
-              <img src="/assets/images/hero_dashboard_preview.jpg" 
-                   alt="FacturaPro 360 Dashboard Preview" 
-                   class="w-full h-auto object-cover transform hover:scale-[1.01] transition-transform duration-500" />
-              
-              <div class="absolute inset-0 bg-gradient-to-t from-[#060E1A]/40 via-transparent to-transparent pointer-events-none"></div>
+          <!-- ─ CTAs PRINCIPALES ─ -->
+          <div class="flex flex-col sm:flex-row items-start gap-3 mb-8">
+            <a routerLink="/register"
+               class="hero-cta-primary inline-flex items-center gap-2.5 px-7 py-3.5 text-sm font-extrabold text-white rounded-xl shadow-2xl shadow-blue-500/35 hover:shadow-blue-500/55 hover:-translate-y-0.5 active:scale-95 transition-all">
+              <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              <span>Comenzar 14 días gratis</span>
+            </a>
 
-              <!-- TARJETA FLOTANTE 1: FACTURA PAGADA EN VIVO -->
-              <div class="hidden lg:flex absolute top-6 right-6 items-center gap-3.5 px-4 py-3 rounded-xl glass-card-dark float-element-1 shadow-2xl">
-                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                </div>
-                <div class="text-left">
-                  <div class="flex items-center gap-2">
-                    <span class="text-xs font-bold text-white">Factura #FAC-00124</span>
-                    <span class="px-1.5 py-0.2 rounded-sm text-[9px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">PAGADA</span>
-                  </div>
-                  <div class="text-[11px] text-slate-300">$1,450.00 • PDF generado • Kardex actualizado</div>
+            <a routerLink="/dashboard"
+               class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-bold text-cyan-300 hover:text-white bg-slate-900/80 hover:bg-slate-800 border border-cyan-500/35 hover:border-cyan-400 rounded-xl transition-all shadow-md shadow-cyan-500/10 hover:shadow-cyan-500/20">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse shrink-0"></span>
+              <span>Ver demo en vivo</span>
+            </a>
+
+            <a routerLink="/login"
+               class="inline-flex items-center gap-2 px-5 py-3.5 text-sm font-semibold text-slate-400 hover:text-white rounded-xl transition-colors border border-transparent hover:border-slate-700 hover:bg-slate-800/60">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/></svg>
+              <span>Iniciar sesión</span>
+            </a>
+          </div>
+
+          <!-- ─ PILL PRECIO COMPACTA ─ -->
+          <div class="inline-flex flex-wrap items-center gap-3 px-4 py-2.5 rounded-2xl hero-pricing-pill">
+            <div class="flex items-baseline gap-1.5">
+              <span class="text-xl font-black text-white">$19.90</span>
+              <span class="text-xs text-slate-400">USD/mes</span>
+            </div>
+            <span class="h-5 w-px bg-slate-700 hidden sm:block"></span>
+            <div class="flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              <span class="text-xs font-semibold text-emerald-400">14 días gratis</span>
+              <span class="text-slate-500 text-xs">· Sin tarjeta · Sin contrato</span>
+            </div>
+          </div>
+
+        </div><!-- /columna izquierda -->
+
+        <!-- ─── COLUMNA DERECHA: PREVIEW INTERACTIVO ─── -->
+        <div class="relative">
+
+          <!-- RESPLANDOR DEL FRAME -->
+          <div class="absolute -inset-4 bg-gradient-to-br from-blue-600/15 via-cyan-500/10 to-indigo-600/15 rounded-3xl blur-2xl pointer-events-none"></div>
+
+          <!-- FRAME PRINCIPAL -->
+          <div class="relative rounded-2xl border border-slate-700/70 shadow-2xl shadow-blue-500/20 hero-glow-pulse overflow-hidden bg-gradient-to-b from-slate-800/70 to-slate-900/90">
+
+            <!-- BARRA TITLEBAR TIPO OS -->
+            <div class="flex items-center justify-between px-4 py-2.5 bg-[#0B192C] border-b border-slate-800">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-red-500/80 shadow-xs shadow-red-500/60"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-400/80 shadow-xs shadow-yellow-500/60"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/80 shadow-xs shadow-emerald-500/60"></span>
+                <div class="ml-3 px-3 py-0.5 rounded-md bg-slate-900 border border-slate-800 flex items-center gap-1.5 max-w-[220px]">
+                  <svg class="w-3 h-3 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                  <span class="text-[10px] font-mono text-slate-300 truncate">
+                    {{ tabHeroActivo() === 'escritorio' ? 'FacturaPro360.Desktop.exe' : 'https://app.facturapro360.cloud' }}
+                  </span>
                 </div>
               </div>
-
-              <!-- TARJETA FLOTANTE 2: RLS EN POSTGRES -->
-              <div class="hidden lg:flex absolute bottom-6 left-6 items-center gap-3.5 px-4 py-3 rounded-xl glass-card-dark float-element-2 shadow-2xl">
-                <div class="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-blue-400 shrink-0">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                </div>
-                <div class="text-left">
-                  <div class="text-xs font-bold text-white">Seguridad Row Level Security (RLS)</div>
-                  <div class="text-[11px] text-emerald-400 font-medium">PostgreSQL 15 • Aislamiento total por empresa</div>
-                </div>
-              </div>
-
-              <!-- TARJETA FLOTANTE 3: TERMINAL OFFLINE -->
-              <div class="hidden lg:flex absolute bottom-6 right-6 items-center gap-3 px-3.5 py-2.5 rounded-xl glass-card-dark shadow-xl">
-                <div class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></div>
-                <div class="text-left">
-                  <div class="text-[11px] font-bold text-white">Terminal Offline .NET 8</div>
-                  <div class="text-[10px] text-slate-400">Cobra en tienda aunque no haya internet</div>
-                </div>
+              <div class="hidden sm:flex items-center gap-2">
+                <span class="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] font-semibold">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  {{ tabHeroActivo() === 'escritorio' ? 'Modo Offline' : 'Supabase RLS' }}
+                </span>
+                <span class="text-[10px] text-slate-500">Empresa Demo S.A.</span>
               </div>
             </div>
 
-            <!-- VISTA 2: FACTURACIÓN & EMISIÓN RÁPIDA -->
-            <div *ngIf="tabHeroActivo() === 'facturacion'" class="p-6 sm:p-10 text-left bg-gradient-to-br from-[#0B192C] via-[#081220] to-[#040810] min-h-[460px] flex flex-col justify-between">
-              <div>
-                <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-800">
-                  <div>
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded-md border border-blue-500/20">Módulo de Emisión</span>
-                    <h3 class="text-2xl font-black text-white mt-2">Nueva Factura Electrónica</h3>
-                    <p class="text-xs text-slate-400 mt-0.5">Correlativo automático: <span class="font-mono text-cyan-300 font-bold">FAC-000289</span> • Motor anti-duplicados</p>
+            <!-- TABS DE MÓDULO -->
+            <div class="flex items-center gap-1 px-3 pt-2 pb-0 bg-[#0B192C]/80 border-b border-slate-800/60 flex-wrap">
+              <button (click)="setTabHero('dashboard')"
+                      class="hero-tab px-3.5 py-2 text-[11px] font-bold rounded-t-lg transition-all cursor-pointer flex items-center gap-1.5 -mb-px"
+                      [ngClass]="tabHeroActivo() === 'dashboard' ? 'hero-tab-active' : 'text-slate-500 hover:text-slate-300'">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+                Dashboard
+              </button>
+              <button (click)="setTabHero('facturacion')"
+                      class="hero-tab px-3.5 py-2 text-[11px] font-bold rounded-t-lg transition-all cursor-pointer flex items-center gap-1.5 -mb-px"
+                      [ngClass]="tabHeroActivo() === 'facturacion' ? 'hero-tab-active' : 'text-slate-500 hover:text-slate-300'">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                Facturas
+              </button>
+              <button (click)="setTabHero('kardex')"
+                      class="hero-tab px-3.5 py-2 text-[11px] font-bold rounded-t-lg transition-all cursor-pointer flex items-center gap-1.5 -mb-px"
+                      [ngClass]="tabHeroActivo() === 'kardex' ? 'hero-tab-active' : 'text-slate-500 hover:text-slate-300'">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                Kardex
+              </button>
+              <button (click)="setTabHero('escritorio')"
+                      class="hero-tab px-3.5 py-2 text-[11px] font-bold rounded-t-lg transition-all cursor-pointer flex items-center gap-1.5 -mb-px"
+                      [ngClass]="tabHeroActivo() === 'escritorio' ? 'hero-tab-active-green' : 'text-slate-500 hover:text-slate-300'">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400" [ngClass]="tabHeroActivo() === 'escritorio' ? 'animate-pulse' : ''"></span>
+                .NET Offline
+              </button>
+            </div>
+
+            <!-- CONTENIDO INTERACTIVO -->
+            <div class="relative bg-[#060E1A] min-h-[360px] sm:min-h-[420px]">
+
+              <!-- VISTA: DASHBOARD -->
+              <div *ngIf="tabHeroActivo() === 'dashboard'" class="relative">
+                <img src="/assets/images/hero_dashboard_preview.jpg"
+                     alt="FacturaPro 360 Dashboard"
+                     class="w-full h-auto object-cover"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#060E1A]/50 via-transparent to-transparent pointer-events-none"></div>
+
+                <!-- TARJETAS FLOTANTES PREMIUM -->
+                <div class="hidden lg:flex absolute top-4 right-4 items-center gap-3 px-4 py-2.5 rounded-xl glass-card-dark float-element-1 shadow-xl">
+                  <div class="w-9 h-9 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
+                    <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                   </div>
-                  <div class="flex items-center gap-2">
-                    <span class="px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center gap-2">
-                      <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                      <span>Listo para Timbrar (&lt; 1.8s)</span>
+                  <div>
+                    <div class="flex items-center gap-1.5">
+                      <span class="text-xs font-bold text-white">FAC-00124</span>
+                      <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/25">PAGADA</span>
+                    </div>
+                    <div class="text-[10px] text-slate-400 mt-0.5 flex items-center gap-1">
+                      <span>$1,450.00 · PDF · Kardex</span>
+                      <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="hidden lg:flex absolute bottom-4 left-4 items-center gap-3 px-4 py-2.5 rounded-xl glass-card-dark float-element-2 shadow-xl">
+                  <div class="w-9 h-9 rounded-lg bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-blue-400 shrink-0">
+                    <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-white">RLS · PostgreSQL 15</div>
+                    <div class="text-[10px] text-emerald-400 mt-0.5">Aislamiento total por tenant</div>
+                  </div>
+                </div>
+
+                <div class="hidden lg:flex absolute bottom-4 right-4 items-center gap-2.5 px-3 py-2 rounded-xl glass-card-dark shadow-lg">
+                  <div class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></div>
+                  <div>
+                    <div class="text-[10px] font-bold text-white">Terminal .NET 8 Online</div>
+                    <div class="text-[9px] text-slate-400">0 ms · SQLite local</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- VISTA: FACTURACIÓN -->
+              <div *ngIf="tabHeroActivo() === 'facturacion'" class="p-5 sm:p-8 text-left bg-gradient-to-br from-[#0B192C] via-[#081220] to-[#040810] min-h-[420px] flex flex-col justify-between">
+                <div>
+                  <div class="flex flex-wrap items-center justify-between gap-3 pb-5 border-b border-slate-800">
+                    <div>
+                      <span class="text-[10px] font-bold uppercase tracking-wider text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded-md border border-blue-500/20">Módulo de Emisión</span>
+                      <h3 class="text-xl font-black text-white mt-2">Nueva Factura Electrónica</h3>
+                      <p class="text-[11px] text-slate-400 mt-0.5">Correlativo: <span class="font-mono text-cyan-300 font-bold">FAC-000289</span> · Anti-duplicados ON</p>
+                    </div>
+                    <span class="px-3 py-1.5 rounded-lg text-[11px] font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center gap-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                      Listo (&lt; 1.8s)
                     </span>
                   </div>
-                </div>
-
-                <!-- TABLA ILUSTRATIVA DE ITEMS -->
-                <div class="mt-6 overflow-x-auto">
-                  <table class="w-full text-xs text-slate-300">
-                    <thead class="bg-slate-900/80 text-slate-400 uppercase text-[10px] tracking-wider border-b border-slate-800">
-                      <tr>
-                        <th class="py-2.5 px-3 text-left">Producto / SKU</th>
-                        <th class="py-2.5 px-3 text-center">Cant.</th>
-                        <th class="py-2.5 px-3 text-right">Precio Unit.</th>
-                        <th class="py-2.5 px-3 text-right">Impuesto</th>
-                        <th class="py-2.5 px-3 text-right">Total</th>
-                      </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-800/60 font-mono">
-                      <tr class="hover:bg-slate-900/40 transition">
-                        <td class="py-3 px-3 font-sans font-medium text-white flex items-center gap-2">
-                          <span class="w-2 h-2 rounded-full bg-blue-400"></span>
-                          <span>Laptop Corporativa Core i7 16GB</span>
-                        </td>
-                        <td class="py-3 px-3 text-center">2</td>
-                        <td class="py-3 px-3 text-right">$850.00</td>
-                        <td class="py-3 px-3 text-right text-slate-400">18% ($306.00)</td>
-                        <td class="py-3 px-3 text-right font-bold text-white">$2,006.00</td>
-                      </tr>
-                      <tr class="hover:bg-slate-900/40 transition">
-                        <td class="py-3 px-3 font-sans font-medium text-white flex items-center gap-2">
-                          <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-                          <span>Servicio de Soporte y Puesta en Marcha</span>
-                        </td>
-                        <td class="py-3 px-3 text-center">1</td>
-                        <td class="py-3 px-3 text-right">$250.00</td>
-                        <td class="py-3 px-3 text-right text-slate-400">18% ($45.00)</td>
-                        <td class="py-3 px-3 text-right font-bold text-white">$295.00</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <!-- TOTALES Y ACCIONES -->
-              <div class="pt-6 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4 mt-6">
-                <div class="flex items-center gap-3">
-                  <span class="px-3 py-1.5 rounded-lg text-xs bg-slate-900 border border-slate-800 text-slate-300">Formatos: <strong>58mm / 80mm / A4 PDF</strong></span>
-                  <span class="px-3 py-1.5 rounded-lg text-xs bg-slate-900 border border-slate-800 text-emerald-400">Kardex: <strong>Salida automática</strong></span>
-                </div>
-                <div class="text-right">
-                  <div class="text-xs text-slate-400">Total a Pagar (Impuestos incl.):</div>
-                  <div class="text-2xl font-black text-white">$2,301.00 USD</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- VISTA 3: INVENTARIO KARDEX -->
-            <div *ngIf="tabHeroActivo() === 'kardex'" class="p-6 sm:p-10 text-left bg-gradient-to-br from-[#0B192C] via-[#091526] to-[#040810] min-h-[460px] flex flex-col justify-between">
-              <div>
-                <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-800">
-                  <div>
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded-md border border-cyan-500/20">Control de Existencias</span>
-                    <h3 class="text-2xl font-black text-white mt-2">Kardex Valorizado & Multibodega</h3>
-                    <p class="text-xs text-slate-400 mt-0.5">Método de valorización: <span class="text-white font-semibold">Costo Promedio Ponderado (CPP) & FIFO</span></p>
-                  </div>
-                  <div class="px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-500/15 text-blue-400 border border-blue-500/30">
-                    Sede Principal + 2 Sucursales
+                  <div class="mt-5 overflow-x-auto">
+                    <table class="w-full text-xs text-slate-300">
+                      <thead class="bg-slate-900/80 text-slate-500 uppercase text-[10px] tracking-wider border-b border-slate-800">
+                        <tr>
+                          <th class="py-2.5 px-3 text-left">Producto</th>
+                          <th class="py-2.5 px-3 text-center">Cant.</th>
+                          <th class="py-2.5 px-3 text-right">P. Unit.</th>
+                          <th class="py-2.5 px-3 text-right">Total</th>
+                        </tr>
+                      </thead>
+                      <tbody class="divide-y divide-slate-800/60 font-mono">
+                        <tr class="hover:bg-slate-900/40 transition">
+                          <td class="py-2.5 px-3 font-sans font-medium text-white flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span>
+                            Laptop i7 16GB
+                          </td>
+                          <td class="py-2.5 px-3 text-center">2</td>
+                          <td class="py-2.5 px-3 text-right">$850.00</td>
+                          <td class="py-2.5 px-3 text-right font-bold text-white">$2,006.00</td>
+                        </tr>
+                        <tr class="hover:bg-slate-900/40 transition">
+                          <td class="py-2.5 px-3 font-sans font-medium text-white flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>
+                            Servicio de Soporte
+                          </td>
+                          <td class="py-2.5 px-3 text-center">1</td>
+                          <td class="py-2.5 px-3 text-right">$250.00</td>
+                          <td class="py-2.5 px-3 text-right font-bold text-white">$295.00</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
-                  <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-                    <div class="text-xs text-slate-400">Valor Total en Stock</div>
-                    <div class="text-2xl font-extrabold text-white mt-1">$48,920.00</div>
-                    <div class="text-[11px] text-emerald-400 mt-1">↑ 12% vs mes anterior</div>
+                <div class="pt-5 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3 mt-5">
+                  <div class="flex items-center gap-2 text-[11px]">
+                    <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">58mm / 80mm / A4</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-emerald-400">Kardex auto</span>
                   </div>
-                  <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-                    <div class="text-xs text-slate-400">Productos Registrados</div>
-                    <div class="text-2xl font-extrabold text-cyan-400 mt-1">1,248 SKUs</div>
-                    <div class="text-[11px] text-slate-400 mt-1">100% trazabilidad por código</div>
-                  </div>
-                  <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-                    <div class="text-xs text-slate-400">Alertas de Stock Mínimo</div>
-                    <div class="text-2xl font-extrabold text-amber-400 mt-1">3 Alertas</div>
-                    <div class="text-[11px] text-amber-300 mt-1">Reposición sugerida lista</div>
-                  </div>
-                </div>
-
-                <div class="mt-6 p-4 rounded-xl bg-slate-900/50 border border-slate-800/80 text-xs text-slate-300 space-y-2">
-                  <div class="flex items-center justify-between">
-                    <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-400"></span> Entrada por Compra #OC-0092 (Proveedor TechCorp)</span>
-                    <span class="font-mono text-emerald-400">+50 unid. ($1,250)</span>
-                  </div>
-                  <div class="flex items-center justify-between">
-                    <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-400"></span> Salida por Factura #FAC-00124 (Cliente Andes SAC)</span>
-                    <span class="font-mono text-blue-400">-2 unid. ($85.00)</span>
+                  <div class="text-right">
+                    <div class="text-[11px] text-slate-400">Total incl. impuestos</div>
+                    <div class="text-2xl font-black text-white">$2,301.00 USD</div>
                   </div>
                 </div>
               </div>
 
-              <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
-                <span>Algoritmo de bloqueo transaccional <strong class="text-white">SELECT FOR UPDATE</strong></span>
-                <span class="text-emerald-400 font-semibold">Cero descuadres de inventario</span>
-              </div>
-            </div>
-
-            <!-- VISTA 4: ESCRITORIO OFFLINE (.NET 8) -->
-            <div *ngIf="tabHeroActivo() === 'escritorio'" class="p-6 sm:p-10 text-left bg-gradient-to-br from-[#06181B] via-[#0B1E29] to-[#040810] min-h-[460px] flex flex-col justify-between">
-              <div>
-                <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-800">
-                  <div>
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/20">Arquitectura Dual Exclusiva</span>
-                    <h3 class="text-2xl font-black text-white mt-2">App Nativa de Escritorio (.NET 8)</h3>
-                    <p class="text-xs text-slate-400 mt-0.5">Diseñada para cajas rápidas y puntos de venta sin depender de conexión a internet.</p>
-                  </div>
-                  <div class="px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center gap-2">
-                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
-                    <span>Modo Offline 100% Operativo</span>
-                  </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
-                  <div class="p-5 rounded-xl bg-slate-900/80 border border-slate-800">
-                    <div class="flex items-center gap-3 text-white font-bold text-sm mb-2">
-                      <span class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono">1</span>
-                      <span>Venta Local en Cajas (0 ms de latencia)</span>
+              <!-- VISTA: KARDEX -->
+              <div *ngIf="tabHeroActivo() === 'kardex'" class="p-5 sm:p-8 text-left bg-gradient-to-br from-[#0B192C] via-[#091526] to-[#040810] min-h-[420px] flex flex-col justify-between">
+                <div>
+                  <div class="flex flex-wrap items-center justify-between gap-3 pb-5 border-b border-slate-800">
+                    <div>
+                      <span class="text-[10px] font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded-md border border-cyan-500/20">Control de Existencias</span>
+                      <h3 class="text-xl font-black text-white mt-2">Kardex Valorizado &amp; Multibodega</h3>
+                      <p class="text-[11px] text-slate-400 mt-0.5">Método: <span class="text-white font-semibold">CPP &amp; FIFO</span></p>
                     </div>
-                    <p class="text-xs text-slate-400 leading-relaxed">
-                      El cajero escanea productos e imprime tickets térmicos directamente en SQLite local. Si se corta la fibra o el Wi-Fi, tu negocio sigue cobrando sin parar.
-                    </p>
+                    <span class="px-3 py-1.5 rounded-lg text-[11px] font-bold bg-blue-500/15 text-blue-400 border border-blue-500/30">Sede + 2 Sucursales</span>
                   </div>
-
-                  <div class="p-5 rounded-xl bg-slate-900/80 border border-slate-800">
-                    <div class="flex items-center gap-3 text-white font-bold text-sm mb-2">
-                      <span class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-mono">2</span>
-                      <span>Sincronización Automática a la Nube</span>
+                  <div class="grid grid-cols-3 gap-3 mt-5">
+                    <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                      <div class="text-[11px] text-slate-400">Valor en Stock</div>
+                      <div class="text-xl font-extrabold text-white mt-1">$48,920</div>
+                      <div class="text-[10px] text-emerald-400 mt-0.5">↑ 12% este mes</div>
                     </div>
-                    <p class="text-xs text-slate-400 leading-relaxed">
-                      En el momento en que regresa la conexión, la aplicación sincroniza en segundo plano todas las facturas y saldos a Supabase / PostgreSQL con conciliación idempotente.
-                    </p>
+                    <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                      <div class="text-[11px] text-slate-400">Productos</div>
+                      <div class="text-xl font-extrabold text-cyan-400 mt-1">1,248 SKUs</div>
+                      <div class="text-[10px] text-slate-400 mt-0.5">100% trazables</div>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                      <div class="text-[11px] text-slate-400">Alertas</div>
+                      <div class="text-xl font-extrabold text-amber-400 mt-1">3</div>
+                      <div class="text-[10px] text-amber-300 mt-0.5">Reposición lista</div>
+                    </div>
+                  </div>
+                  <div class="mt-4 p-3.5 rounded-xl bg-slate-900/50 border border-slate-800 text-[11px] text-slate-300 space-y-2">
+                    <div class="flex items-center justify-between">
+                      <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0"></span>Compra #OC-0092 · TechCorp</span>
+                      <span class="font-mono text-emerald-400">+50 und. ($1,250)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span>Factura #FAC-00124 · Andes SAC</span>
+                      <span class="font-mono text-blue-400">-2 und. ($85)</span>
+                    </div>
                   </div>
                 </div>
+                <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
+                  <span><strong class="text-white">SELECT FOR UPDATE</strong> — bloqueo transaccional</span>
+                  <span class="text-emerald-400 font-semibold">Cero descuadres</span>
+                </div>
               </div>
 
-              <div class="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-400">
-                <span class="text-slate-300">Incluido en tu suscripción sin cargos extras de licencia por terminal.</span>
-                <span class="text-emerald-400 font-bold">WPF + .NET 8 Nativo para Windows 10/11</span>
+              <!-- VISTA: ESCRITORIO OFFLINE -->
+              <div *ngIf="tabHeroActivo() === 'escritorio'" class="p-5 sm:p-8 text-left bg-gradient-to-br from-[#06181B] via-[#0B1E29] to-[#040810] min-h-[420px] flex flex-col justify-between">
+                <div>
+                  <div class="flex flex-wrap items-center justify-between gap-3 pb-5 border-b border-slate-800">
+                    <div>
+                      <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/20">Arquitectura Dual Exclusiva</span>
+                      <h3 class="text-xl font-black text-white mt-2">App Nativa .NET 8 (Offline)</h3>
+                      <p class="text-[11px] text-slate-400 mt-0.5">Punto de venta sin internet · SQLite local · Sync automática a Supabase</p>
+                    </div>
+                    <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-[11px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                      Offline 100% Operativo
+                    </span>
+                  </div>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
+                    <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+                      <div class="flex items-center gap-2.5 text-white font-bold text-sm mb-2">
+                        <span class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono text-xs">1</span>
+                        Venta local sin latencia
+                      </div>
+                      <p class="text-[11px] text-slate-400 leading-relaxed">Cajero escanea e imprime tickets térmicos en SQLite. Si se cae el Wi-Fi, el negocio sigue cobrando.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+                      <div class="flex items-center gap-2.5 text-white font-bold text-sm mb-2">
+                        <span class="w-7 h-7 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-mono text-xs">2</span>
+                        Sync automática a la nube
+                      </div>
+                      <p class="text-[11px] text-slate-400 leading-relaxed">Al recuperar señal, todo se sincroniza a Supabase / PostgreSQL con conciliación idempotente.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-400">
+                  <span class="text-slate-300">Incluido en tu plan — sin cargo extra por terminal.</span>
+                  <span class="text-emerald-400 font-bold">WPF + .NET 8 · Windows 10/11</span>
+                </div>
               </div>
+
             </div>
-
           </div>
+          <!-- /FRAME -->
+
         </div>
+        <!-- /columna derecha -->
+
       </div>
+      <!-- /grid 2 columnas -->
 
-      <!-- ==================== LA CUOTA MENSUAL EN LA PARTE INFERIOR DEL HERO ==================== -->
-      <div class="max-w-4xl mx-auto hero-pricing-box rounded-3xl p-6 sm:p-10 text-left relative overflow-hidden mb-16">
-        
-        <!-- GLOW DECORATIVO INTERNO -->
-        <div class="absolute -top-24 -right-24 w-72 h-72 bg-blue-500/15 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="relative z-10">
-          
-          <!-- FILA SUPERIOR: BADGE DE PRUEBA Y TEMPORIZADOR -->
-          <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-700/60">
-            <div class="flex items-center gap-3">
-              <span class="trial-badge px-3.5 py-1.5 rounded-full text-xs font-bold text-emerald-400 flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>14 DÍAS DE PRUEBA GRATUITA</span>
-              </span>
-              <span class="text-xs font-semibold text-slate-300">Regístrate hoy sin costo</span>
-            </div>
-            
-            <div class="flex items-center gap-2 text-xs text-slate-400 font-mono bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-800">
-              <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              <span>Temporizador: <strong class="text-cyan-300">14 días de acceso total</strong></span>
-            </div>
-          </div>
-
-          <!-- CUERPO PRINCIPAL DEL PRECIO MENSUAL -->
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center py-6">
-            
-            <!-- EXPLICACIÓN Y VALOR COMERCIAL -->
-            <div class="lg:col-span-7">
-              <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight leading-tight">
-                Pruébalo libremente hoy. Continúa por una cuota mensual transparente.
-              </h3>
-              <p class="text-sm text-slate-300 mt-3 leading-relaxed">
-                Puedes registrarte y comenzar a operar de inmediato sin ingresar tarjeta de crédito. Dispones de un temporizador de 14 días para evaluar todas las herramientas. Luego, conserva tu sistema activo con una cuota mensual plana y accesible para tu empresa.
-              </p>
-              
-              <!-- BENEFICIOS INCLUIDOS EN LA CUOTA -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-5 text-xs text-slate-200">
-                <div class="flex items-center gap-2">
-                  <span class="text-emerald-400 font-bold">✓</span>
-                  <span>Facturación y boletas ilimitadas</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <span class="text-emerald-400 font-bold">✓</span>
-                  <span>Inventario Kardex multisede</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <span class="text-emerald-400 font-bold">✓</span>
-                  <span>App Escritorio Offline (.NET 8)</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <span class="text-emerald-400 font-bold">✓</span>
-                  <span>Multi-usuario y soporte incluido</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- BLOQUE DE PRECIO MENSUAL DESTACADO -->
-            <div class="lg:col-span-5 flex flex-col items-center lg:items-end justify-center p-6 rounded-2xl bg-[#0B192C]/90 border border-blue-500/30 text-center lg:text-right shadow-xl">
-              <span class="text-[11px] uppercase tracking-wider font-bold text-blue-400">Cuota Mensual del Plan</span>
-              
-              <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-4xl sm:text-5xl font-black text-white tracking-tight">$19.90</span>
-                <span class="text-sm font-semibold text-slate-300">USD / mes</span>
-              </div>
-              
-              <div class="text-[11px] text-emerald-400 font-medium mt-1">
-                ✨ Primeros 14 días gratis al registrarte
-              </div>
-
-              <div class="w-full flex flex-col gap-2 mt-5">
-                <a routerLink="/register" 
-                   class="w-full py-3 px-5 text-center text-xs font-extrabold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 rounded-xl shadow-lg shadow-blue-500/30 hover:scale-[1.02] active:scale-95 transition-all">
-                  Registrarse Gratis (14 Días)
-                </a>
-                
-                <div class="flex items-center justify-between gap-2 text-[11px] text-slate-400 pt-1">
-                  <a routerLink="/dashboard" class="text-cyan-400 hover:underline">Ver demo en vivo</a>
-                  <span>•</span>
-                  <a routerLink="/login" class="text-slate-300 hover:underline">Iniciar sesión</a>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- NOTA INFERIOR DE TRANSPARENCIA -->
-          <div class="pt-4 border-t border-slate-700/60 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-400">
-            <span class="flex items-center gap-1.5">
-              <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              <span>Sin contratos forzosos. Cancela o cambia de plan en cualquier momento.</span>
-            </span>
-            <span class="text-slate-400">Soporte técnico continuo y actualizaciones en la nube incluidas.</span>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- BANDA DE MÉTRICAS CLAVE INFERIORES -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-800/80 text-left">
-        <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/70 hover:border-blue-500/40 transition-colors">
-          <div class="text-2xl sm:text-3xl font-black text-blue-400">&lt; 1.8s</div>
-          <div class="text-xs text-slate-400 mt-1 font-medium">Emisión y timbrado de comprobantes</div>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/70 hover:border-cyan-500/40 transition-colors">
-          <div class="text-2xl sm:text-3xl font-black text-cyan-400">100% ACID</div>
-          <div class="text-xs text-slate-400 mt-1 font-medium">Correlatividad y stock sin duplicados</div>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/70 hover:border-indigo-500/40 transition-colors">
-          <div class="text-2xl sm:text-3xl font-black text-indigo-400">99.98%</div>
-          <div class="text-xs text-slate-400 mt-1 font-medium">Disponibilidad del servicio en la nube</div>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/70 hover:border-emerald-500/40 transition-colors">
-          <div class="text-2xl sm:text-3xl font-black text-emerald-400">Offline POS</div>
-          <div class="text-xs text-slate-400 mt-1 font-medium">Cajas de cobro sin interrupción</div>
-        </div>
+      <!-- ══════════ BANDA DE PRUEBA SOCIAL ══════════ -->
+      <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 pt-8 border-t border-slate-800/60 text-xs text-slate-400 font-medium">
+        <span class="flex items-center gap-1.5">
+          <span class="flex items-center text-amber-400 gap-0.5">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </span>
+          <span>4.9/5 satisfacción pyme</span>
+        </span>
+        <span class="text-slate-700 hidden sm:inline">·</span>
+        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Sin tarjeta de crédito</span>
+        <span class="text-slate-700 hidden sm:inline">·</span>
+        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> RLS multi-tenant en PostgreSQL</span>
+        <span class="text-slate-700 hidden sm:inline">·</span>
+        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-cyan-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Activación en 30 segundos</span>
+        <span class="text-slate-700 hidden sm:inline">·</span>
+        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-indigo-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Soporte técnico incluido</span>
       </div>
 
     </div>
   </section>
-
   <!-- ==================== 3. SECCIÓN: POR QUÉ FACTURAPRO 360 ==================== -->
   <section id="caracteristicas" class="py-20 border-t border-slate-800/80 bg-slate-950/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -597,9 +526,9 @@
             </p>
           </div>
           <ul class="space-y-2 text-xs text-slate-300 font-medium">
-            <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> Soporte para lectores de código de barras</li>
-            <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> Cálculo automático de impuestos y descuentos</li>
-            <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> Descarga o impresión inmediata en 1 clic</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Soporte para lectores de código de barras</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Cálculo automático de impuestos y descuentos</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Descarga o impresión inmediata en 1 clic</li>
           </ul>
         </div>
 
@@ -615,9 +544,9 @@
             </p>
           </div>
           <ul class="space-y-2 text-xs text-slate-300 font-medium">
-            <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> Procedimientos almacenados PL/pgSQL</li>
-            <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> Control de costo promedio y FIFO</li>
-            <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> Auditoría inmutable de cada transacción</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Procedimientos almacenados PL/pgSQL</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Control de costo promedio y FIFO</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Auditoría inmutable de cada transacción</li>
           </ul>
         </div>
 
@@ -634,9 +563,9 @@
             </p>
           </div>
           <ul class="space-y-2 text-xs text-slate-300 font-medium">
-            <li class="flex items-center gap-2"><span class="text-blue-400 font-bold">✓</span> Base de datos local SQLite / SQL Server</li>
-            <li class="flex items-center gap-2"><span class="text-blue-400 font-bold">✓</span> Cero tiempo muerto en cajas y mostradores</li>
-            <li class="flex items-center gap-2"><span class="text-blue-400 font-bold">✓</span> Panel Web accesible desde cualquier celular o PC</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Base de datos local SQLite / SQL Server</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Cero tiempo muerto en cajas y mostradores</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Panel Web accesible desde cualquier celular o PC</li>
           </ul>
         </div>
 
@@ -689,7 +618,7 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
               <div *ngFor="let p of moduloSeleccionado().puntos" class="flex items-start gap-2.5 text-xs text-slate-200">
-                <span class="text-blue-400 font-bold shrink-0">✔</span>
+                <svg class="w-3.5 h-3.5 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                 <span>{{ p }}</span>
               </div>
             </div>
@@ -871,12 +800,12 @@
             </div>
 
             <ul class="space-y-3 text-xs text-slate-300 pb-8 border-b border-slate-800">
-              <li class="flex items-center gap-2.5"><span class="text-blue-400 font-bold">✓</span> Hasta 50 comprobantes al mes</li>
-              <li class="flex items-center gap-2.5"><span class="text-blue-400 font-bold">✓</span> 1 Sucursal y 1 Usuario</li>
-              <li class="flex items-center gap-2.5"><span class="text-blue-400 font-bold">✓</span> Catálogo de hasta 100 productos</li>
-              <li class="flex items-center gap-2.5"><span class="text-blue-400 font-bold">✓</span> Exportación a PDF estándar</li>
-              <li class="flex items-center gap-2.5 text-slate-500"><span class="font-bold">✕</span> Modo Offline de Escritorio</li>
-              <li class="flex items-center gap-2.5 text-slate-500"><span class="font-bold">✕</span> Multibodega y Kardex Avanzado</li>
+              <li class="flex items-center gap-2.5"><svg class="w-3.5 h-3.5 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Hasta 50 comprobantes al mes</li>
+              <li class="flex items-center gap-2.5"><svg class="w-3.5 h-3.5 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> 1 Sucursal y 1 Usuario</li>
+              <li class="flex items-center gap-2.5"><svg class="w-3.5 h-3.5 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Catálogo de hasta 100 productos</li>
+              <li class="flex items-center gap-2.5"><svg class="w-3.5 h-3.5 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Exportación a PDF estándar</li>
+              <li class="flex items-center gap-2.5 text-slate-500"><svg class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg> Modo Offline de Escritorio</li>
+              <li class="flex items-center gap-2.5 text-slate-500"><svg class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg> Multibodega y Kardex Avanzado</li>
             </ul>
           </div>
 
@@ -903,12 +832,12 @@
             </div>
 
             <ul class="space-y-3 text-xs text-slate-200 pb-8 border-b border-blue-500/30">
-              <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> <strong>Facturación ilimitada</strong> sin restricciones</li>
-              <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Hasta 3 Sucursales y 5 Usuarios</li>
-              <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Kardex valorizado (FIFO / Promedio)</li>
-              <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Formatos térmicos 58/80mm + A4 PDF</li>
-              <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Soporte para app de Escritorio</li>
-              <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Soporte prioritario vía WhatsApp y Correo</li>
+              <li class="flex items-center gap-2.5"><svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> <strong>Facturación ilimitada</strong> sin restricciones</li>
+              <li class="flex items-center gap-2.5"><svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Hasta 3 Sucursales y 5 Usuarios</li>
+              <li class="flex items-center gap-2.5"><svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Kardex valorizado (FIFO / Promedio)</li>
+              <li class="flex items-center gap-2.5"><svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Formatos térmicos 58/80mm + A4 PDF</li>
+              <li class="flex items-center gap-2.5"><svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Soporte para app de Escritorio</li>
+              <li class="flex items-center gap-2.5"><svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Soporte prioritario vía WhatsApp y Correo</li>
             </ul>
           </div>
 
@@ -931,12 +860,12 @@
             </div>
 
             <ul class="space-y-3 text-xs text-slate-300 pb-8 border-b border-slate-800">
-              <li class="flex items-center gap-2.5"><span class="text-blue-400 font-bold">✓</span> Todo lo incluido en Pyme Pro</li>
-              <li class="flex items-center gap-2.5"><span class="text-blue-400 font-bold">✓</span> <strong>Sucursales y Usuarios Ilimitados</strong></li>
-              <li class="flex items-center gap-2.5"><span class="text-blue-400 font-bold">✓</span> Base de datos Postgres dedicada / RLS</li>
-              <li class="flex items-center gap-2.5"><span class="text-blue-400 font-bold">✓</span> Módulo de Auditoría Forense y Logs</li>
-              <li class="flex items-center gap-2.5"><span class="text-blue-400 font-bold">✓</span> API REST para integraciones ERP externas</li>
-              <li class="flex items-center gap-2.5"><span class="text-blue-400 font-bold">✓</span> SLA 99.9% y Asesor de cuenta 24/7</li>
+              <li class="flex items-center gap-2.5"><svg class="w-3.5 h-3.5 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Todo lo incluido en Pyme Pro</li>
+              <li class="flex items-center gap-2.5"><svg class="w-3.5 h-3.5 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> <strong>Sucursales y Usuarios Ilimitados</strong></li>
+              <li class="flex items-center gap-2.5"><svg class="w-3.5 h-3.5 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Base de datos Postgres dedicada / RLS</li>
+              <li class="flex items-center gap-2.5"><svg class="w-3.5 h-3.5 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Módulo de Auditoría Forense y Logs</li>
+              <li class="flex items-center gap-2.5"><svg class="w-3.5 h-3.5 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> API REST para integraciones ERP externas</li>
+              <li class="flex items-center gap-2.5"><svg class="w-3.5 h-3.5 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> SLA 99.9% y Asesor de cuenta 24/7</li>
             </ul>
           </div>
 
@@ -1007,6 +936,91 @@
     </div>
   </section>
 
+  <!-- ==================== 8.5. SECCIÓN DE DONACIÓN (APOYO A LA COMUNIDAD) ==================== -->
+  <section id="donacion" class="py-20 border-t border-slate-800/80 relative overflow-hidden">
+
+    <!-- FONDO DECORATIVO -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-amber-500/8 rounded-full blur-[120px]"></div>
+      <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-rose-600/8 rounded-full blur-[100px]"></div>
+      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[100px]"></div>
+    </div>
+
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+
+      <!-- ICONO ANIMADO -->
+      <div class="flex justify-center mb-6">
+        <div class="relative w-20 h-20 flex items-center justify-center">
+          <div class="absolute inset-0 rounded-full bg-rose-500/15 border border-rose-500/30 animate-ping-slow"></div>
+          <div class="relative w-16 h-16 rounded-full bg-gradient-to-br from-rose-500/20 to-amber-500/20 border border-rose-500/30 flex items-center justify-center shadow-xl shadow-rose-500/20">
+            <svg class="w-8 h-8 text-rose-400" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- TEXTO PRINCIPAL -->
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+        ¿Te ha sido útil
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-amber-400"> FacturaPro 360</span>?
+      </h2>
+
+      <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto mb-8">
+        Este proyecto nació con el objetivo de democratizar el acceso a herramientas de gestión empresarial de calidad.
+        Si el sistema te ha aportado valor y deseas apoyar su desarrollo continuo, actualizaciones y mantenimiento del servidor,
+        <strong class="text-white">cualquier donación es profundamente apreciada</strong> y nos ayuda a seguir mejorando.
+      </p>
+
+      <!-- BENEFICIOS DE DONAR -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 text-xs">
+        <div class="flex flex-col items-center gap-2 p-5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-rose-500/30 transition-all group">
+          <div class="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 mb-1 group-hover:scale-110 transition-transform">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <span class="font-bold text-slate-200">Nuevas funcionalidades</span>
+          <span class="text-slate-400 text-center leading-relaxed">Tu aporte financia el desarrollo de módulos avanzados y mejoras</span>
+        </div>
+        <div class="flex flex-col items-center gap-2 p-5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-amber-500/30 transition-all group">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-1 group-hover:scale-110 transition-transform">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <span class="font-bold text-slate-200">Servidor y seguridad</span>
+          <span class="text-slate-400 text-center leading-relaxed">Mantiene la infraestructura cloud activa, rápida y segura</span>
+        </div>
+        <div class="flex flex-col items-center gap-2 p-5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-blue-500/30 transition-all group">
+          <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-1 group-hover:scale-110 transition-transform">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <span class="font-bold text-slate-200">Soporte a la comunidad</span>
+          <span class="text-slate-400 text-center leading-relaxed">Ayuda a mantener el software accesible para pequeñas empresas</span>
+        </div>
+      </div>
+
+      <!-- BOTÓN DE DONACIÓN PAYPAL -->
+      <div class="flex flex-col items-center gap-4">
+        <a href="https://www.paypal.com/donate/?hosted_button_id=J6AKQR29DWTVC"
+           target="_blank"
+           rel="noopener noreferrer"
+           id="btn-donar-paypal"
+           class="donate-btn inline-flex items-center justify-center gap-3 px-10 py-4 text-sm font-extrabold text-white rounded-2xl transition-all shadow-2xl hover:-translate-y-1 active:scale-95">
+          <!-- Logo PayPal SVG -->
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7.076 21.337H2.47a.641.641 0 01-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 00-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 00-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 00.554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 01.923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/>
+          </svg>
+          <span>Donar con PayPal</span>
+          <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+
+        <p class="text-[11px] text-slate-500 flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          Pago 100% seguro a través de PayPal • Monto libre • Sin registro obligatorio
+        </p>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ==================== 9. PIE DE PÁGINA (FOOTER) ==================== -->
   <footer class="border-t border-slate-800/80 bg-[#040912] py-14 text-xs text-slate-400">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1045,6 +1059,7 @@
           <div><a routerLink="/login" class="hover:text-blue-400 transition-colors">Acceso de Usuarios</a></div>
           <div><a routerLink="/register" class="hover:text-blue-400 transition-colors">Registro de Empresa</a></div>
           <div><a href="#arquitectura" class="hover:text-blue-400 transition-colors">Arquitectura Dual .NET / Web</a></div>
+          <div><a href="#donacion" class="hover:text-rose-400 text-rose-300 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-rose-400 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> Donación (Apoyo al Proyecto)</a></div>
         </div>
 
         <!-- COLUMNA 4: SEGURIDAD & COMPLIANCE -->
